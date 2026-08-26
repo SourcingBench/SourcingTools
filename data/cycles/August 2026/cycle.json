@@ -2,9 +2,9 @@
   "cycle": "August 2026",
   "published": "2026-08-26",
   "files": {
-    "criteria.json": "9d7e2a103f4b27ecb2a09811b0b936688621805bc09911c1b993465c83b4aaf1",
-    "capabilities.json": "21dc7a043ea722409943f7ce62583272c93409e702cc04d1b2cafbd0105cf75f",
-    "scoring.mjs": "46383dc63a5bd07c00f8d0ec408ee5de2ef4712367e121f6e86984888f9aab0f",
-    "leaderboard.json": "5fdcafa43e2ffd4c7744dbf2c2e4f7cb75567f9d7c992daa2a69e154f71f6795"
+    "criteria.json": "eec2566682b77ca8196985b835c0c1257842a2b71ac4356cad9ba48a6f543392",
+    "capabilities.json": "d6e03d1f3b85dcb31b777b2d49ae82e0ea941503a34fdbb83d59f988a39021fc",
+    "scoring.mjs": "bbb0f55d5b41ba22dc9d16fca8ff123cb83c0db675357e5fb01a009561496b7d",
+    "leaderboard.json": "09e1ca85de3af4a240e0ec4e094e559b4d2c3669c77c87bc60355e5728241925"
   }
 }

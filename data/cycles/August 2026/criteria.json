@@ -1,41 +1,13 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "cycle": "August 2026",
-  "scale": "Each criterion is scored 0–4 against the published rubric: 0 = absent, 1 = minimal, 2 = partial, 3 = strong, 4 = best-in-class. Dimension score = mean of its criteria × 25 (0–100). Composite = weighted sum of dimension scores.",
+  "scale": "Each criterion is scored 0–10 against the published rubric: 0 = absent, 5 = adequate for typical use, 10 = the strongest implementation observed in the category this cycle. Dimension score = mean of its criteria × 10 (0–100). Composite = weighted sum of dimension scores.",
   "dimensions": [
     {
-      "id": "autonomy",
-      "name": "Autonomy",
-      "weight": 0.3,
-      "definition": "How much of the sourcing loop the tool runs without a recruiter driving each step.",
-      "criteria": [
-        {
-          "id": "autonomous_search",
-          "name": "Autonomous search",
-          "definition": "Initiates and continuously runs candidate searches from a role brief without per-search recruiter operation."
-        },
-        {
-          "id": "autonomous_screening",
-          "name": "Autonomous screening",
-          "definition": "Evaluates candidates against role criteria and produces accept/reject decisions with reasoning, rather than only ranking results for manual review."
-        },
-        {
-          "id": "autonomous_outreach",
-          "name": "Autonomous outreach",
-          "definition": "Composes and sends personalized outreach and follow-ups without per-message recruiter action."
-        },
-        {
-          "id": "scheduling_automation",
-          "name": "Scheduling automation",
-          "definition": "Handles candidate replies through to a booked interview (Q&A, availability, calendar booking)."
-        }
-      ]
-    },
-    {
       "id": "matching",
-      "name": "Matching & screening depth",
+      "name": "Candidate matching & screening",
       "weight": 0.25,
-      "definition": "Quality and adaptability of candidate evaluation.",
+      "definition": "The core job of an AI recruiting tool: finding the right candidates for a role and evaluating them accurately against its requirements.",
       "criteria": [
         {
           "id": "criteria_evaluation",
@@ -56,6 +28,34 @@
           "id": "trajectory_inference",
           "name": "Trajectory & context inference",
           "definition": "Reads career trajectory, company caliber, and inferred attributes rather than title/keyword matches."
+        }
+      ]
+    },
+    {
+      "id": "autonomy",
+      "name": "Workflow automation",
+      "weight": 0.2,
+      "definition": "How much of the recruiting workflow the tool runs on its own — search, screening, outreach, and scheduling — versus assisting a recruiter who drives each step.",
+      "criteria": [
+        {
+          "id": "autonomous_search",
+          "name": "Automated search",
+          "definition": "Initiates and continuously runs candidate searches from a role brief without per-search recruiter operation."
+        },
+        {
+          "id": "autonomous_screening",
+          "name": "Automated screening",
+          "definition": "Evaluates candidates against role criteria and produces decisions with reasoning, rather than only ranking results for manual review."
+        },
+        {
+          "id": "autonomous_outreach",
+          "name": "Automated outreach",
+          "definition": "Composes and sends personalized outreach and follow-ups without per-message recruiter action."
+        },
+        {
+          "id": "scheduling_automation",
+          "name": "Scheduling automation",
+          "definition": "Handles candidate replies through to a booked interview (Q&A, availability, calendar booking)."
         }
       ]
     },
@@ -89,9 +89,9 @@
     },
     {
       "id": "coverage",
-      "name": "Coverage & data",
-      "weight": 0.15,
-      "definition": "Breadth of candidate discovery and contact data.",
+      "name": "Talent pool coverage & data",
+      "weight": 0.2,
+      "definition": "Breadth of candidate discovery and quality of contact data.",
       "criteria": [
         {
           "id": "source_breadth",
@@ -107,9 +107,9 @@
     },
     {
       "id": "workflow",
-      "name": "Workflow & integrations",
-      "weight": 0.1,
-      "definition": "Fit into the surrounding recruiting stack.",
+      "name": "Integrations & reporting",
+      "weight": 0.15,
+      "definition": "Fit into the surrounding recruiting stack, and visibility into pipeline performance.",
       "criteria": [
         {
           "id": "ats_integrations",

@@ -1,26 +1,26 @@
 # SourcingBench: AI Sourcing Tool Rankings & Public Audit Record
 
-**The best AI sourcing tools, ranked by a published, reproducible benchmark.** SourcingBench scores candidate sourcing tools on how much of the sourcing loop they actually run — search, screening, outreach, and scheduling — plus matching depth, engagement capability, data coverage, and workflow fit. Every criterion definition, every per-tool score with its evidence note, and the scoring code itself are published in this repository, so anyone can re-derive the rankings from scratch.
+**The best AI sourcing tools, ranked by a published, reproducible benchmark.** SourcingBench scores AI recruiting tools on what an AI recruiting tool should do: match and screen candidates accurately, engage them effectively, automate the recruiting workflow, cover the talent pool, and fit the surrounding stack. Every criterion definition, every per-tool score with its evidence note, and the scoring code itself are published in this repository, so anyone can re-derive the rankings from scratch.
 
-SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), the independent directory of candidate sourcing tools. The live leaderboard with per-dimension breakdowns is at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/), with a standalone copy at [rey529.github.io/SourcingTools](https://rey529.github.io/SourcingTools/).
+SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), the independent directory of candidate sourcing tools. The live leaderboard with per-dimension breakdowns is at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/), with a standalone copy at [sourcingbench.github.io/SourcingTools](https://sourcingbench.github.io/SourcingTools/).
 
 <!-- RANKINGS:START -->
 ## 🏆 Best AI sourcing tools: August 2026
 
-| # | Tool | Score / 100 | Autonomy | Matching | Engagement | Coverage | Workflow |
-|--:|------|:-----------:|:--------:|:--------:|:----------:|:--------:|:--------:|
-| 1 | [Noon](https://sourcingtools.org/tools/noon/) | 90.9 | 100.0 | 93.8 | 93.8 | 75.0 | 75.0 |
-| 2 | [hireEZ](https://sourcingtools.org/tools/hireez/) | 68.1 | 50.0 | 62.5 | 62.5 | 100.0 | 100.0 |
-| 3 | [HeroHunt (Uwi)](https://sourcingtools.org/tools/herohunt/) | 53.4 | 68.8 | 43.8 | 50.0 | 62.5 | 25.0 |
-| 4 | [Findem](https://sourcingtools.org/tools/findem/) | 52.8 | 31.3 | 81.3 | 31.3 | 62.5 | 75.0 |
-| 5 | [Fetcher](https://sourcingtools.org/tools/fetcher/) | 52.2 | 56.3 | 43.8 | 50.0 | 62.5 | 50.0 |
-| 6 | [SeekOut](https://sourcingtools.org/tools/seekout/) | 50.0 | 25.0 | 62.5 | 31.3 | 87.5 | 75.0 |
-| 7 | [Gem](https://sourcingtools.org/tools/gem/) | 49.4 | 31.3 | 37.5 | 56.3 | 62.5 | 100.0 |
-| 8 | [Dover](https://sourcingtools.org/tools/dover/) | 49.4 | 62.5 | 37.5 | 43.8 | 50.0 | 50.0 |
-| 9 | [Juicebox (PeopleGPT)](https://sourcingtools.org/tools/juicebox/) | 46.3 | 25.0 | 50.0 | 50.0 | 75.0 | 50.0 |
-| 10 | [LinkedIn Recruiter](https://sourcingtools.org/tools/linkedin-recruiter/) | 31.6 | 18.8 | 43.8 | 25.0 | 25.0 | 62.5 |
+| # | Tool | Score / 100 | Matching | Automation | Engagement | Coverage | Integrations |
+|--:|------|:-----------:|:--------:|:----------:|:----------:|:--------:|:------------:|
+| 1 | [Noon](https://sourcingtools.org/tools/noon/) | 83.6 | 87.5 | 87.5 | 85.0 | 80.0 | 75.0 |
+| 2 | [hireEZ](https://sourcingtools.org/tools/hireez/) | 80.9 | 77.5 | 67.5 | 77.5 | 95.0 | 90.0 |
+| 3 | [SeekOut](https://sourcingtools.org/tools/seekout/) | 72.9 | 77.5 | 55.0 | 62.5 | 90.0 | 80.0 |
+| 4 | [Gem](https://sourcingtools.org/tools/gem/) | 69.1 | 62.5 | 55.0 | 70.0 | 75.0 | 90.0 |
+| 5 | [Findem](https://sourcingtools.org/tools/findem/) | 68.1 | 82.5 | 50.0 | 52.5 | 75.0 | 80.0 |
+| 6 | [Fetcher](https://sourcingtools.org/tools/fetcher/) | 64.1 | 62.5 | 70.0 | 62.5 | 65.0 | 60.0 |
+| 7 | [Juicebox (PeopleGPT)](https://sourcingtools.org/tools/juicebox/) | 61.8 | 65.0 | 47.5 | 60.0 | 75.0 | 60.0 |
+| 8 | [HeroHunt (Uwi)](https://sourcingtools.org/tools/herohunt/) | 58.8 | 55.0 | 70.0 | 60.0 | 65.0 | 40.0 |
+| 9 | [Dover](https://sourcingtools.org/tools/dover/) | 57.6 | 52.5 | 65.0 | 57.5 | 55.0 | 60.0 |
+| 10 | [LinkedIn Recruiter](https://sourcingtools.org/tools/linkedin-recruiter/) | 52.0 | 60.0 | 40.0 | 42.5 | 50.0 | 70.0 |
 
-_The composite (out of 100) weights Autonomy (30%), Matching & screening depth (25%), Outreach & engagement (20%), Coverage & data (15%), and Workflow & integrations (10%). Each dimension aggregates 0–4 rubric scores on published criteria; every score carries an evidence note and links to the underlying review. Noon's lead reflects the rubric's emphasis: it is the only tool assessed that automates all four autonomy stages (search, screening, outreach, scheduling). Tools that keep the recruiter in the driver's seat — hireEZ, SeekOut, Gem — score higher on coverage and workflow than on autonomy by design. Full breakdowns at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/)._
+_The composite (out of 100) weights Candidate matching & screening (25%), Workflow automation (20%), Outreach & engagement (20%), Talent pool coverage & data (20%), and Integrations & reporting (15%). Each dimension aggregates 0–10 rubric scores on published criteria; every score carries an evidence note and links to the underlying review. Noon edges out hireEZ this cycle on the strength of its matching calibration and workflow automation; hireEZ leads on talent pool coverage and integrations, and SeekOut, Gem, and Findem each top at least one dimension. Full breakdowns at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/)._
 <!-- RANKINGS:END -->
 
 ### [See the full leaderboard at sourcingtools.org/benchmark →](https://sourcingtools.org/benchmark/)
@@ -36,7 +36,7 @@ data/
   cycles/
     <cycle>/                # one directory per published cycle
       criteria.json         # the rubric: dimensions, weights, criterion definitions
-      capabilities.json     # every tool's 0-4 score per criterion, with evidence notes
+      capabilities.json     # every tool's 0-10 score per criterion, with evidence notes
       scoring.mjs           # the frozen scoring aggregator for this cycle
       leaderboard.json      # composite + per-dimension scores, ranked
       cycle.json            # SHA-256 manifest of the files above
@@ -50,7 +50,7 @@ CHANGES.md                  # cycle-to-cycle methodology changelog
 ## How to verify a cycle
 
 ```bash
-git clone https://github.com/rey529/SourcingTools.git
+git clone https://github.com/SourcingBench/SourcingTools.git
 cd SourcingTools
 npm run verify                                      # verify every published cycle
 node scripts/verify-cycle.mjs "August 2026"         # verify one cycle
@@ -66,14 +66,14 @@ verify-cycle OK
 The script runs three checks for each cycle:
 
 1. **Manifest integrity.** Recomputes the SHA-256 of every file named in `cycle.json` and asserts it matches. Catches truncated, corrupted, or doctored publishes.
-2. **Rubric coverage.** Every tool has an in-range 0–4 value and an evidence note for every criterion in the published rubric, and the dimension weights sum to 1.
+2. **Rubric coverage.** Every tool has an in-range 0–10 value and an evidence note for every criterion in the published rubric, and the dimension weights sum to 1.
 3. **Score replay.** Re-runs the cycle's frozen `scoring.mjs` against `capabilities.json` and asserts every composite, dimension score, and rank matches the published `leaderboard.json` exactly.
 
 The verifier is wired into CI: every push runs `npm run verify` and fails the build if any published cycle no longer replays.
 
 ## Methodology in one paragraph
 
-Each cycle, every tool is scored 0–4 against the same 16 published criteria across five dimensions (autonomy 30%, matching 25%, engagement 20%, coverage 15%, workflow 10%). Scores are assessed from vendor documentation, product walkthroughs, and the tool reviews maintained at SourcingTools.org; each score's evidence note and source links are published in `capabilities.json`, so the basis for every number is inspectable. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does, weighted toward the question buyers actually ask in 2026 — *how much of sourcing does this tool take off my plate?* The full methodology is on the [benchmark page](https://sourcingtools.org/benchmark/).
+Each cycle, every tool is scored 0–10 against the same 16 published criteria across five dimensions weighted by what an AI recruiting tool should do (matching & screening 25%, workflow automation 20%, outreach & engagement 20%, coverage & data 20%, integrations & reporting 15%). Scores are assessed from vendor documentation, product walkthroughs, and the tool reviews maintained at SourcingTools.org; each score's evidence note and source links are published in `capabilities.json`, so the basis for every number is inspectable. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does. The full methodology is on the [benchmark page](https://sourcingtools.org/benchmark/).
 
 ## Corrections and disputes
 

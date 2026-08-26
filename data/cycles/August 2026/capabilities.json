@@ -1,7 +1,7 @@
 {
   "cycle": "August 2026",
   "assessed": "2026-08-26",
-  "rubric_version": "1.0.0",
+  "rubric_version": "2.0.0",
   "tools": [
     {
       "slug": "noon",
@@ -13,69 +13,69 @@
         "https://noon.ai"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 4,
-          "note": "Agent sources continuously from a role brief; keeps monitoring as new candidates enter the market"
-        },
-        "autonomous_screening": {
-          "value": 4,
-          "note": "Per-candidate accept/reject verdicts with reasoning against calibrated role criteria"
-        },
-        "autonomous_outreach": {
-          "value": 4,
-          "note": "Multi-touch personalized sequences sent and followed up by the agent"
-        },
-        "scheduling_automation": {
-          "value": 4,
-          "note": "AI coordinator answers candidate questions and books interviews (calendar integration)"
-        },
         "criteria_evaluation": {
-          "value": 4,
+          "value": 9,
           "note": "Explicit role criteria with per-candidate reasoning and pass-rate reporting"
         },
         "feedback_learning": {
-          "value": 4,
+          "value": 9,
           "note": "Calibration loop: recruiter grades early candidates, model adjusts per role; re-evaluates on criteria change"
         },
         "hard_filters": {
-          "value": 4,
-          "note": "Non-negotiables: mandatory criteria the agent never relaxes"
+          "value": 9,
+          "note": "Non-negotiables: mandatory criteria that are never relaxed"
         },
         "trajectory_inference": {
-          "value": 3,
+          "value": 8,
           "note": "Interprets career trajectory and company caliber; less attribute search than Findem"
         },
+        "autonomous_search": {
+          "value": 9,
+          "note": "Sources continuously from a role brief; keeps monitoring as new candidates enter the market"
+        },
+        "autonomous_screening": {
+          "value": 9,
+          "note": "Per-candidate verdicts with reasoning against calibrated role criteria"
+        },
+        "autonomous_outreach": {
+          "value": 9,
+          "note": "Multi-touch personalized sequences sent and followed up automatically"
+        },
+        "scheduling_automation": {
+          "value": 8,
+          "note": "AI coordinator answers candidate questions and books interviews (calendar integration); newer than incumbent scheduling stacks"
+        },
         "channels": {
-          "value": 4,
+          "value": 9,
           "note": "Email, LinkedIn, and SMS sequences"
         },
         "personalization": {
-          "value": 4,
+          "value": 9,
           "note": "AI-generated per-candidate intros grounded in profile; above category average in our review"
         },
         "sequencing": {
-          "value": 3,
+          "value": 7,
           "note": "Multi-step sequences with editing; no A/B testing at hireEZ/Gem depth"
         },
         "reply_handling": {
-          "value": 4,
+          "value": 9,
           "note": "Coordinator handles candidate Q&A through to booking"
         },
         "source_breadth": {
-          "value": 3,
-          "note": "Web-wide sourcing beyond LinkedIn; no 800M-profile aggregated database"
+          "value": 8,
+          "note": "Web-wide sourcing beyond LinkedIn; smaller aggregated index than hireEZ/SeekOut"
         },
         "contact_finding": {
-          "value": 3,
+          "value": 8,
           "note": "Built-in email enrichment and verification"
         },
         "ats_integrations": {
-          "value": 3,
-          "note": "20+ ATS providers via unified sync layer; fewer native bi-directional depth claims than hireEZ"
+          "value": 8,
+          "note": "20+ ATS providers via unified sync layer; fewer native bi-directional integrations than hireEZ"
         },
         "analytics": {
-          "value": 3,
-          "note": "Funnel and outbound performance metrics"
+          "value": 7,
+          "note": "Funnel and outbound performance metrics; lighter reporting than Gem"
         }
       }
     },
@@ -89,68 +89,68 @@
         "https://hireez.com"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 2,
-          "note": "AI Sourcing mode surfaces new matches continuously, but recruiter builds and owns searches"
-        },
-        "autonomous_screening": {
-          "value": 2,
-          "note": "EZ Match ranks against the JD; recruiter reviews every shortlist"
-        },
-        "autonomous_outreach": {
-          "value": 3,
-          "note": "AI-drafted sequenced outreach runs after recruiter launch"
-        },
-        "scheduling_automation": {
-          "value": 1,
-          "note": "No candidate-facing scheduling agent; handoff to ATS"
-        },
         "criteria_evaluation": {
-          "value": 3,
+          "value": 8,
           "note": "JD-driven requirement extraction and ranked matching"
         },
         "feedback_learning": {
-          "value": 2,
+          "value": 7,
           "note": "Match tuning within a search; no per-role calibration loop"
         },
         "hard_filters": {
-          "value": 3,
+          "value": 9,
           "note": "Deep Boolean and healthcare/technical filters"
         },
         "trajectory_inference": {
-          "value": 2,
-          "note": "Ranking beyond keywords, but title/skill-centric"
+          "value": 7,
+          "note": "Ranking beyond keywords, though title/skill-centric"
+        },
+        "autonomous_search": {
+          "value": 7,
+          "note": "AI Sourcing mode surfaces new matches continuously; recruiter builds and owns searches"
+        },
+        "autonomous_screening": {
+          "value": 7,
+          "note": "EZ Match ranks against the JD with strong relevance; recruiter reviews shortlists"
+        },
+        "autonomous_outreach": {
+          "value": 8,
+          "note": "AI-drafted sequenced outreach runs after recruiter launch"
+        },
+        "scheduling_automation": {
+          "value": 5,
+          "note": "Scheduling handoff to ATS/calendar tooling; no candidate-facing agent"
         },
         "channels": {
-          "value": 2,
-          "note": "Email sequences; phone data provided but no SMS/LinkedIn sending"
+          "value": 8,
+          "note": "Email sequences with phone data; no SMS/LinkedIn sending"
         },
         "personalization": {
-          "value": 3,
+          "value": 8,
           "note": "AI-written outreach from profile + JD"
         },
         "sequencing": {
-          "value": 4,
+          "value": 9,
           "note": "Mature sequences with A/B testing and team tracking"
         },
         "reply_handling": {
-          "value": 1,
-          "note": "Replies land with the recruiter"
+          "value": 6,
+          "note": "Reply detection and routing; replies handled by the recruiter"
         },
         "source_breadth": {
-          "value": 4,
+          "value": 10,
           "note": "800M+ profiles aggregated from open web and licensed partners"
         },
         "contact_finding": {
-          "value": 4,
-          "note": "Best-in-class contact coverage; quality varies by region"
+          "value": 9,
+          "note": "Category-leading contact coverage; quality varies by region"
         },
         "ats_integrations": {
-          "value": 4,
+          "value": 9,
           "note": "~30 bi-directional ATS integrations plus ATS Rediscovery"
         },
         "analytics": {
-          "value": 4,
+          "value": 9,
           "note": "Full funnel, sequence, and team analytics"
         }
       }
@@ -165,68 +165,68 @@
         "https://seekout.com"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 1,
-          "note": "SeekOut Assist builds searches from a JD; recruiter runs them"
-        },
-        "autonomous_screening": {
-          "value": 2,
-          "note": "Assist ranks and explains matches; review is manual"
-        },
-        "autonomous_outreach": {
-          "value": 1,
-          "note": "Drafts outreach; sending is recruiter-driven"
-        },
-        "scheduling_automation": {
-          "value": 0,
-          "note": "None"
-        },
         "criteria_evaluation": {
-          "value": 3,
+          "value": 9,
           "note": "JD-to-search with explainable matching"
         },
         "feedback_learning": {
-          "value": 1,
-          "note": "No per-role learning loop"
+          "value": 6,
+          "note": "Search-level tuning; no per-role learning loop"
         },
         "hard_filters": {
-          "value": 4,
-          "note": "Deepest technical/cleared-talent filters in the market (clearances, patents, GitHub)"
+          "value": 9,
+          "note": "Deepest technical/cleared-talent filters reviewed (clearances, patents, GitHub)"
         },
         "trajectory_inference": {
-          "value": 2,
+          "value": 7,
           "note": "Strong profile enrichment; limited attribute inference"
         },
+        "autonomous_search": {
+          "value": 6,
+          "note": "SeekOut Assist builds searches from a JD; recruiter runs them"
+        },
+        "autonomous_screening": {
+          "value": 6,
+          "note": "Assist ranks and explains matches; review is manual"
+        },
+        "autonomous_outreach": {
+          "value": 6,
+          "note": "AI-drafted outreach; sending is recruiter-driven"
+        },
+        "scheduling_automation": {
+          "value": 4,
+          "note": "No candidate-facing scheduling; ATS handoff"
+        },
         "channels": {
-          "value": 1,
+          "value": 6,
           "note": "Email-focused"
         },
         "personalization": {
-          "value": 2,
+          "value": 7,
           "note": "AI-drafted messages"
         },
         "sequencing": {
-          "value": 2,
-          "note": "Basic campaigns"
+          "value": 7,
+          "note": "Solid campaigns; fewer testing features than hireEZ/Gem"
         },
         "reply_handling": {
-          "value": 0,
-          "note": "None"
+          "value": 5,
+          "note": "Reply routing to the recruiter"
         },
         "source_breadth": {
-          "value": 4,
+          "value": 9,
           "note": "Broad aggregated index incl. GitHub, papers, clearances"
         },
         "contact_finding": {
-          "value": 3,
-          "note": "Good email coverage; phone thinner"
+          "value": 9,
+          "note": "Strong email coverage; phone thinner"
         },
         "ats_integrations": {
-          "value": 3,
+          "value": 8,
           "note": "Major ATS integrations"
         },
         "analytics": {
-          "value": 3,
+          "value": 8,
           "note": "Talent analytics and pipeline insights"
         }
       }
@@ -241,68 +241,68 @@
         "https://juicebox.ai"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 1,
-          "note": "Natural-language search is recruiter-initiated per query"
-        },
-        "autonomous_screening": {
-          "value": 2,
-          "note": "Cited-evidence matching against the query; manual review"
-        },
-        "autonomous_outreach": {
-          "value": 1,
-          "note": "AI-drafted emails; recruiter sends"
-        },
-        "scheduling_automation": {
-          "value": 0,
-          "note": "None"
-        },
         "criteria_evaluation": {
-          "value": 3,
+          "value": 8,
           "note": "NL queries evaluated with cited evidence per candidate"
         },
         "feedback_learning": {
-          "value": 1,
-          "note": "Query refinement only; no persistent per-role model"
+          "value": 6,
+          "note": "Query refinement; no persistent per-role model"
         },
         "hard_filters": {
-          "value": 2,
+          "value": 6,
           "note": "Filterable, less deep than SeekOut on technical/clearance"
         },
         "trajectory_inference": {
-          "value": 2,
+          "value": 6,
           "note": "Understands NL requirements; limited trajectory modeling"
         },
+        "autonomous_search": {
+          "value": 5,
+          "note": "Natural-language search is recruiter-initiated per query"
+        },
+        "autonomous_screening": {
+          "value": 6,
+          "note": "Cited-evidence matching against the query; manual review"
+        },
+        "autonomous_outreach": {
+          "value": 5,
+          "note": "AI-drafted emails; recruiter sends"
+        },
+        "scheduling_automation": {
+          "value": 3,
+          "note": "No scheduling automation"
+        },
         "channels": {
-          "value": 2,
+          "value": 6,
           "note": "Email outreach with enrichment"
         },
         "personalization": {
-          "value": 3,
+          "value": 7,
           "note": "AI personalization from profile evidence"
         },
         "sequencing": {
-          "value": 3,
+          "value": 7,
           "note": "Sequenced campaigns, self-serve"
         },
         "reply_handling": {
-          "value": 0,
-          "note": "None"
+          "value": 4,
+          "note": "Reply routing only"
         },
         "source_breadth": {
-          "value": 3,
+          "value": 8,
           "note": "800M-profile index; web-wide"
         },
         "contact_finding": {
-          "value": 3,
+          "value": 7,
           "note": "Built-in enrichment"
         },
         "ats_integrations": {
-          "value": 2,
+          "value": 6,
           "note": "Growing list, lighter than incumbents"
         },
         "analytics": {
-          "value": 2,
+          "value": 6,
           "note": "Campaign-level analytics"
         }
       }
@@ -317,69 +317,69 @@
         "https://gem.com"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 1,
-          "note": "AI sourcing assists; recruiter-driven searches"
-        },
-        "autonomous_screening": {
-          "value": 1,
-          "note": "Ranking assist only"
-        },
-        "autonomous_outreach": {
-          "value": 2,
-          "note": "Sequences run automatically once launched"
-        },
-        "scheduling_automation": {
-          "value": 1,
-          "note": "Scheduling links, not an agent"
-        },
         "criteria_evaluation": {
-          "value": 2,
+          "value": 7,
           "note": "JD-based matching assist"
         },
         "feedback_learning": {
-          "value": 1,
-          "note": "No per-role calibration"
+          "value": 6,
+          "note": "Sequence/search tuning; no per-role calibration"
         },
         "hard_filters": {
-          "value": 2,
+          "value": 7,
           "note": "Standard filtering"
         },
         "trajectory_inference": {
-          "value": 1,
+          "value": 5,
           "note": "CRM-centric, not inference-led"
         },
+        "autonomous_search": {
+          "value": 5,
+          "note": "AI sourcing assists; recruiter-driven searches"
+        },
+        "autonomous_screening": {
+          "value": 5,
+          "note": "Ranking assist only"
+        },
+        "autonomous_outreach": {
+          "value": 7,
+          "note": "Sequences run automatically once launched"
+        },
+        "scheduling_automation": {
+          "value": 5,
+          "note": "Scheduling links, not an agent"
+        },
         "channels": {
-          "value": 2,
+          "value": 7,
           "note": "Email + InMail tracking"
         },
         "personalization": {
-          "value": 2,
+          "value": 7,
           "note": "Templates with AI assist"
         },
         "sequencing": {
-          "value": 4,
+          "value": 9,
           "note": "Category-leading sequences, A/B, send-time optimization"
         },
         "reply_handling": {
-          "value": 1,
-          "note": "Reply detection and routing only"
+          "value": 5,
+          "note": "Reply detection and routing"
         },
         "source_breadth": {
-          "value": 2,
+          "value": 7,
           "note": "Extension + CRM rediscovery over LinkedIn-centric sourcing"
         },
         "contact_finding": {
-          "value": 3,
+          "value": 8,
           "note": "Strong email finding"
         },
         "ats_integrations": {
-          "value": 4,
+          "value": 9,
           "note": "Deep ATS/CRM sync; Gem is also a CRM"
         },
         "analytics": {
-          "value": 4,
-          "note": "Best-in-class outbound and funnel analytics"
+          "value": 9,
+          "note": "Category-leading outbound and funnel analytics"
         }
       }
     },
@@ -393,68 +393,68 @@
         "https://findem.ai"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 2,
-          "note": "Attribute-based searches run and refresh continuously"
-        },
-        "autonomous_screening": {
-          "value": 2,
-          "note": "Attribute matching narrows pools; review manual"
-        },
-        "autonomous_outreach": {
-          "value": 1,
-          "note": "Campaigns exist; recruiter-configured"
-        },
-        "scheduling_automation": {
-          "value": 0,
-          "note": "None"
-        },
         "criteria_evaluation": {
-          "value": 4,
+          "value": 9,
           "note": "Attribute inference ('built a data team at a startup') is a real capability gap"
         },
         "feedback_learning": {
-          "value": 2,
+          "value": 7,
           "note": "Attribute tuning per search"
         },
         "hard_filters": {
-          "value": 3,
+          "value": 8,
           "note": "Attribute-level hard requirements"
         },
         "trajectory_inference": {
-          "value": 4,
+          "value": 9,
           "note": "3D data: person + company + time; strongest trajectory modeling reviewed"
         },
+        "autonomous_search": {
+          "value": 6,
+          "note": "Attribute-based searches run and refresh continuously"
+        },
+        "autonomous_screening": {
+          "value": 6,
+          "note": "Attribute matching narrows pools; review manual"
+        },
+        "autonomous_outreach": {
+          "value": 5,
+          "note": "Campaigns exist; recruiter-configured"
+        },
+        "scheduling_automation": {
+          "value": 3,
+          "note": "No scheduling automation"
+        },
         "channels": {
-          "value": 1,
+          "value": 5,
           "note": "Email-focused"
         },
         "personalization": {
-          "value": 2,
+          "value": 6,
           "note": "Standard AI drafting"
         },
         "sequencing": {
-          "value": 2,
+          "value": 6,
           "note": "Basic campaigns"
         },
         "reply_handling": {
-          "value": 0,
-          "note": "None"
+          "value": 4,
+          "note": "Reply routing only"
         },
         "source_breadth": {
-          "value": 3,
+          "value": 8,
           "note": "Large enriched index with company history data"
         },
         "contact_finding": {
-          "value": 2,
+          "value": 7,
           "note": "Adequate; not its focus"
         },
         "ats_integrations": {
-          "value": 3,
+          "value": 8,
           "note": "Enterprise ATS integrations"
         },
         "analytics": {
-          "value": 3,
+          "value": 8,
           "note": "Talent analytics focus"
         }
       }
@@ -469,68 +469,68 @@
         "https://fetcher.ai"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 3,
-          "note": "Recurring AI-sourced candidate batches delivered per role"
-        },
-        "autonomous_screening": {
-          "value": 2,
-          "note": "AI pre-screen with human curation before delivery"
-        },
-        "autonomous_outreach": {
-          "value": 3,
-          "note": "Automated sequences on approved candidates"
-        },
-        "scheduling_automation": {
-          "value": 1,
-          "note": "Interest handoff; no booking agent"
-        },
         "criteria_evaluation": {
-          "value": 2,
+          "value": 7,
           "note": "Brief-based matching, curator-checked"
         },
         "feedback_learning": {
-          "value": 2,
+          "value": 7,
           "note": "Batch approval/rejection tunes future batches"
         },
         "hard_filters": {
-          "value": 2,
+          "value": 6,
           "note": "Brief-level requirements"
         },
         "trajectory_inference": {
-          "value": 1,
+          "value": 5,
           "note": "Standard profile matching"
         },
+        "autonomous_search": {
+          "value": 8,
+          "note": "Recurring AI-sourced candidate batches delivered per role"
+        },
+        "autonomous_screening": {
+          "value": 7,
+          "note": "AI pre-screen with human curation before delivery"
+        },
+        "autonomous_outreach": {
+          "value": 8,
+          "note": "Automated sequences on approved candidates"
+        },
+        "scheduling_automation": {
+          "value": 5,
+          "note": "Interest handoff; no booking agent"
+        },
         "channels": {
-          "value": 2,
+          "value": 6,
           "note": "Email sequences"
         },
         "personalization": {
-          "value": 2,
+          "value": 7,
           "note": "Template + AI assist"
         },
         "sequencing": {
-          "value": 3,
+          "value": 7,
           "note": "Solid automated follow-ups"
         },
         "reply_handling": {
-          "value": 1,
+          "value": 5,
           "note": "Interested-reply routing"
         },
         "source_breadth": {
-          "value": 2,
+          "value": 6,
           "note": "Web sourcing; smaller index"
         },
         "contact_finding": {
-          "value": 3,
+          "value": 7,
           "note": "Verified emails included"
         },
         "ats_integrations": {
-          "value": 2,
+          "value": 6,
           "note": "Common ATS integrations"
         },
         "analytics": {
-          "value": 2,
+          "value": 6,
           "note": "Campaign metrics"
         }
       }
@@ -545,68 +545,68 @@
         "https://herohunt.ai"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 4,
-          "note": "Uwi runs the search loop autonomously from a brief"
-        },
-        "autonomous_screening": {
-          "value": 3,
-          "note": "Automated screening; precision trails Noon on complex briefs"
-        },
-        "autonomous_outreach": {
-          "value": 3,
-          "note": "Automated personalized outreach"
-        },
-        "scheduling_automation": {
-          "value": 1,
-          "note": "Interest handoff only"
-        },
         "criteria_evaluation": {
-          "value": 2,
+          "value": 6,
           "note": "Brief-driven screening, lighter reasoning"
         },
         "feedback_learning": {
-          "value": 2,
+          "value": 6,
           "note": "Feedback adjusts the search"
         },
         "hard_filters": {
-          "value": 2,
+          "value": 6,
           "note": "Standard requirements"
         },
         "trajectory_inference": {
-          "value": 1,
+          "value": 4,
           "note": "Keyword/skill-centric"
         },
+        "autonomous_search": {
+          "value": 8,
+          "note": "Uwi runs the search loop automatically from a brief"
+        },
+        "autonomous_screening": {
+          "value": 7,
+          "note": "Automated screening; precision trails Noon on complex briefs"
+        },
+        "autonomous_outreach": {
+          "value": 8,
+          "note": "Automated personalized outreach"
+        },
+        "scheduling_automation": {
+          "value": 5,
+          "note": "Interest handoff only"
+        },
         "channels": {
-          "value": 2,
+          "value": 7,
           "note": "Email + LinkedIn"
         },
         "personalization": {
-          "value": 3,
+          "value": 7,
           "note": "Per-candidate AI personalization"
         },
         "sequencing": {
-          "value": 2,
+          "value": 6,
           "note": "Basic follow-ups"
         },
         "reply_handling": {
-          "value": 1,
+          "value": 4,
           "note": "Routing only"
         },
         "source_breadth": {
-          "value": 3,
+          "value": 7,
           "note": "1B-profile web index claim; broad coverage"
         },
         "contact_finding": {
-          "value": 2,
+          "value": 6,
           "note": "Included, thinner coverage"
         },
         "ats_integrations": {
-          "value": 1,
+          "value": 4,
           "note": "Minimal"
         },
         "analytics": {
-          "value": 1,
+          "value": 4,
           "note": "Basic"
         }
       }
@@ -621,68 +621,68 @@
         "https://dover.com"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 3,
-          "note": "Automated sourcing for common startup roles inside its free ATS"
-        },
-        "autonomous_screening": {
-          "value": 2,
-          "note": "Criteria-based filtering tuned to startup roles"
-        },
-        "autonomous_outreach": {
-          "value": 3,
-          "note": "Automated sequences from your domain"
-        },
-        "scheduling_automation": {
-          "value": 2,
-          "note": "Scheduling links and coordination help"
-        },
         "criteria_evaluation": {
-          "value": 2,
+          "value": 6,
           "note": "Role presets + criteria"
         },
         "feedback_learning": {
-          "value": 1,
+          "value": 5,
           "note": "Limited"
         },
         "hard_filters": {
-          "value": 2,
+          "value": 6,
           "note": "Standard"
         },
         "trajectory_inference": {
-          "value": 1,
+          "value": 4,
           "note": "Standard matching"
         },
+        "autonomous_search": {
+          "value": 7,
+          "note": "Automated sourcing for common startup roles inside its free ATS"
+        },
+        "autonomous_screening": {
+          "value": 6,
+          "note": "Criteria-based filtering tuned to startup roles"
+        },
+        "autonomous_outreach": {
+          "value": 7,
+          "note": "Automated sequences from your domain"
+        },
+        "scheduling_automation": {
+          "value": 6,
+          "note": "Scheduling links and coordination help"
+        },
         "channels": {
-          "value": 2,
+          "value": 6,
           "note": "Email"
         },
         "personalization": {
-          "value": 2,
+          "value": 6,
           "note": "Templated with variables"
         },
         "sequencing": {
-          "value": 2,
+          "value": 6,
           "note": "Automated follow-ups"
         },
         "reply_handling": {
-          "value": 1,
+          "value": 5,
           "note": "Routing"
         },
         "source_breadth": {
-          "value": 2,
+          "value": 5,
           "note": "Common startup-role coverage"
         },
         "contact_finding": {
-          "value": 2,
+          "value": 6,
           "note": "Included"
         },
         "ats_integrations": {
-          "value": 2,
+          "value": 6,
           "note": "Is its own ATS; exports elsewhere"
         },
         "analytics": {
-          "value": 2,
+          "value": 6,
           "note": "Funnel basics"
         }
       }
@@ -697,68 +697,68 @@
         "https://business.linkedin.com/talent-solutions/recruiter"
       ],
       "scores": {
-        "autonomous_search": {
-          "value": 1,
-          "note": "AI-assisted search inside a recruiter-driven workflow"
-        },
-        "autonomous_screening": {
-          "value": 1,
-          "note": "Spotlights and match signals only"
-        },
-        "autonomous_outreach": {
-          "value": 1,
-          "note": "AI-assisted InMail drafting; manual sends"
-        },
-        "scheduling_automation": {
-          "value": 0,
-          "note": "None"
-        },
         "criteria_evaluation": {
-          "value": 2,
+          "value": 6,
           "note": "Recommended matches per project"
         },
         "feedback_learning": {
-          "value": 1,
+          "value": 5,
           "note": "Project-level signals"
         },
         "hard_filters": {
-          "value": 3,
+          "value": 8,
           "note": "40+ structured filters on first-party data"
         },
         "trajectory_inference": {
-          "value": 1,
+          "value": 5,
           "note": "First-party data, keyword-led search"
         },
+        "autonomous_search": {
+          "value": 4,
+          "note": "AI-assisted search inside a recruiter-driven workflow"
+        },
+        "autonomous_screening": {
+          "value": 4,
+          "note": "Spotlights and match signals only"
+        },
+        "autonomous_outreach": {
+          "value": 5,
+          "note": "AI-assisted InMail drafting; manual sends"
+        },
+        "scheduling_automation": {
+          "value": 3,
+          "note": "No scheduling automation"
+        },
         "channels": {
-          "value": 1,
+          "value": 4,
           "note": "InMail only; no email/SMS"
         },
         "personalization": {
-          "value": 1,
+          "value": 5,
           "note": "AI-assisted drafts, template-heavy in practice"
         },
         "sequencing": {
-          "value": 2,
+          "value": 5,
           "note": "InMail follow-ups"
         },
         "reply_handling": {
-          "value": 0,
-          "note": "None"
+          "value": 3,
+          "note": "Manual"
         },
         "source_breadth": {
-          "value": 1,
+          "value": 6,
           "note": "Single network (the largest one) — no open-web or licensed sources"
         },
         "contact_finding": {
-          "value": 1,
+          "value": 4,
           "note": "No emails/phones without third-party tools"
         },
         "ats_integrations": {
-          "value": 2,
+          "value": 6,
           "note": "ATS connectors via partners"
         },
         "analytics": {
-          "value": 3,
+          "value": 8,
           "note": "Talent insights and pipeline reporting"
         }
       }

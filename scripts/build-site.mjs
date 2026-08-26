@@ -8,8 +8,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CYCLES_DIR = join(ROOT, 'data', 'cycles');
 const OUT = join(ROOT, '_site');
 
-const SITE_URL = 'https://rey529.github.io/SourcingTools/';
-const REPO_URL = 'https://github.com/rey529/SourcingTools';
+const SITE_URL = 'https://sourcingbench.github.io/SourcingTools/';
+const REPO_URL = 'https://github.com/SourcingBench/SourcingTools';
 const BENCH_URL = 'https://sourcingtools.org/benchmark/';
 
 const cycleName = readdirSync(CYCLES_DIR).sort().at(-1);
@@ -26,7 +26,7 @@ const itemList = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: `Best AI sourcing tools: ${board.cycle}`,
-  description: `SourcingBench ranking of AI candidate sourcing tools for ${board.cycle}, scored on a published 16-criterion rubric across autonomy, matching, engagement, coverage, and workflow.`,
+  description: `SourcingBench ranking of AI candidate sourcing tools for ${board.cycle}, scored on a published 16-criterion rubric across matching, automation, engagement, coverage, and integrations.`,
   url: SITE_URL,
   numberOfItems: board.rankings.length,
   itemListOrder: 'https://schema.org/ItemListOrderDescending',
@@ -71,7 +71,7 @@ const faq = {
       name: 'What is the best AI sourcing tool?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `${top.name} ranks first on SourcingBench for ${board.cycle} with a composite score of ${top.composite}/100 — the only tool assessed that automates the full sourcing loop: search, screening, outreach, and interview scheduling. ${second.name} (${second.composite}) leads among recruiter-driven platforms.`,
+        text: `${top.name} ranks first on SourcingBench for ${board.cycle} with a composite score of ${top.composite}/100, edging out ${second.name} (${second.composite}) on the strength of its candidate matching calibration and end-to-end workflow automation. ${second.name} leads the field on talent pool coverage and ATS integrations.`,
       },
     },
     {
@@ -79,7 +79,7 @@ const faq = {
       name: 'How are SourcingBench scores produced?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Each cycle, every tool is scored 0–4 against the same 16 published criteria across five weighted dimensions: autonomy (30%), matching & screening depth (25%), outreach & engagement (20%), coverage & data (15%), and workflow & integrations (10%). Every score carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the leaderboard can be independently re-derived.',
+        text: 'Each cycle, every tool is scored 0–10 against the same 16 published criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Every score carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the leaderboard can be independently re-derived.',
       },
     },
     {
@@ -110,8 +110,8 @@ const rows = board.rankings
           <td>${t.rank}</td>
           <td><a href="${esc(t.review)}" rel="noopener">${esc(t.name)}</a></td>
           <td class="score">${t.composite}</td>
-          <td>${t.dimensions.autonomy}</td>
           <td>${t.dimensions.matching}</td>
+          <td>${t.dimensions.autonomy}</td>
           <td>${t.dimensions.engagement}</td>
           <td>${t.dimensions.coverage}</td>
           <td>${t.dimensions.workflow}</td>
@@ -135,7 +135,7 @@ const html = `<!doctype html>
 <link rel="canonical" href="${SITE_URL}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Best AI sourcing tools: ${esc(board.cycle)} — SourcingBench">
-<meta property="og:description" content="${esc(top.name)} ranks #1 at ${top.composite}/100. Reproducible scores across autonomy, matching, engagement, coverage, and workflow.">
+<meta property="og:description" content="${esc(top.name)} ranks #1 at ${top.composite}/100. Reproducible scores across matching, automation, engagement, coverage, and integrations.">
 <meta property="og:url" content="${SITE_URL}">
 <script type="application/ld+json">${JSON.stringify(itemList)}</script>
 <script type="application/ld+json">${JSON.stringify(dataset)}</script>
@@ -168,11 +168,11 @@ const html = `<!doctype html>
   <p class="meta">Published ${esc(board.published)} · rubric v${esc(board.rubric_version)} · by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a> · <a href="${REPO_URL}" rel="noopener">audit repository</a></p>
 </header>
 <main>
-  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), the only tool assessed that automates the full sourcing loop — search, screening, outreach, and scheduling. <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) leads among recruiter-driven platforms on data coverage and workflow. ${board.rankings.length} tools, sixteen published criteria, five weighted dimensions — and every score, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
+  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on candidate matching calibration and end-to-end workflow automation; ${esc(second.name)} leads the field on talent pool coverage and integrations. ${board.rankings.length} tools, sixteen published criteria, five weighted dimensions — and every score, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
 
   <table>
     <thead>
-      <tr><th>#</th><th>Tool</th><th>Score / 100</th><th>Autonomy</th><th>Matching</th><th>Engagement</th><th>Coverage</th><th>Workflow</th></tr>
+      <tr><th>#</th><th>Tool</th><th>Score / 100</th><th>Matching</th><th>Automation</th><th>Engagement</th><th>Coverage</th><th>Integrations</th></tr>
     </thead>
     <tbody>
 ${rows}
@@ -185,7 +185,7 @@ ${dims}
   </ul>
 
   <h2>How scores are produced — and how to check them</h2>
-  <p>Each cycle, every tool is scored 0–4 against the same sixteen criteria, based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does, and every score carries an evidence note naming the capability it is based on.</p>
+  <p>Each cycle, every tool is scored 0–10 against the same sixteen criteria, based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does, and every score carries an evidence note naming the capability it is based on.</p>
   <p>The full cycle data lives in the <a href="${REPO_URL}" rel="noopener">SourcingBench public audit repository</a>: the rubric (<code>criteria.json</code>), every per-tool score with its evidence note (<code>capabilities.json</code>), the frozen scoring code (<code>scoring.mjs</code>), the ranked output (<code>leaderboard.json</code>), and a SHA-256 manifest of all of it. Re-derive the leaderboard yourself:</p>
   <pre><code>git clone ${REPO_URL}.git
 cd SourcingTools

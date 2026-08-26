@@ -4,7 +4,7 @@
 // For each published cycle it runs three checks:
 //   1. Manifest integrity — recompute the SHA-256 of every file named in
 //      cycle.json and assert it matches. Catches truncated or doctored data.
-//   2. Rubric coverage — every tool has a 0-4 value and an evidence note for
+//   2. Rubric coverage — every tool has an in-range value and an evidence note for
 //      every criterion in the published rubric; the rubric weights sum to 1.
 //   3. Score replay — re-run the cycle's frozen scoring.mjs against
 //      capabilities.json and assert every composite, dimension score, and
@@ -61,7 +61,7 @@ async function verifyCycle(cycle) {
       const s = t.scores[id];
       if (!s) errors.push(`${cycle}: ${t.slug} missing criterion ${id}`);
       else {
-        if (!(Number.isInteger(s.value) && s.value >= 0 && s.value <= 4))
+        if (!(Number.isInteger(s.value) && s.value >= 0 && s.value <= 10))
           errors.push(`${cycle}: ${t.slug}.${id} value out of range: ${s.value}`);
         if (!s.note || typeof s.note !== 'string')
           errors.push(`${cycle}: ${t.slug}.${id} has no evidence note`);

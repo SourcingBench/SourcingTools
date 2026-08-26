@@ -7,13 +7,13 @@
     {
       "cycle": "August 2026",
       "rank": 2,
-      "composite": 68.1,
+      "composite": 80.9,
       "dimensions": {
-        "autonomy": 50.0,
-        "matching": 62.5,
-        "engagement": 62.5,
-        "coverage": 100.0,
-        "workflow": 100.0
+        "matching": 77.5,
+        "autonomy": 67.5,
+        "engagement": 77.5,
+        "coverage": 95.0,
+        "workflow": 90.0
       }
     }
   ]

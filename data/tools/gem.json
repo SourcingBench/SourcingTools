@@ -6,14 +6,14 @@
   "history": [
     {
       "cycle": "August 2026",
-      "rank": 7,
-      "composite": 49.4,
+      "rank": 4,
+      "composite": 69.1,
       "dimensions": {
-        "autonomy": 31.3,
-        "matching": 37.5,
-        "engagement": 56.3,
-        "coverage": 62.5,
-        "workflow": 100.0
+        "matching": 62.5,
+        "autonomy": 55.0,
+        "engagement": 70.0,
+        "coverage": 75.0,
+        "workflow": 90.0
       }
     }
   ]

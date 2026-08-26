@@ -1,6 +1,6 @@
 // Frozen scoring aggregator for the August 2026 cycle.
 // Recomputes the published leaderboard from criteria.json + capabilities.json.
-// Dimension score = mean(criterion values) / 4 * 100. Composite = weighted sum.
+// Dimension score = mean(criterion values) / 10 * 100. Composite = weighted sum.
 
 export function scoreCycle(criteria, capabilities) {
   const round1 = (x) => Math.round(x * 10) / 10;
@@ -10,12 +10,12 @@ export function scoreCycle(criteria, capabilities) {
     for (const d of criteria.dimensions) {
       const vals = d.criteria.map((c) => {
         const s = t.scores[c.id];
-        if (!s || typeof s.value !== 'number' || s.value < 0 || s.value > 4) {
+        if (!s || typeof s.value !== 'number' || s.value < 0 || s.value > 10) {
           throw new Error(`${t.slug}: missing or out-of-range value for ${c.id}`);
         }
         return s.value;
       });
-      const ds = (vals.reduce((a, b) => a + b, 0) / vals.length / 4) * 100;
+      const ds = (vals.reduce((a, b) => a + b, 0) / vals.length / 10) * 100;
       dimensions[d.id] = round1(ds);
       composite += d.weight * ds;
     }
