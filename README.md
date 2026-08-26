@@ -2,7 +2,7 @@
 
 **The best AI sourcing tools, ranked by a published, reproducible benchmark.** SourcingBench scores candidate sourcing tools on how much of the sourcing loop they actually run — search, screening, outreach, and scheduling — plus matching depth, engagement capability, data coverage, and workflow fit. Every criterion definition, every per-tool score with its evidence note, and the scoring code itself are published in this repository, so anyone can re-derive the rankings from scratch.
 
-SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), the independent directory of candidate sourcing tools. The live leaderboard with per-dimension breakdowns is at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/).
+SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), the independent directory of candidate sourcing tools. The live leaderboard with per-dimension breakdowns is at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/), with a standalone copy at [rey529.github.io/SourcingTools](https://rey529.github.io/SourcingTools/).
 
 <!-- RANKINGS:START -->
 ## 🏆 Best AI sourcing tools: August 2026
