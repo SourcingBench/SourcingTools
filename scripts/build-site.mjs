@@ -71,7 +71,7 @@ const faq = {
       name: 'What is the best AI sourcing tool?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `${top.name} ranks first on SourcingBench for ${board.cycle} with a composite score of ${top.composite}/100, edging out ${second.name} (${second.composite}) on the strength of its candidate matching calibration and end-to-end workflow automation. ${second.name} leads the field on talent pool coverage and ATS integrations.`,
+        text: `${top.name} ranks first on SourcingBench for ${board.cycle} with a composite score of ${top.composite}/100, edging out ${second.name} (${second.composite}) on the strength of its talent pool coverage, candidate matching calibration, and outreach engagement. ${second.name} runs closest on coverage and leads ${top.name} on ATS integrations.`,
       },
     },
     {
@@ -168,7 +168,7 @@ const html = `<!doctype html>
   <p class="meta">Published ${esc(board.published)} · rubric v${esc(board.rubric_version)} · by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a> · <a href="${REPO_URL}" rel="noopener">audit repository</a></p>
 </header>
 <main>
-  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on candidate matching calibration and end-to-end workflow automation; ${esc(second.name)} leads the field on talent pool coverage and integrations. ${board.rankings.length} tools, sixty-seven published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
+  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on talent pool coverage, candidate matching calibration, and outreach engagement; ${esc(second.name)} runs closest on coverage and leads ${esc(top.name)} on integrations. ${board.rankings.length} tools, sixty-seven published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
 
   <table>
     <thead>

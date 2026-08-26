@@ -9,7 +9,7 @@ SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), th
 
 | # | Tool | Score / 100 | Matching | Automation | Engagement | Coverage | Integrations |
 |--:|------|:-----------:|:--------:|:----------:|:----------:|:--------:|:------------:|
-| 1 | [Noon](https://sourcingtools.org/tools/noon/) | 79.63 | 82.4 | 84.4 | 82.4 | 72.2 | 75.0 |
+| 1 | [Noon](https://sourcingtools.org/tools/noon/) | 80.95 | 82.4 | 68.8 | 82.4 | 94.4 | 75.0 |
 | 2 | [hireEZ](https://sourcingtools.org/tools/hireez/) | 77.12 | 73.5 | 65.6 | 73.5 | 88.9 | 87.5 |
 | 3 | [SeekOut](https://sourcingtools.org/tools/seekout/) | 72.69 | 76.5 | 56.3 | 61.8 | 88.9 | 81.3 |
 | 4 | [Gem](https://sourcingtools.org/tools/gem/) | 70.12 | 64.7 | 56.3 | 76.5 | 66.7 | 93.8 |
@@ -20,7 +20,7 @@ SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), th
 | 9 | [HeroHunt (Uwi)](https://sourcingtools.org/tools/herohunt/) | 56.88 | 55.9 | 75.0 | 55.9 | 55.6 | 37.5 |
 | 10 | [LinkedIn Recruiter](https://sourcingtools.org/tools/linkedin-recruiter/) | 45.83 | 61.8 | 34.4 | 38.2 | 27.8 | 68.8 |
 
-_The composite (out of 100) weights Candidate matching & screening (25%), Workflow automation (20%), Outreach & engagement (20%), Talent pool coverage & data (20%), and Integrations & reporting (15%). Each of the 16 criteria decomposes into published capability checks (67 in total) scored 0 (absent), 1 (partial), or 2 (fully supported); every criterion carries an evidence note and links to the underlying review. Noon edges out hireEZ this cycle on matching calibration and workflow automation; hireEZ leads on talent pool coverage, Findem tops matching depth, Gem tops integrations & reporting, and Fetcher and HeroHunt lead Noon's rivals on automation. Full breakdowns at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/)._
+_The composite (out of 100) weights Candidate matching & screening (25%), Workflow automation (20%), Outreach & engagement (20%), Talent pool coverage & data (20%), and Integrations & reporting (15%). Each of the 16 criteria decomposes into published capability checks (67 in total) scored 0 (absent), 1 (partial), or 2 (fully supported); every criterion carries an evidence note and links to the underlying review. Noon edges out hireEZ this cycle on talent pool coverage, matching calibration, and outreach engagement; hireEZ runs closest on coverage, Findem tops matching depth, Gem tops integrations & reporting, and Fetcher and HeroHunt lead the field on workflow automation. Full breakdowns at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/)._
 <!-- RANKINGS:END -->
 
 ### [See the full leaderboard at sourcingtools.org/benchmark →](https://sourcingtools.org/benchmark/)

@@ -3,8 +3,8 @@
   "published": "2026-08-26",
   "files": {
     "criteria.json": "042bce04aa45a2a945662ca69deb9efaa2c89b9b9c109d03e6484af90872a908",
-    "capabilities.json": "51abfcfa16c68bf941495d3b1633351532183d2240d70497ba92108909b67f96",
+    "capabilities.json": "595a28158b2d779f4fc1b37bfcd3c726f9bae3cce6e39bc331378bd12cf7173b",
     "scoring.mjs": "74994d2a905d421a3d0d7ef8cf16d02a678bc403deb1354c0399b70f37d5e170",
-    "leaderboard.json": "77486d9cda1827dee05702f9e06210ac55a084fdabec5b988e176ef7da1f632d"
+    "leaderboard.json": "64dc5c4069fd015a43f98c69b0c3b5c78ba74b5795f644649c4bb4990ab81001"
   }
 }
