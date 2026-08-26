@@ -1,7 +1,7 @@
 {
   "cycle": "August 2026",
   "assessed": "2026-08-26",
-  "rubric_version": "2.0.0",
+  "rubric_version": "2.1.0",
   "tools": [
     {
       "slug": "noon",
@@ -14,68 +14,199 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 9,
-          "note": "Explicit role criteria with per-candidate reasoning and pass-rate reporting"
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 2,
+            "per_criterion_verdicts": 2,
+            "evidence_citation": 1,
+            "criteria_editing": 2
+          },
+          "points": 9,
+          "max": 10,
+          "value": 9.0,
+          "note": "Explicit role criteria with per-candidate reasoning and pass-rate reporting; evidence cited at the criterion level rather than per claim"
         },
         "feedback_learning": {
-          "value": 9,
+          "checks": {
+            "calibration_round": 2,
+            "per_role_persistence": 2,
+            "in_product_feedback": 1,
+            "pipeline_reevaluation": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Calibration loop: recruiter grades early candidates, model adjusts per role; re-evaluates on criteria change"
         },
         "hard_filters": {
-          "value": 9,
-          "note": "Non-negotiables: mandatory criteria that are never relaxed"
+          "checks": {
+            "never_relaxed": 2,
+            "structured_fields": 1,
+            "location_authorization": 2,
+            "filter_depth": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "Non-negotiables never relaxed by ranking; structured-field and Boolean depth trail SeekOut/hireEZ"
         },
         "trajectory_inference": {
-          "value": 8,
-          "note": "Interprets career trajectory and company caliber; less attribute search than Findem"
+          "checks": {
+            "career_trajectory": 2,
+            "company_context": 2,
+            "inferred_attributes": 1,
+            "temporal_modeling": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "Interprets career trajectory and company caliber; less attribute inference than Findem"
         },
         "autonomous_search": {
-          "value": 9,
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 2,
+            "pool_expansion": 1,
+            "unattended_operation": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Sources continuously from a role brief; keeps monitoring as new candidates enter the market"
         },
         "autonomous_screening": {
-          "value": 9,
-          "note": "Per-candidate verdicts with reasoning against calibrated role criteria"
+          "checks": {
+            "automatic_verdicts": 2,
+            "decision_reasoning": 2,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Per-candidate verdicts with reasoning against calibrated role criteria across the full pool"
         },
         "autonomous_outreach": {
-          "value": 9,
-          "note": "Multi-touch personalized sequences sent and followed up automatically"
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 2,
+            "automatic_followups": 2,
+            "multichannel_automation": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Multi-touch personalized sequences sent and followed up automatically; multi-channel automation partial"
         },
         "scheduling_automation": {
-          "value": 8,
-          "note": "AI coordinator answers candidate questions and books interviews (calendar integration); newer than incumbent scheduling stacks"
+          "checks": {
+            "candidate_qa": 2,
+            "availability_collection": 2,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "AI coordinator answers candidate questions and collects availability; direct booking and rescheduling newer than incumbent scheduling stacks"
         },
         "channels": {
-          "value": 9,
-          "note": "Email, LinkedIn, and SMS sequences"
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 2,
+            "sms_outreach": 2,
+            "deliverability_tooling": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Email, LinkedIn, and SMS sequences; deliverability tooling lighter than dedicated outbound platforms"
         },
         "personalization": {
-          "value": 9,
+          "checks": {
+            "profile_grounding": 2,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "AI-generated per-candidate intros grounded in profile; above category average in our review"
         },
         "sequencing": {
-          "value": 7,
-          "note": "Multi-step sequences with editing; no A/B testing at hireEZ/Gem depth"
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 1,
+            "ab_testing": 0,
+            "team_templates": 2
+          },
+          "points": 7,
+          "max": 10,
+          "value": 7.0,
+          "note": "Multi-step sequences with editing and stop-on-reply; no A/B testing at hireEZ/Gem depth"
         },
         "reply_handling": {
-          "value": 9,
-          "note": "Coordinator handles candidate Q&A through to booking"
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 2,
+            "context_handoff": 1,
+            "logistics_conversation": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Coordinator handles candidate Q&A and logistics through to booking"
         },
         "source_breadth": {
-          "value": 8,
-          "note": "Web-wide sourcing beyond LinkedIn; smaller aggregated index than hireEZ/SeekOut"
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 2,
+            "licensed_partners": 1,
+            "index_scale": 1,
+            "ats_rediscovery": 1
+          },
+          "points": 7,
+          "max": 10,
+          "value": 7.0,
+          "note": "Web-wide sourcing beyond LinkedIn incl. technical sources; smaller aggregated index than hireEZ/SeekOut"
         },
         "contact_finding": {
-          "value": 8,
-          "note": "Built-in email enrichment and verification"
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 2,
+            "continuous_refresh": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "Built-in email enrichment and verification; phone coverage thinner"
         },
         "ats_integrations": {
-          "value": 8,
+          "checks": {
+            "native_breadth": 2,
+            "bidirectional_sync": 1,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 2
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "20+ ATS providers via unified sync layer; fewer native bi-directional integrations than hireEZ"
         },
         "analytics": {
-          "value": 7,
-          "note": "Funnel and outbound performance metrics; lighter reporting than Gem"
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 2,
+            "team_reporting": 1,
+            "exports_dashboards": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "Funnel and outbound performance metrics; lighter team reporting than Gem"
         }
       }
     },
@@ -90,67 +221,198 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 8,
-          "note": "JD-driven requirement extraction and ranked matching"
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 1,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 2,
+            "criteria_editing": 2
+          },
+          "points": 8,
+          "max": 10,
+          "value": 8.0,
+          "note": "JD-driven requirement extraction and ranked matching with match evidence; per-criterion verdicts partial"
         },
         "feedback_learning": {
-          "value": 7,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 2,
+            "pipeline_reevaluation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Match tuning within a search; no per-role calibration loop"
         },
         "hard_filters": {
-          "value": 9,
-          "note": "Deep Boolean and healthcare/technical filters"
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 2,
+            "location_authorization": 2,
+            "filter_depth": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Deep Boolean and healthcare/technical filters; hard requirements interact with ranking"
         },
         "trajectory_inference": {
-          "value": 7,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 2,
+            "inferred_attributes": 1,
+            "temporal_modeling": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Ranking beyond keywords, though title/skill-centric"
         },
         "autonomous_search": {
-          "value": 7,
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 2,
+            "pool_expansion": 1,
+            "unattended_operation": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "AI Sourcing mode surfaces new matches continuously; recruiter builds and owns searches"
         },
         "autonomous_screening": {
-          "value": 7,
-          "note": "EZ Match ranks against the JD with strong relevance; recruiter reviews shortlists"
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "EZ Match ranks the full pool against the JD with strong relevance; recruiter reviews shortlists"
         },
         "autonomous_outreach": {
-          "value": 8,
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 1,
+            "automatic_followups": 2,
+            "multichannel_automation": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "AI-drafted sequenced outreach runs after recruiter launch"
         },
         "scheduling_automation": {
-          "value": 5,
+          "checks": {
+            "candidate_qa": 1,
+            "availability_collection": 1,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Scheduling handoff to ATS/calendar tooling; no candidate-facing agent"
         },
         "channels": {
-          "value": 8,
-          "note": "Email sequences with phone data; no SMS/LinkedIn sending"
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 0,
+            "sms_outreach": 1,
+            "deliverability_tooling": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Email sequences with phone data and mature deliverability controls; no LinkedIn/SMS sending"
         },
         "personalization": {
-          "value": 8,
+          "checks": {
+            "profile_grounding": 2,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "AI-written outreach from profile + JD"
         },
         "sequencing": {
-          "value": 9,
-          "note": "Mature sequences with A/B testing and team tracking"
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 2,
+            "ab_testing": 2,
+            "team_templates": 1
+          },
+          "points": 9,
+          "max": 10,
+          "value": 9.0,
+          "note": "Mature sequences with A/B testing and send-time optimization"
         },
         "reply_handling": {
-          "value": 6,
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 1,
+            "context_handoff": 1,
+            "logistics_conversation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Reply detection and routing; replies handled by the recruiter"
         },
         "source_breadth": {
-          "value": 10,
-          "note": "800M+ profiles aggregated from open web and licensed partners"
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 2,
+            "licensed_partners": 2,
+            "index_scale": 2,
+            "ats_rediscovery": 1
+          },
+          "points": 9,
+          "max": 10,
+          "value": 9.0,
+          "note": "800M+ profiles aggregated from open web and licensed partners; ATS Rediscovery"
         },
         "contact_finding": {
-          "value": 9,
-          "note": "Category-leading contact coverage; quality varies by region"
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 2,
+            "verification": 2,
+            "continuous_refresh": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Category-leading contact coverage with verification; quality varies by region"
         },
         "ats_integrations": {
-          "value": 9,
-          "note": "~30 bi-directional ATS integrations plus ATS Rediscovery"
+          "checks": {
+            "native_breadth": 2,
+            "bidirectional_sync": 2,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "~30 bi-directional ATS integrations plus API access"
         },
         "analytics": {
-          "value": 9,
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 2,
+            "team_reporting": 2,
+            "exports_dashboards": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Full funnel, sequence, and team analytics"
         }
       }
@@ -166,144 +428,199 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 9,
-          "note": "JD-to-search with explainable matching"
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 2,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 2,
+            "criteria_editing": 2
+          },
+          "points": 9,
+          "max": 10,
+          "value": 9.0,
+          "note": "SeekOut Assist builds JD-driven searches with explainable matching"
         },
         "feedback_learning": {
-          "value": 6,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 2,
+            "pipeline_reevaluation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Search-level tuning; no per-role learning loop"
         },
         "hard_filters": {
-          "value": 9,
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 2,
+            "location_authorization": 2,
+            "filter_depth": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Deepest technical/cleared-talent filters reviewed (clearances, patents, GitHub)"
         },
         "trajectory_inference": {
-          "value": 7,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 2,
+            "inferred_attributes": 1,
+            "temporal_modeling": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Strong profile enrichment; limited attribute inference"
         },
         "autonomous_search": {
-          "value": 6,
-          "note": "SeekOut Assist builds searches from a JD; recruiter runs them"
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 1,
+            "pool_expansion": 1,
+            "unattended_operation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Assist builds searches from a JD; recruiter runs them"
         },
         "autonomous_screening": {
-          "value": 6,
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 2,
+            "full_pool_coverage": 1,
+            "uncertainty_flagging": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Assist ranks and explains matches; review is manual"
         },
         "autonomous_outreach": {
-          "value": 6,
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 1,
+            "automatic_followups": 1,
+            "multichannel_automation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "AI-drafted outreach; sending is recruiter-driven"
         },
         "scheduling_automation": {
-          "value": 4,
+          "checks": {
+            "candidate_qa": 0,
+            "availability_collection": 1,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "No candidate-facing scheduling; ATS handoff"
         },
         "channels": {
-          "value": 6,
-          "note": "Email-focused"
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 0,
+            "sms_outreach": 0,
+            "deliverability_tooling": 2
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
+          "note": "Email-focused with solid deliverability controls"
         },
         "personalization": {
-          "value": 7,
-          "note": "AI-drafted messages"
+          "checks": {
+            "profile_grounding": 2,
+            "role_grounding": 1,
+            "tone_control": 1,
+            "beyond_merge_tokens": 2
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "AI-drafted messages from enriched profiles"
         },
         "sequencing": {
-          "value": 7,
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 1,
+            "ab_testing": 1,
+            "team_templates": 1
+          },
+          "points": 7,
+          "max": 10,
+          "value": 7.0,
           "note": "Solid campaigns; fewer testing features than hireEZ/Gem"
         },
         "reply_handling": {
-          "value": 5,
-          "note": "Reply routing to the recruiter"
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 0,
+            "context_handoff": 2,
+            "logistics_conversation": 0
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
+          "note": "Reply routing to the recruiter with thread context"
         },
         "source_breadth": {
-          "value": 9,
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 2,
+            "licensed_partners": 2,
+            "index_scale": 2,
+            "ats_rediscovery": 1
+          },
+          "points": 9,
+          "max": 10,
+          "value": 9.0,
           "note": "Broad aggregated index incl. GitHub, papers, clearances"
         },
         "contact_finding": {
-          "value": 9,
-          "note": "Strong email coverage; phone thinner"
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 2,
+            "continuous_refresh": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
+          "note": "Strong email coverage with verification; phone thinner"
         },
         "ats_integrations": {
-          "value": 8,
+          "checks": {
+            "native_breadth": 2,
+            "bidirectional_sync": 2,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Major ATS integrations"
         },
         "analytics": {
-          "value": 8,
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 1,
+            "team_reporting": 2,
+            "exports_dashboards": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Talent analytics and pipeline insights"
-        }
-      }
-    },
-    {
-      "slug": "juicebox",
-      "name": "Juicebox (PeopleGPT)",
-      "website": "https://juicebox.ai",
-      "review": "https://sourcingtools.org/tools/juicebox/",
-      "sources": [
-        "https://sourcingtools.org/tools/juicebox/",
-        "https://juicebox.ai"
-      ],
-      "scores": {
-        "criteria_evaluation": {
-          "value": 8,
-          "note": "NL queries evaluated with cited evidence per candidate"
-        },
-        "feedback_learning": {
-          "value": 6,
-          "note": "Query refinement; no persistent per-role model"
-        },
-        "hard_filters": {
-          "value": 6,
-          "note": "Filterable, less deep than SeekOut on technical/clearance"
-        },
-        "trajectory_inference": {
-          "value": 6,
-          "note": "Understands NL requirements; limited trajectory modeling"
-        },
-        "autonomous_search": {
-          "value": 5,
-          "note": "Natural-language search is recruiter-initiated per query"
-        },
-        "autonomous_screening": {
-          "value": 6,
-          "note": "Cited-evidence matching against the query; manual review"
-        },
-        "autonomous_outreach": {
-          "value": 5,
-          "note": "AI-drafted emails; recruiter sends"
-        },
-        "scheduling_automation": {
-          "value": 3,
-          "note": "No scheduling automation"
-        },
-        "channels": {
-          "value": 6,
-          "note": "Email outreach with enrichment"
-        },
-        "personalization": {
-          "value": 7,
-          "note": "AI personalization from profile evidence"
-        },
-        "sequencing": {
-          "value": 7,
-          "note": "Sequenced campaigns, self-serve"
-        },
-        "reply_handling": {
-          "value": 4,
-          "note": "Reply routing only"
-        },
-        "source_breadth": {
-          "value": 8,
-          "note": "800M-profile index; web-wide"
-        },
-        "contact_finding": {
-          "value": 7,
-          "note": "Built-in enrichment"
-        },
-        "ats_integrations": {
-          "value": 6,
-          "note": "Growing list, lighter than incumbents"
-        },
-        "analytics": {
-          "value": 6,
-          "note": "Campaign-level analytics"
         }
       }
     },
@@ -318,67 +635,198 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 7,
-          "note": "JD-based matching assist"
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 1,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 1,
+            "criteria_editing": 2
+          },
+          "points": 7,
+          "max": 10,
+          "value": 7.0,
+          "note": "JD-based matching assist inside the CRM"
         },
         "feedback_learning": {
-          "value": 6,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 2,
+            "pipeline_reevaluation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Sequence/search tuning; no per-role calibration"
         },
         "hard_filters": {
-          "value": 7,
-          "note": "Standard filtering"
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 1,
+            "location_authorization": 2,
+            "filter_depth": 2
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "Standard filtering, strong on CRM fields"
         },
         "trajectory_inference": {
-          "value": 5,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 1,
+            "inferred_attributes": 1,
+            "temporal_modeling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "CRM-centric, not inference-led"
         },
         "autonomous_search": {
-          "value": 5,
+          "checks": {
+            "brief_to_search": 1,
+            "continuous_monitoring": 1,
+            "pool_expansion": 1,
+            "unattended_operation": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "AI sourcing assists; recruiter-driven searches"
         },
         "autonomous_screening": {
-          "value": 5,
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 1,
+            "uncertainty_flagging": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Ranking assist only"
         },
         "autonomous_outreach": {
-          "value": 7,
+          "checks": {
+            "auto_composition": 1,
+            "unattended_sending": 2,
+            "automatic_followups": 2,
+            "multichannel_automation": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Sequences run automatically once launched"
         },
         "scheduling_automation": {
-          "value": 5,
-          "note": "Scheduling links, not an agent"
+          "checks": {
+            "candidate_qa": 0,
+            "availability_collection": 1,
+            "calendar_booking": 2,
+            "reschedule_handling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
+          "note": "Scheduling links with calendar booking, not an agent"
         },
         "channels": {
-          "value": 7,
-          "note": "Email + InMail tracking"
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 1,
+            "sms_outreach": 1,
+            "deliverability_tooling": 2
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "Email + InMail tracking with deliverability controls"
         },
         "personalization": {
-          "value": 7,
+          "checks": {
+            "profile_grounding": 1,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 2
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Templates with AI assist"
         },
         "sequencing": {
-          "value": 9,
-          "note": "Category-leading sequences, A/B, send-time optimization"
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 2,
+            "ab_testing": 2,
+            "team_templates": 2
+          },
+          "points": 10,
+          "max": 10,
+          "value": 10.0,
+          "note": "Category-leading sequences: A/B, send-time optimization, team tracking"
         },
         "reply_handling": {
-          "value": 5,
-          "note": "Reply detection and routing"
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 0,
+            "context_handoff": 2,
+            "logistics_conversation": 0
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
+          "note": "Reply detection and routing with full thread history"
         },
         "source_breadth": {
-          "value": 7,
+          "checks": {
+            "open_web": 1,
+            "technical_sources": 1,
+            "licensed_partners": 1,
+            "index_scale": 1,
+            "ats_rediscovery": 2
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "Extension + CRM rediscovery over LinkedIn-centric sourcing"
         },
         "contact_finding": {
-          "value": 8,
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 2,
+            "continuous_refresh": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Strong email finding"
         },
         "ats_integrations": {
-          "value": 9,
-          "note": "Deep ATS/CRM sync; Gem is also a CRM"
+          "checks": {
+            "native_breadth": 2,
+            "bidirectional_sync": 2,
+            "dedupe_against_ats": 2,
+            "api_webhooks": 2
+          },
+          "points": 8,
+          "max": 8,
+          "value": 10.0,
+          "note": "Deep bi-directional ATS/CRM sync; Gem is also a CRM"
         },
         "analytics": {
-          "value": 9,
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 2,
+            "team_reporting": 2,
+            "exports_dashboards": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Category-leading outbound and funnel analytics"
         }
       }
@@ -394,67 +842,198 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 9,
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 2,
+            "per_criterion_verdicts": 2,
+            "evidence_citation": 2,
+            "criteria_editing": 1
+          },
+          "points": 9,
+          "max": 10,
+          "value": 9.0,
           "note": "Attribute inference ('built a data team at a startup') is a real capability gap"
         },
         "feedback_learning": {
-          "value": 7,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 2,
+            "in_product_feedback": 2,
+            "pipeline_reevaluation": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Attribute tuning per search"
         },
         "hard_filters": {
-          "value": 8,
+          "checks": {
+            "never_relaxed": 2,
+            "structured_fields": 2,
+            "location_authorization": 1,
+            "filter_depth": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Attribute-level hard requirements"
         },
         "trajectory_inference": {
-          "value": 9,
+          "checks": {
+            "career_trajectory": 2,
+            "company_context": 2,
+            "inferred_attributes": 2,
+            "temporal_modeling": 2
+          },
+          "points": 8,
+          "max": 8,
+          "value": 10.0,
           "note": "3D data: person + company + time; strongest trajectory modeling reviewed"
         },
         "autonomous_search": {
-          "value": 6,
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 1,
+            "pool_expansion": 1,
+            "unattended_operation": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Attribute-based searches run and refresh continuously"
         },
         "autonomous_screening": {
-          "value": 6,
-          "note": "Attribute matching narrows pools; review manual"
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Attribute matching narrows the full pool; review manual"
         },
         "autonomous_outreach": {
-          "value": 5,
+          "checks": {
+            "auto_composition": 1,
+            "unattended_sending": 1,
+            "automatic_followups": 1,
+            "multichannel_automation": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Campaigns exist; recruiter-configured"
         },
         "scheduling_automation": {
-          "value": 3,
+          "checks": {
+            "candidate_qa": 0,
+            "availability_collection": 1,
+            "calendar_booking": 1,
+            "reschedule_handling": 0
+          },
+          "points": 2,
+          "max": 8,
+          "value": 2.5,
           "note": "No scheduling automation"
         },
         "channels": {
-          "value": 5,
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 0,
+            "sms_outreach": 0,
+            "deliverability_tooling": 2
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Email-focused"
         },
         "personalization": {
-          "value": 6,
+          "checks": {
+            "profile_grounding": 1,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Standard AI drafting"
         },
         "sequencing": {
-          "value": 6,
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 1,
+            "send_time_optimization": 1,
+            "ab_testing": 0,
+            "team_templates": 1
+          },
+          "points": 5,
+          "max": 10,
+          "value": 5.0,
           "note": "Basic campaigns"
         },
         "reply_handling": {
-          "value": 4,
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 0,
+            "context_handoff": 1,
+            "logistics_conversation": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Reply routing only"
         },
         "source_breadth": {
-          "value": 8,
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 1,
+            "licensed_partners": 1,
+            "index_scale": 2,
+            "ats_rediscovery": 1
+          },
+          "points": 7,
+          "max": 10,
+          "value": 7.0,
           "note": "Large enriched index with company history data"
         },
         "contact_finding": {
-          "value": 7,
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 1,
+            "continuous_refresh": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Adequate; not its focus"
         },
         "ats_integrations": {
-          "value": 8,
+          "checks": {
+            "native_breadth": 2,
+            "bidirectional_sync": 2,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Enterprise ATS integrations"
         },
         "analytics": {
-          "value": 8,
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 1,
+            "team_reporting": 2,
+            "exports_dashboards": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Talent analytics focus"
         }
       }
@@ -470,68 +1049,406 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 7,
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 1,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 1,
+            "criteria_editing": 1
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "Brief-based matching, curator-checked"
         },
         "feedback_learning": {
-          "value": 7,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 2,
+            "in_product_feedback": 1,
+            "pipeline_reevaluation": 2
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Batch approval/rejection tunes future batches"
         },
         "hard_filters": {
-          "value": 6,
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 1,
+            "location_authorization": 2,
+            "filter_depth": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Brief-level requirements"
         },
         "trajectory_inference": {
-          "value": 5,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 1,
+            "inferred_attributes": 1,
+            "temporal_modeling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Standard profile matching"
         },
         "autonomous_search": {
-          "value": 8,
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 2,
+            "pool_expansion": 1,
+            "unattended_operation": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Recurring AI-sourced candidate batches delivered per role"
         },
         "autonomous_screening": {
-          "value": 7,
+          "checks": {
+            "automatic_verdicts": 2,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "AI pre-screen with human curation before delivery"
         },
         "autonomous_outreach": {
-          "value": 8,
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 2,
+            "automatic_followups": 2,
+            "multichannel_automation": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Automated sequences on approved candidates"
         },
         "scheduling_automation": {
-          "value": 5,
+          "checks": {
+            "candidate_qa": 1,
+            "availability_collection": 1,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Interest handoff; no booking agent"
         },
         "channels": {
-          "value": 6,
-          "note": "Email sequences"
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 0,
+            "sms_outreach": 1,
+            "deliverability_tooling": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Email sequences with deliverability care"
         },
         "personalization": {
-          "value": 7,
+          "checks": {
+            "profile_grounding": 2,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Template + AI assist"
         },
         "sequencing": {
-          "value": 7,
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 1,
+            "ab_testing": 0,
+            "team_templates": 1
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "Solid automated follow-ups"
         },
         "reply_handling": {
-          "value": 5,
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 1,
+            "context_handoff": 1,
+            "logistics_conversation": 0
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Interested-reply routing"
         },
         "source_breadth": {
-          "value": 6,
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 1,
+            "licensed_partners": 0,
+            "index_scale": 1,
+            "ats_rediscovery": 1
+          },
+          "points": 5,
+          "max": 10,
+          "value": 5.0,
           "note": "Web sourcing; smaller index"
         },
         "contact_finding": {
-          "value": 7,
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 2,
+            "continuous_refresh": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Verified emails included"
         },
         "ats_integrations": {
-          "value": 6,
+          "checks": {
+            "native_breadth": 2,
+            "bidirectional_sync": 1,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Common ATS integrations"
         },
         "analytics": {
-          "value": 6,
+          "checks": {
+            "funnel_metrics": 1,
+            "outreach_performance": 2,
+            "team_reporting": 1,
+            "exports_dashboards": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Campaign metrics"
+        }
+      }
+    },
+    {
+      "slug": "juicebox",
+      "name": "Juicebox (PeopleGPT)",
+      "website": "https://juicebox.ai",
+      "review": "https://sourcingtools.org/tools/juicebox/",
+      "sources": [
+        "https://sourcingtools.org/tools/juicebox/",
+        "https://juicebox.ai"
+      ],
+      "scores": {
+        "criteria_evaluation": {
+          "checks": {
+            "structured_criteria": 2,
+            "per_candidate_reasoning": 2,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 2,
+            "criteria_editing": 1
+          },
+          "points": 8,
+          "max": 10,
+          "value": 8.0,
+          "note": "NL queries evaluated with cited evidence per candidate"
+        },
+        "feedback_learning": {
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 1,
+            "pipeline_reevaluation": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Query refinement; no persistent per-role model"
+        },
+        "hard_filters": {
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 1,
+            "location_authorization": 1,
+            "filter_depth": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Filterable, less deep than SeekOut on technical/clearance"
+        },
+        "trajectory_inference": {
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 1,
+            "inferred_attributes": 2,
+            "temporal_modeling": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Understands NL requirements; limited trajectory modeling"
+        },
+        "autonomous_search": {
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 1,
+            "pool_expansion": 1,
+            "unattended_operation": 0
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
+          "note": "Natural-language search is recruiter-initiated per query"
+        },
+        "autonomous_screening": {
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Cited-evidence matching against the query; manual review"
+        },
+        "autonomous_outreach": {
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 0,
+            "automatic_followups": 1,
+            "multichannel_automation": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
+          "note": "AI-drafted emails; recruiter sends"
+        },
+        "scheduling_automation": {
+          "checks": {
+            "candidate_qa": 0,
+            "availability_collection": 0,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 2,
+          "max": 8,
+          "value": 2.5,
+          "note": "No scheduling automation"
+        },
+        "channels": {
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 0,
+            "sms_outreach": 1,
+            "deliverability_tooling": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Email outreach with enrichment"
+        },
+        "personalization": {
+          "checks": {
+            "profile_grounding": 2,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
+          "note": "AI personalization from profile evidence"
+        },
+        "sequencing": {
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 1,
+            "ab_testing": 0,
+            "team_templates": 1
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
+          "note": "Sequenced campaigns, self-serve"
+        },
+        "reply_handling": {
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 0,
+            "context_handoff": 1,
+            "logistics_conversation": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
+          "note": "Reply routing only"
+        },
+        "source_breadth": {
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 2,
+            "licensed_partners": 1,
+            "index_scale": 2,
+            "ats_rediscovery": 0
+          },
+          "points": 7,
+          "max": 10,
+          "value": 7.0,
+          "note": "800M-profile index; web-wide"
+        },
+        "contact_finding": {
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 1,
+            "continuous_refresh": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Built-in enrichment"
+        },
+        "ats_integrations": {
+          "checks": {
+            "native_breadth": 1,
+            "bidirectional_sync": 1,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Growing list, lighter than incumbents"
+        },
+        "analytics": {
+          "checks": {
+            "funnel_metrics": 1,
+            "outreach_performance": 2,
+            "team_reporting": 1,
+            "exports_dashboards": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
+          "note": "Campaign-level analytics"
         }
       }
     },
@@ -546,67 +1463,198 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 6,
+          "checks": {
+            "structured_criteria": 1,
+            "per_candidate_reasoning": 2,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 1,
+            "criteria_editing": 1
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "Brief-driven screening, lighter reasoning"
         },
         "feedback_learning": {
-          "value": 6,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 1,
+            "pipeline_reevaluation": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Feedback adjusts the search"
         },
         "hard_filters": {
-          "value": 6,
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 1,
+            "location_authorization": 2,
+            "filter_depth": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Standard requirements"
         },
         "trajectory_inference": {
-          "value": 4,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 1,
+            "inferred_attributes": 1,
+            "temporal_modeling": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Keyword/skill-centric"
         },
         "autonomous_search": {
-          "value": 8,
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 2,
+            "pool_expansion": 1,
+            "unattended_operation": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Uwi runs the search loop automatically from a brief"
         },
         "autonomous_screening": {
-          "value": 7,
+          "checks": {
+            "automatic_verdicts": 2,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Automated screening; precision trails Noon on complex briefs"
         },
         "autonomous_outreach": {
-          "value": 8,
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 2,
+            "automatic_followups": 2,
+            "multichannel_automation": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Automated personalized outreach"
         },
         "scheduling_automation": {
-          "value": 5,
+          "checks": {
+            "candidate_qa": 1,
+            "availability_collection": 1,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Interest handoff only"
         },
         "channels": {
-          "value": 7,
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 2,
+            "sms_outreach": 0,
+            "deliverability_tooling": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Email + LinkedIn"
         },
         "personalization": {
-          "value": 7,
+          "checks": {
+            "profile_grounding": 2,
+            "role_grounding": 2,
+            "tone_control": 1,
+            "beyond_merge_tokens": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Per-candidate AI personalization"
         },
         "sequencing": {
-          "value": 6,
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 1,
+            "ab_testing": 0,
+            "team_templates": 0
+          },
+          "points": 5,
+          "max": 10,
+          "value": 5.0,
           "note": "Basic follow-ups"
         },
         "reply_handling": {
-          "value": 4,
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 1,
+            "context_handoff": 0,
+            "logistics_conversation": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Routing only"
         },
         "source_breadth": {
-          "value": 7,
+          "checks": {
+            "open_web": 2,
+            "technical_sources": 2,
+            "licensed_partners": 0,
+            "index_scale": 2,
+            "ats_rediscovery": 0
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "1B-profile web index claim; broad coverage"
         },
         "contact_finding": {
-          "value": 6,
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 0,
+            "verification": 1,
+            "continuous_refresh": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Included, thinner coverage"
         },
         "ats_integrations": {
-          "value": 4,
+          "checks": {
+            "native_breadth": 1,
+            "bidirectional_sync": 1,
+            "dedupe_against_ats": 0,
+            "api_webhooks": 1
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Minimal"
         },
         "analytics": {
-          "value": 4,
+          "checks": {
+            "funnel_metrics": 1,
+            "outreach_performance": 1,
+            "team_reporting": 0,
+            "exports_dashboards": 1
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Basic"
         }
       }
@@ -622,67 +1670,198 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 6,
+          "checks": {
+            "structured_criteria": 1,
+            "per_candidate_reasoning": 1,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 1,
+            "criteria_editing": 2
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "Role presets + criteria"
         },
         "feedback_learning": {
-          "value": 5,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 1,
+            "pipeline_reevaluation": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Limited"
         },
         "hard_filters": {
-          "value": 6,
+          "checks": {
+            "never_relaxed": 1,
+            "structured_fields": 1,
+            "location_authorization": 2,
+            "filter_depth": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Standard"
         },
         "trajectory_inference": {
-          "value": 4,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 1,
+            "inferred_attributes": 1,
+            "temporal_modeling": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Standard matching"
         },
         "autonomous_search": {
-          "value": 7,
+          "checks": {
+            "brief_to_search": 2,
+            "continuous_monitoring": 2,
+            "pool_expansion": 1,
+            "unattended_operation": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Automated sourcing for common startup roles inside its free ATS"
         },
         "autonomous_screening": {
-          "value": 6,
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 2,
+            "uncertainty_flagging": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Criteria-based filtering tuned to startup roles"
         },
         "autonomous_outreach": {
-          "value": 7,
+          "checks": {
+            "auto_composition": 2,
+            "unattended_sending": 1,
+            "automatic_followups": 2,
+            "multichannel_automation": 1
+          },
+          "points": 6,
+          "max": 8,
+          "value": 7.5,
           "note": "Automated sequences from your domain"
         },
         "scheduling_automation": {
-          "value": 6,
+          "checks": {
+            "candidate_qa": 1,
+            "availability_collection": 2,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Scheduling links and coordination help"
         },
         "channels": {
-          "value": 6,
+          "checks": {
+            "email_sending": 2,
+            "linkedin_sending": 0,
+            "sms_outreach": 1,
+            "deliverability_tooling": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Email"
         },
         "personalization": {
-          "value": 6,
+          "checks": {
+            "profile_grounding": 1,
+            "role_grounding": 1,
+            "tone_control": 1,
+            "beyond_merge_tokens": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Templated with variables"
         },
         "sequencing": {
-          "value": 6,
+          "checks": {
+            "multi_step": 2,
+            "stop_on_reply": 2,
+            "send_time_optimization": 1,
+            "ab_testing": 0,
+            "team_templates": 0
+          },
+          "points": 5,
+          "max": 10,
+          "value": 5.0,
           "note": "Automated follow-ups"
         },
         "reply_handling": {
-          "value": 5,
+          "checks": {
+            "reply_classification": 2,
+            "automated_answers": 1,
+            "context_handoff": 1,
+            "logistics_conversation": 0
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Routing"
         },
         "source_breadth": {
-          "value": 5,
+          "checks": {
+            "open_web": 1,
+            "technical_sources": 1,
+            "licensed_partners": 0,
+            "index_scale": 1,
+            "ats_rediscovery": 1
+          },
+          "points": 4,
+          "max": 10,
+          "value": 4.0,
           "note": "Common startup-role coverage"
         },
         "contact_finding": {
-          "value": 6,
+          "checks": {
+            "email_coverage": 2,
+            "phone_coverage": 1,
+            "verification": 1,
+            "continuous_refresh": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Included"
         },
         "ats_integrations": {
-          "value": 6,
+          "checks": {
+            "native_breadth": 1,
+            "bidirectional_sync": 1,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 2
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Is its own ATS; exports elsewhere"
         },
         "analytics": {
-          "value": 6,
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 1,
+            "team_reporting": 1,
+            "exports_dashboards": 1
+          },
+          "points": 5,
+          "max": 8,
+          "value": 6.3,
           "note": "Funnel basics"
         }
       }
@@ -698,67 +1877,198 @@
       ],
       "scores": {
         "criteria_evaluation": {
-          "value": 6,
+          "checks": {
+            "structured_criteria": 1,
+            "per_candidate_reasoning": 1,
+            "per_criterion_verdicts": 1,
+            "evidence_citation": 2,
+            "criteria_editing": 1
+          },
+          "points": 6,
+          "max": 10,
+          "value": 6.0,
           "note": "Recommended matches per project"
         },
         "feedback_learning": {
-          "value": 5,
+          "checks": {
+            "calibration_round": 1,
+            "per_role_persistence": 1,
+            "in_product_feedback": 1,
+            "pipeline_reevaluation": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "Project-level signals"
         },
         "hard_filters": {
-          "value": 8,
+          "checks": {
+            "never_relaxed": 2,
+            "structured_fields": 2,
+            "location_authorization": 2,
+            "filter_depth": 1
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "40+ structured filters on first-party data"
         },
         "trajectory_inference": {
-          "value": 5,
+          "checks": {
+            "career_trajectory": 1,
+            "company_context": 1,
+            "inferred_attributes": 1,
+            "temporal_modeling": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "First-party data, keyword-led search"
         },
         "autonomous_search": {
-          "value": 4,
+          "checks": {
+            "brief_to_search": 1,
+            "continuous_monitoring": 1,
+            "pool_expansion": 1,
+            "unattended_operation": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "AI-assisted search inside a recruiter-driven workflow"
         },
         "autonomous_screening": {
-          "value": 4,
+          "checks": {
+            "automatic_verdicts": 1,
+            "decision_reasoning": 1,
+            "full_pool_coverage": 1,
+            "uncertainty_flagging": 0
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "Spotlights and match signals only"
         },
         "autonomous_outreach": {
-          "value": 5,
+          "checks": {
+            "auto_composition": 1,
+            "unattended_sending": 0,
+            "automatic_followups": 1,
+            "multichannel_automation": 1
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "AI-assisted InMail drafting; manual sends"
         },
         "scheduling_automation": {
-          "value": 3,
+          "checks": {
+            "candidate_qa": 0,
+            "availability_collection": 0,
+            "calendar_booking": 1,
+            "reschedule_handling": 1
+          },
+          "points": 2,
+          "max": 8,
+          "value": 2.5,
           "note": "No scheduling automation"
         },
         "channels": {
-          "value": 4,
+          "checks": {
+            "email_sending": 0,
+            "linkedin_sending": 2,
+            "sms_outreach": 0,
+            "deliverability_tooling": 1
+          },
+          "points": 3,
+          "max": 8,
+          "value": 3.8,
           "note": "InMail only; no email/SMS"
         },
         "personalization": {
-          "value": 5,
+          "checks": {
+            "profile_grounding": 1,
+            "role_grounding": 1,
+            "tone_control": 1,
+            "beyond_merge_tokens": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "AI-assisted drafts, template-heavy in practice"
         },
         "sequencing": {
-          "value": 5,
+          "checks": {
+            "multi_step": 1,
+            "stop_on_reply": 2,
+            "send_time_optimization": 0,
+            "ab_testing": 0,
+            "team_templates": 1
+          },
+          "points": 4,
+          "max": 10,
+          "value": 4.0,
           "note": "InMail follow-ups"
         },
         "reply_handling": {
-          "value": 3,
+          "checks": {
+            "reply_classification": 1,
+            "automated_answers": 0,
+            "context_handoff": 1,
+            "logistics_conversation": 0
+          },
+          "points": 2,
+          "max": 8,
+          "value": 2.5,
           "note": "Manual"
         },
         "source_breadth": {
-          "value": 6,
+          "checks": {
+            "open_web": 0,
+            "technical_sources": 0,
+            "licensed_partners": 0,
+            "index_scale": 2,
+            "ats_rediscovery": 1
+          },
+          "points": 3,
+          "max": 10,
+          "value": 3.0,
           "note": "Single network (the largest one) — no open-web or licensed sources"
         },
         "contact_finding": {
-          "value": 4,
+          "checks": {
+            "email_coverage": 0,
+            "phone_coverage": 1,
+            "verification": 1,
+            "continuous_refresh": 0
+          },
+          "points": 2,
+          "max": 8,
+          "value": 2.5,
           "note": "No emails/phones without third-party tools"
         },
         "ats_integrations": {
-          "value": 6,
+          "checks": {
+            "native_breadth": 1,
+            "bidirectional_sync": 1,
+            "dedupe_against_ats": 1,
+            "api_webhooks": 1
+          },
+          "points": 4,
+          "max": 8,
+          "value": 5.0,
           "note": "ATS connectors via partners"
         },
         "analytics": {
-          "value": 8,
+          "checks": {
+            "funnel_metrics": 2,
+            "outreach_performance": 1,
+            "team_reporting": 2,
+            "exports_dashboards": 2
+          },
+          "points": 7,
+          "max": 8,
+          "value": 8.8,
           "note": "Talent insights and pipeline reporting"
         }
       }

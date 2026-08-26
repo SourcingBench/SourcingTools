@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "cycle": "August 2026",
-  "scale": "Each criterion is scored 0–10 against the published rubric: 0 = absent, 5 = adequate for typical use, 10 = the strongest implementation observed in the category this cycle. Dimension score = mean of its criteria × 10 (0–100). Composite = weighted sum of dimension scores.",
+  "scale": "Each criterion decomposes into published capability checks. Each check is scored 0 (absent), 1 (partial or assisted), or 2 (fully supported), from documented, observable product behavior. Criterion score = points earned / points possible × 10. Dimension score = dimension points earned / dimension points possible × 100. Composite = weighted sum of dimension scores.",
   "dimensions": [
     {
       "id": "matching",
@@ -12,22 +12,98 @@
         {
           "id": "criteria_evaluation",
           "name": "Structured criteria evaluation",
-          "definition": "Evaluates against explicit role-specific criteria with per-candidate reasoning, beyond keyword/Boolean relevance."
+          "definition": "Evaluates against explicit role-specific criteria with per-candidate reasoning, beyond keyword/Boolean relevance.",
+          "checks": [
+            {
+              "id": "structured_criteria",
+              "name": "Role requirements captured as explicit, structured criteria (not only a Boolean string)"
+            },
+            {
+              "id": "per_candidate_reasoning",
+              "name": "Written per-candidate reasoning against the role's criteria"
+            },
+            {
+              "id": "per_criterion_verdicts",
+              "name": "Per-criterion verdicts (pass/fail or graded), not only an overall relevance rank"
+            },
+            {
+              "id": "evidence_citation",
+              "name": "Cites the profile evidence behind each judgment"
+            },
+            {
+              "id": "criteria_editing",
+              "name": "Criteria editable mid-role with candidates re-evaluated"
+            }
+          ]
         },
         {
           "id": "feedback_learning",
           "name": "Learning from feedback",
-          "definition": "Adapts its matching per role from recruiter/hiring-manager feedback."
+          "definition": "Adapts its matching per role from recruiter/hiring-manager feedback.",
+          "checks": [
+            {
+              "id": "calibration_round",
+              "name": "Structured calibration round on early candidates"
+            },
+            {
+              "id": "per_role_persistence",
+              "name": "Learning persists per role, not only per search session"
+            },
+            {
+              "id": "in_product_feedback",
+              "name": "Recruiter/hiring-manager feedback captured in-product"
+            },
+            {
+              "id": "pipeline_reevaluation",
+              "name": "Existing pipeline re-scored when criteria change"
+            }
+          ]
         },
         {
           "id": "hard_filters",
           "name": "Hard requirements",
-          "definition": "Supports mandatory criteria that are never relaxed (certifications, clearances, locations)."
+          "definition": "Supports mandatory criteria that are never relaxed (certifications, clearances, locations).",
+          "checks": [
+            {
+              "id": "never_relaxed",
+              "name": "Mandatory criteria that ranking never relaxes"
+            },
+            {
+              "id": "structured_fields",
+              "name": "Deep structured fields (certifications, clearances, licenses)"
+            },
+            {
+              "id": "location_authorization",
+              "name": "Location and work-authorization constraints"
+            },
+            {
+              "id": "filter_depth",
+              "name": "Expert-grade Boolean/attribute filter depth"
+            }
+          ]
         },
         {
           "id": "trajectory_inference",
           "name": "Trajectory & context inference",
-          "definition": "Reads career trajectory, company caliber, and inferred attributes rather than title/keyword matches."
+          "definition": "Reads career trajectory, company caliber, and inferred attributes rather than title/keyword matches.",
+          "checks": [
+            {
+              "id": "career_trajectory",
+              "name": "Models career progression and tenure patterns"
+            },
+            {
+              "id": "company_context",
+              "name": "Uses company caliber/stage context in matching"
+            },
+            {
+              "id": "inferred_attributes",
+              "name": "Infers attributes beyond stated keywords"
+            },
+            {
+              "id": "temporal_modeling",
+              "name": "Time-aware modeling of employment history"
+            }
+          ]
         }
       ]
     },
@@ -40,22 +116,94 @@
         {
           "id": "autonomous_search",
           "name": "Automated search",
-          "definition": "Initiates and continuously runs candidate searches from a role brief without per-search recruiter operation."
+          "definition": "Initiates and continuously runs candidate searches from a role brief without per-search recruiter operation.",
+          "checks": [
+            {
+              "id": "brief_to_search",
+              "name": "Starts sourcing from a role brief without manual query building"
+            },
+            {
+              "id": "continuous_monitoring",
+              "name": "Continuously monitors for new candidates entering the market"
+            },
+            {
+              "id": "pool_expansion",
+              "name": "Expands/refreshes the pool automatically as the role evolves"
+            },
+            {
+              "id": "unattended_operation",
+              "name": "Runs without per-search recruiter operation"
+            }
+          ]
         },
         {
           "id": "autonomous_screening",
           "name": "Automated screening",
-          "definition": "Evaluates candidates against role criteria and produces decisions with reasoning, rather than only ranking results for manual review."
+          "definition": "Evaluates candidates against role criteria and produces decisions with reasoning, rather than only ranking results for manual review.",
+          "checks": [
+            {
+              "id": "automatic_verdicts",
+              "name": "Produces screening decisions without per-candidate review"
+            },
+            {
+              "id": "decision_reasoning",
+              "name": "Decisions include written reasoning"
+            },
+            {
+              "id": "full_pool_coverage",
+              "name": "Screens the full sourced pool, not a sample"
+            },
+            {
+              "id": "uncertainty_flagging",
+              "name": "Flags uncertain cases for human review"
+            }
+          ]
         },
         {
           "id": "autonomous_outreach",
           "name": "Automated outreach",
-          "definition": "Composes and sends personalized outreach and follow-ups without per-message recruiter action."
+          "definition": "Composes and sends personalized outreach and follow-ups without per-message recruiter action.",
+          "checks": [
+            {
+              "id": "auto_composition",
+              "name": "Composes outreach without per-message drafting"
+            },
+            {
+              "id": "unattended_sending",
+              "name": "Sends without per-message approval (approval mode optional)"
+            },
+            {
+              "id": "automatic_followups",
+              "name": "Follow-ups fire automatically"
+            },
+            {
+              "id": "multichannel_automation",
+              "name": "Automation spans more than one channel"
+            }
+          ]
         },
         {
           "id": "scheduling_automation",
           "name": "Scheduling automation",
-          "definition": "Handles candidate replies through to a booked interview (Q&A, availability, calendar booking)."
+          "definition": "Handles candidate replies through to a booked interview (Q&A, availability, calendar booking).",
+          "checks": [
+            {
+              "id": "candidate_qa",
+              "name": "Answers candidate questions automatically"
+            },
+            {
+              "id": "availability_collection",
+              "name": "Collects candidate availability"
+            },
+            {
+              "id": "calendar_booking",
+              "name": "Books directly onto interviewer calendars"
+            },
+            {
+              "id": "reschedule_handling",
+              "name": "Handles rescheduling without recruiter action"
+            }
+          ]
         }
       ]
     },
@@ -68,22 +216,98 @@
         {
           "id": "channels",
           "name": "Channel coverage",
-          "definition": "Outreach channels available (email, LinkedIn, SMS/phone)."
+          "definition": "Outreach channels available (email, LinkedIn, SMS/phone).",
+          "checks": [
+            {
+              "id": "email_sending",
+              "name": "Email sending built in"
+            },
+            {
+              "id": "linkedin_sending",
+              "name": "LinkedIn/InMail sending"
+            },
+            {
+              "id": "sms_outreach",
+              "name": "SMS/text outreach"
+            },
+            {
+              "id": "deliverability_tooling",
+              "name": "Sender deliverability tooling (domains, warmup, throttling)"
+            }
+          ]
         },
         {
           "id": "personalization",
           "name": "Personalization",
-          "definition": "Per-candidate AI personalization grounded in the candidate's actual background."
+          "definition": "Per-candidate AI personalization grounded in the candidate's actual background.",
+          "checks": [
+            {
+              "id": "profile_grounding",
+              "name": "Personalization grounded in the candidate's actual background"
+            },
+            {
+              "id": "role_grounding",
+              "name": "Message tailored to the role's specific pitch"
+            },
+            {
+              "id": "tone_control",
+              "name": "Tone and style controls"
+            },
+            {
+              "id": "beyond_merge_tokens",
+              "name": "Goes beyond merge-token templates"
+            }
+          ]
         },
         {
           "id": "sequencing",
           "name": "Sequencing",
-          "definition": "Multi-step sequences, scheduling windows, and testing."
+          "definition": "Multi-step sequences, scheduling windows, and testing.",
+          "checks": [
+            {
+              "id": "multi_step",
+              "name": "Multi-step sequences"
+            },
+            {
+              "id": "stop_on_reply",
+              "name": "Sequences stop automatically on reply"
+            },
+            {
+              "id": "send_time_optimization",
+              "name": "Send-time windows or optimization"
+            },
+            {
+              "id": "ab_testing",
+              "name": "A/B testing of messages"
+            },
+            {
+              "id": "team_templates",
+              "name": "Team-shared templates and sequence tracking"
+            }
+          ]
         },
         {
           "id": "reply_handling",
           "name": "Reply handling",
-          "definition": "Automated handling of candidate questions and replies."
+          "definition": "Automated handling of candidate questions and replies.",
+          "checks": [
+            {
+              "id": "reply_classification",
+              "name": "Replies detected and classified (interested / not / question)"
+            },
+            {
+              "id": "automated_answers",
+              "name": "Common candidate questions answered automatically"
+            },
+            {
+              "id": "context_handoff",
+              "name": "Clean handoff to the recruiter with conversation context"
+            },
+            {
+              "id": "logistics_conversation",
+              "name": "Handles logistics (timing, process) conversationally"
+            }
+          ]
         }
       ]
     },
@@ -96,12 +320,52 @@
         {
           "id": "source_breadth",
           "name": "Source breadth",
-          "definition": "Discovery beyond a single network: open web, GitHub, publications, licensed partners."
+          "definition": "Discovery beyond a single network: open web, GitHub, publications, licensed partners.",
+          "checks": [
+            {
+              "id": "open_web",
+              "name": "Open-web profiles beyond a single network"
+            },
+            {
+              "id": "technical_sources",
+              "name": "Technical sources (GitHub, publications, patents)"
+            },
+            {
+              "id": "licensed_partners",
+              "name": "Licensed/partner data sources"
+            },
+            {
+              "id": "index_scale",
+              "name": "Index scale (hundreds of millions of profiles)"
+            },
+            {
+              "id": "ats_rediscovery",
+              "name": "Rediscovery of candidates already in the ATS/CRM"
+            }
+          ]
         },
         {
           "id": "contact_finding",
           "name": "Contact finding",
-          "definition": "Email/phone enrichment coverage and accuracy."
+          "definition": "Email/phone enrichment coverage and accuracy.",
+          "checks": [
+            {
+              "id": "email_coverage",
+              "name": "Personal email coverage"
+            },
+            {
+              "id": "phone_coverage",
+              "name": "Phone number coverage"
+            },
+            {
+              "id": "verification",
+              "name": "Verification and bounce protection"
+            },
+            {
+              "id": "continuous_refresh",
+              "name": "Continuous re-enrichment of stale contact data"
+            }
+          ]
         }
       ]
     },
@@ -114,12 +378,48 @@
         {
           "id": "ats_integrations",
           "name": "ATS integrations",
-          "definition": "Breadth and depth of ATS/CRM sync."
+          "definition": "Breadth and depth of ATS/CRM sync.",
+          "checks": [
+            {
+              "id": "native_breadth",
+              "name": "Breadth of native ATS integrations"
+            },
+            {
+              "id": "bidirectional_sync",
+              "name": "Bi-directional sync"
+            },
+            {
+              "id": "dedupe_against_ats",
+              "name": "Duplicate detection against existing ATS records"
+            },
+            {
+              "id": "api_webhooks",
+              "name": "API and webhooks"
+            }
+          ]
         },
         {
           "id": "analytics",
           "name": "Analytics",
-          "definition": "Funnel, outreach, and pipeline analytics."
+          "definition": "Funnel, outreach, and pipeline analytics.",
+          "checks": [
+            {
+              "id": "funnel_metrics",
+              "name": "Pipeline/funnel metrics"
+            },
+            {
+              "id": "outreach_performance",
+              "name": "Outreach performance (open/reply/interested rates)"
+            },
+            {
+              "id": "team_reporting",
+              "name": "Team-level performance reporting"
+            },
+            {
+              "id": "exports_dashboards",
+              "name": "Exports and dashboards"
+            }
+          ]
         }
       ]
     }

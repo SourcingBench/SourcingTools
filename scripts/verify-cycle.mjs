@@ -4,8 +4,9 @@
 // For each published cycle it runs three checks:
 //   1. Manifest integrity — recompute the SHA-256 of every file named in
 //      cycle.json and assert it matches. Catches truncated or doctored data.
-//   2. Rubric coverage — every tool has an in-range value and an evidence note for
-//      every criterion in the published rubric; the rubric weights sum to 1.
+//   2. Rubric coverage — every tool has an in-range 0/1/2 value for every
+//      capability check and an evidence note for every criterion in the
+//      published rubric; the rubric weights sum to 1.
 //   3. Score replay — re-run the cycle's frozen scoring.mjs against
 //      capabilities.json and assert every composite, dimension score, and
 //      rank matches the published leaderboard.json exactly.
@@ -53,19 +54,26 @@ async function verifyCycle(cycle) {
   // 2. Rubric coverage
   const criteria = readJson(join(dir, 'criteria.json'));
   const capabilities = readJson(join(dir, 'capabilities.json'));
-  const critIds = criteria.dimensions.flatMap((d) => d.criteria.map((c) => c.id));
+  const crits = criteria.dimensions.flatMap((d) => d.criteria);
+  const critIds = crits.map((c) => c.id);
   const weightSum = criteria.dimensions.reduce((a, d) => a + d.weight, 0);
   if (Math.abs(weightSum - 1) > 1e-9) errors.push(`${cycle}: dimension weights sum to ${weightSum}, not 1`);
   for (const t of capabilities.tools) {
-    for (const id of critIds) {
-      const s = t.scores[id];
-      if (!s) errors.push(`${cycle}: ${t.slug} missing criterion ${id}`);
-      else {
-        if (!(Number.isInteger(s.value) && s.value >= 0 && s.value <= 10))
-          errors.push(`${cycle}: ${t.slug}.${id} value out of range: ${s.value}`);
-        if (!s.note || typeof s.note !== 'string')
-          errors.push(`${cycle}: ${t.slug}.${id} has no evidence note`);
+    for (const c of crits) {
+      const s = t.scores[c.id];
+      if (!s) { errors.push(`${cycle}: ${t.slug} missing criterion ${c.id}`); continue; }
+      const checkIds = c.checks.map((k) => k.id);
+      for (const k of checkIds) {
+        const v = s.checks?.[k];
+        if (![0, 1, 2].includes(v)) errors.push(`${cycle}: ${t.slug}.${c.id}.${k} check value out of range: ${v}`);
       }
+      for (const k of Object.keys(s.checks ?? {})) {
+        if (!checkIds.includes(k)) errors.push(`${cycle}: ${t.slug}.${c.id} scores unknown check ${k}`);
+      }
+      if (typeof s.value !== 'number' || s.value < 0 || s.value > 10)
+        errors.push(`${cycle}: ${t.slug}.${c.id} value out of range: ${s.value}`);
+      if (!s.note || typeof s.note !== 'string')
+        errors.push(`${cycle}: ${t.slug}.${c.id} has no evidence note`);
     }
     for (const id of Object.keys(t.scores)) {
       if (!critIds.includes(id)) errors.push(`${cycle}: ${t.slug} scores unknown criterion ${id}`);
@@ -89,7 +97,8 @@ async function verifyCycle(cycle) {
     }
   }
   if (!errors.length) {
-    console.log(`[ok] ${cycle}: ${capabilities.tools.length} tools x ${critIds.length} criteria verified, scores replayed`);
+    const nChecks = crits.reduce((a, c) => a + c.checks.length, 0);
+    console.log(`[ok] ${cycle}: ${capabilities.tools.length} tools x ${critIds.length} criteria (${nChecks} checks) verified, scores replayed`);
   }
   return errors;
 }

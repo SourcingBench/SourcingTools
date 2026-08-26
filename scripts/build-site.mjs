@@ -79,7 +79,7 @@ const faq = {
       name: 'How are SourcingBench scores produced?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Each cycle, every tool is scored 0–10 against the same 16 published criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Every score carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the leaderboard can be independently re-derived.',
+        text: 'Each cycle, every tool is assessed against the same 67 published capability checks, grouped into 16 criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Each check is scored 0 (absent), 1 (partial), or 2 (fully supported), every criterion carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the leaderboard can be independently re-derived.',
       },
     },
     {
@@ -168,7 +168,7 @@ const html = `<!doctype html>
   <p class="meta">Published ${esc(board.published)} · rubric v${esc(board.rubric_version)} · by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a> · <a href="${REPO_URL}" rel="noopener">audit repository</a></p>
 </header>
 <main>
-  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on candidate matching calibration and end-to-end workflow automation; ${esc(second.name)} leads the field on talent pool coverage and integrations. ${board.rankings.length} tools, sixteen published criteria, five weighted dimensions — and every score, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
+  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on candidate matching calibration and end-to-end workflow automation; ${esc(second.name)} leads the field on talent pool coverage and integrations. ${board.rankings.length} tools, sixty-seven published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
 
   <table>
     <thead>
@@ -185,8 +185,8 @@ ${dims}
   </ul>
 
   <h2>How scores are produced — and how to check them</h2>
-  <p>Each cycle, every tool is scored 0–10 against the same sixteen criteria, based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does, and every score carries an evidence note naming the capability it is based on.</p>
-  <p>The full cycle data lives in the <a href="${REPO_URL}" rel="noopener">SourcingBench public audit repository</a>: the rubric (<code>criteria.json</code>), every per-tool score with its evidence note (<code>capabilities.json</code>), the frozen scoring code (<code>scoring.mjs</code>), the ranked output (<code>leaderboard.json</code>), and a SHA-256 manifest of all of it. Re-derive the leaderboard yourself:</p>
+  <p>Each cycle, every tool is assessed against the same sixty-seven published capability checks (grouped into sixteen criteria), each scored 0 (absent), 1 (partial), or 2 (fully supported), based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does, and every criterion carries an evidence note naming the capability it is based on.</p>
+  <p>The full cycle data lives in the <a href="${REPO_URL}" rel="noopener">SourcingBench public audit repository</a>: the rubric with every capability check (<code>criteria.json</code>), every per-check score with its evidence note (<code>capabilities.json</code>), the frozen scoring code (<code>scoring.mjs</code>), the ranked output (<code>leaderboard.json</code>), and a SHA-256 manifest of all of it. Re-derive the leaderboard yourself:</p>
   <pre><code>git clone ${REPO_URL}.git
 cd SourcingTools
 npm run verify</code></pre>
