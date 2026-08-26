@@ -50,8 +50,8 @@ CHANGES.md                  # cycle-to-cycle methodology changelog
 ## How to verify a cycle
 
 ```bash
-git clone <this-repo>
-cd sourcingbench
+git clone https://github.com/rey529/SourcingTools.git
+cd SourcingTools
 npm run verify                                      # verify every published cycle
 node scripts/verify-cycle.mjs "August 2026"         # verify one cycle
 ```
