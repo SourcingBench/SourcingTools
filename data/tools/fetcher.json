@@ -1,0 +1,20 @@
+{
+  "slug": "fetcher",
+  "name": "Fetcher",
+  "website": "https://fetcher.ai",
+  "review": "https://sourcingtools.org/tools/fetcher/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 5,
+      "composite": 52.2,
+      "dimensions": {
+        "autonomy": 56.3,
+        "matching": 43.8,
+        "engagement": 50.0,
+        "coverage": 62.5,
+        "workflow": 50.0
+      }
+    }
+  ]
+}

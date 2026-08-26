@@ -1,0 +1,14 @@
+{
+  "name": "sourcingbench-audit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public audit record for SourcingBench, the AI sourcing tool benchmark by SourcingTools.org. Run `npm run verify` to independently re-derive every published leaderboard.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "verify": "node scripts/verify-cycle.mjs --all"
+  },
+  "license": "MIT"
+}

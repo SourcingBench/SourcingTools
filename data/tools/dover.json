@@ -1,0 +1,20 @@
+{
+  "slug": "dover",
+  "name": "Dover",
+  "website": "https://dover.com",
+  "review": "https://sourcingtools.org/tools/dover/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 8,
+      "composite": 49.4,
+      "dimensions": {
+        "autonomy": 62.5,
+        "matching": 37.5,
+        "engagement": 43.8,
+        "coverage": 50.0,
+        "workflow": 50.0
+      }
+    }
+  ]
+}

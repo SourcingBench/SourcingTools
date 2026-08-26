@@ -1,0 +1,20 @@
+{
+  "slug": "seekout",
+  "name": "SeekOut",
+  "website": "https://seekout.com",
+  "review": "https://sourcingtools.org/tools/seekout/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 6,
+      "composite": 50.0,
+      "dimensions": {
+        "autonomy": 25.0,
+        "matching": 62.5,
+        "engagement": 31.3,
+        "coverage": 87.5,
+        "workflow": 75.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "hireez",
+  "name": "hireEZ",
+  "website": "https://hireez.com",
+  "review": "https://sourcingtools.org/tools/hireez/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 2,
+      "composite": 68.1,
+      "dimensions": {
+        "autonomy": 50.0,
+        "matching": 62.5,
+        "engagement": 62.5,
+        "coverage": 100.0,
+        "workflow": 100.0
+      }
+    }
+  ]
+}

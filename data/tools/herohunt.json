@@ -1,0 +1,20 @@
+{
+  "slug": "herohunt",
+  "name": "HeroHunt (Uwi)",
+  "website": "https://herohunt.ai",
+  "review": "https://sourcingtools.org/tools/herohunt/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 3,
+      "composite": 53.4,
+      "dimensions": {
+        "autonomy": 68.8,
+        "matching": 43.8,
+        "engagement": 50.0,
+        "coverage": 62.5,
+        "workflow": 25.0
+      }
+    }
+  ]
+}

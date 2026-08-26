@@ -1,0 +1,10 @@
+{
+  "cycle": "August 2026",
+  "published": "2026-08-26",
+  "files": {
+    "criteria.json": "9d7e2a103f4b27ecb2a09811b0b936688621805bc09911c1b993465c83b4aaf1",
+    "capabilities.json": "21dc7a043ea722409943f7ce62583272c93409e702cc04d1b2cafbd0105cf75f",
+    "scoring.mjs": "46383dc63a5bd07c00f8d0ec408ee5de2ef4712367e121f6e86984888f9aab0f",
+    "leaderboard.json": "5fdcafa43e2ffd4c7744dbf2c2e4f7cb75567f9d7c992daa2a69e154f71f6795"
+  }
+}

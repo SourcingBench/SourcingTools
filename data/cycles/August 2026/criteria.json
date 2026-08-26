@@ -1,0 +1,127 @@
+{
+  "version": "1.0.0",
+  "cycle": "August 2026",
+  "scale": "Each criterion is scored 0–4 against the published rubric: 0 = absent, 1 = minimal, 2 = partial, 3 = strong, 4 = best-in-class. Dimension score = mean of its criteria × 25 (0–100). Composite = weighted sum of dimension scores.",
+  "dimensions": [
+    {
+      "id": "autonomy",
+      "name": "Autonomy",
+      "weight": 0.3,
+      "definition": "How much of the sourcing loop the tool runs without a recruiter driving each step.",
+      "criteria": [
+        {
+          "id": "autonomous_search",
+          "name": "Autonomous search",
+          "definition": "Initiates and continuously runs candidate searches from a role brief without per-search recruiter operation."
+        },
+        {
+          "id": "autonomous_screening",
+          "name": "Autonomous screening",
+          "definition": "Evaluates candidates against role criteria and produces accept/reject decisions with reasoning, rather than only ranking results for manual review."
+        },
+        {
+          "id": "autonomous_outreach",
+          "name": "Autonomous outreach",
+          "definition": "Composes and sends personalized outreach and follow-ups without per-message recruiter action."
+        },
+        {
+          "id": "scheduling_automation",
+          "name": "Scheduling automation",
+          "definition": "Handles candidate replies through to a booked interview (Q&A, availability, calendar booking)."
+        }
+      ]
+    },
+    {
+      "id": "matching",
+      "name": "Matching & screening depth",
+      "weight": 0.25,
+      "definition": "Quality and adaptability of candidate evaluation.",
+      "criteria": [
+        {
+          "id": "criteria_evaluation",
+          "name": "Structured criteria evaluation",
+          "definition": "Evaluates against explicit role-specific criteria with per-candidate reasoning, beyond keyword/Boolean relevance."
+        },
+        {
+          "id": "feedback_learning",
+          "name": "Learning from feedback",
+          "definition": "Adapts its matching per role from recruiter/hiring-manager feedback."
+        },
+        {
+          "id": "hard_filters",
+          "name": "Hard requirements",
+          "definition": "Supports mandatory criteria that are never relaxed (certifications, clearances, locations)."
+        },
+        {
+          "id": "trajectory_inference",
+          "name": "Trajectory & context inference",
+          "definition": "Reads career trajectory, company caliber, and inferred attributes rather than title/keyword matches."
+        }
+      ]
+    },
+    {
+      "id": "engagement",
+      "name": "Outreach & engagement",
+      "weight": 0.2,
+      "definition": "Ability to convert sourced profiles into responsive candidates.",
+      "criteria": [
+        {
+          "id": "channels",
+          "name": "Channel coverage",
+          "definition": "Outreach channels available (email, LinkedIn, SMS/phone)."
+        },
+        {
+          "id": "personalization",
+          "name": "Personalization",
+          "definition": "Per-candidate AI personalization grounded in the candidate's actual background."
+        },
+        {
+          "id": "sequencing",
+          "name": "Sequencing",
+          "definition": "Multi-step sequences, scheduling windows, and testing."
+        },
+        {
+          "id": "reply_handling",
+          "name": "Reply handling",
+          "definition": "Automated handling of candidate questions and replies."
+        }
+      ]
+    },
+    {
+      "id": "coverage",
+      "name": "Coverage & data",
+      "weight": 0.15,
+      "definition": "Breadth of candidate discovery and contact data.",
+      "criteria": [
+        {
+          "id": "source_breadth",
+          "name": "Source breadth",
+          "definition": "Discovery beyond a single network: open web, GitHub, publications, licensed partners."
+        },
+        {
+          "id": "contact_finding",
+          "name": "Contact finding",
+          "definition": "Email/phone enrichment coverage and accuracy."
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "name": "Workflow & integrations",
+      "weight": 0.1,
+      "definition": "Fit into the surrounding recruiting stack.",
+      "criteria": [
+        {
+          "id": "ats_integrations",
+          "name": "ATS integrations",
+          "definition": "Breadth and depth of ATS/CRM sync."
+        },
+        {
+          "id": "analytics",
+          "name": "Analytics",
+          "definition": "Funnel, outreach, and pipeline analytics."
+        }
+      ]
+    }
+  ]
+}

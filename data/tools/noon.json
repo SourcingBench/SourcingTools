@@ -1,0 +1,20 @@
+{
+  "slug": "noon",
+  "name": "Noon",
+  "website": "https://noon.ai",
+  "review": "https://sourcingtools.org/tools/noon/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 1,
+      "composite": 90.9,
+      "dimensions": {
+        "autonomy": 100.0,
+        "matching": 93.8,
+        "engagement": 93.8,
+        "coverage": 75.0,
+        "workflow": 75.0
+      }
+    }
+  ]
+}

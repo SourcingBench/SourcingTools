@@ -1,0 +1,20 @@
+{
+  "slug": "juicebox",
+  "name": "Juicebox (PeopleGPT)",
+  "website": "https://juicebox.ai",
+  "review": "https://sourcingtools.org/tools/juicebox/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 9,
+      "composite": 46.3,
+      "dimensions": {
+        "autonomy": 25.0,
+        "matching": 50.0,
+        "engagement": 50.0,
+        "coverage": 75.0,
+        "workflow": 50.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "linkedin-recruiter",
+  "name": "LinkedIn Recruiter",
+  "website": "https://business.linkedin.com/talent-solutions/recruiter",
+  "review": "https://sourcingtools.org/tools/linkedin-recruiter/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 10,
+      "composite": 31.6,
+      "dimensions": {
+        "autonomy": 18.8,
+        "matching": 43.8,
+        "engagement": 25.0,
+        "coverage": 25.0,
+        "workflow": 62.5
+      }
+    }
+  ]
+}

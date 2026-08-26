@@ -1,0 +1,20 @@
+{
+  "slug": "gem",
+  "name": "Gem",
+  "website": "https://gem.com",
+  "review": "https://sourcingtools.org/tools/gem/",
+  "history": [
+    {
+      "cycle": "August 2026",
+      "rank": 7,
+      "composite": 49.4,
+      "dimensions": {
+        "autonomy": 31.3,
+        "matching": 37.5,
+        "engagement": 56.3,
+        "coverage": 62.5,
+        "workflow": 100.0
+      }
+    }
+  ]
+}
