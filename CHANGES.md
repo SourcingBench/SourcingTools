@@ -4,6 +4,24 @@ Each entry records methodology, rubric, or scoring changes between cycles.
 
 ---
 
+## Verbatim quotes and in-table referral field (2026-08-26)
+
+No score changes; every composite, dimension score, and rank is identical.
+
+- **Verbatim quotes in evidence records**: 78 evidence records now carry the
+  exact rendered line from the cited vendor page (a `quote` field) alongside
+  the URL, source type, access date, and claim. Quotes are recorded only
+  where the cited page states the capability in so many words — criteria
+  without an on-page statement carry the citation without a quote rather
+  than an invented one. Every quote was verified verbatim against the
+  fetched page text before publication; the verifier rejects empty quotes.
+- **Referral disclosure inside `leaderboard.json`**: each ranking row now
+  carries a per-tool `referral` field mirrored from
+  [data/disclosures.json](data/disclosures.json), so the disclosure travels
+  with (and is hashed into) the ranking data itself rather than living only
+  in a side file. The rendered leaderboard column now reads from the hashed
+  cycle data.
+
 ## Evidence layer and governance II (2026-08-26)
 
 No score changes; every composite, dimension score, and rank is identical.

@@ -23,6 +23,7 @@
         "coverage": 61.1,
         "workflow": 75.0
       },
+      "referral": true,
       "rank": 1
     },
     {
@@ -38,6 +39,7 @@
         "coverage": 66.7,
         "workflow": 87.5
       },
+      "referral": true,
       "rank": 2
     },
     {
@@ -53,6 +55,7 @@
         "coverage": 66.7,
         "workflow": 81.3
       },
+      "referral": false,
       "rank": 3
     },
     {
@@ -68,6 +71,7 @@
         "coverage": 55.6,
         "workflow": 93.8
       },
+      "referral": false,
       "rank": 4
     },
     {
@@ -83,6 +87,7 @@
         "coverage": 66.7,
         "workflow": 81.3
       },
+      "referral": false,
       "rank": 5
     },
     {
@@ -98,6 +103,7 @@
         "coverage": 50.0,
         "workflow": 62.5
       },
+      "referral": true,
       "rank": 6
     },
     {
@@ -113,6 +119,7 @@
         "coverage": 55.6,
         "workflow": 62.5
       },
+      "referral": true,
       "rank": 7
     },
     {
@@ -128,6 +135,7 @@
         "coverage": 44.4,
         "workflow": 62.5
       },
+      "referral": true,
       "rank": 8
     },
     {
@@ -143,6 +151,7 @@
         "coverage": 77.8,
         "workflow": 68.8
       },
+      "referral": false,
       "rank": 9
     },
     {
@@ -158,6 +167,7 @@
         "coverage": 44.4,
         "workflow": 37.5
       },
+      "referral": true,
       "rank": 10
     }
   ]

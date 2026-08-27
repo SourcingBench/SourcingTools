@@ -61,6 +61,8 @@ function checkEvidence(cycle, tool, critId, s, checkVals, errors) {
       errors.push(`${cycle}: ${where} has invalid accessed date: ${e.accessed}`);
     if (!e.claim || typeof e.claim !== 'string')
       errors.push(`${cycle}: ${where} has no claim`);
+    if ('quote' in e && (typeof e.quote !== 'string' || !e.quote.trim()))
+      errors.push(`${cycle}: ${where} has an empty quote`);
   }
   if (best < SOURCE_TYPES.length && WEAK_SOURCES.includes(SOURCE_TYPES[best]) && checkVals.some((v) => v === 2))
     errors.push(`${cycle}: ${tool}.${critId} awards a 2 but its best source is ${SOURCE_TYPES[best]} (capped at 1)`);

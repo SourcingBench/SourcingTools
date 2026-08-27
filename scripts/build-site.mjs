@@ -18,7 +18,6 @@ const DATA_URL = `${REPO_URL}/blob/main/data/cycles/${encodeURIComponent(cycleNa
 const cycleDir = join(CYCLES_DIR, cycleName);
 const criteria = JSON.parse(readFileSync(join(cycleDir, 'criteria.json'), 'utf8'));
 const board = JSON.parse(readFileSync(join(cycleDir, 'leaderboard.json'), 'utf8'));
-const disclosures = JSON.parse(readFileSync(join(ROOT, 'data', 'disclosures.json'), 'utf8'));
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const pct = (w) => `${Math.round(w * 100)}%`;
@@ -126,7 +125,7 @@ const rows = board.rankings
           <td>${t.dimensions.engagement}</td>
           <td>${t.dimensions.coverage}</td>
           <td>${t.dimensions.workflow}</td>
-          <td>${disclosures.vendors[t.slug].referral ? '<b>Yes</b>' : 'No'}</td>
+          <td>${t.referral ? '<b>Yes</b>' : 'No'}</td>
         </tr>`
   )
   .join('\n');

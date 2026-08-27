@@ -440,6 +440,111 @@ TOOLS = {
     },
 }
 
+# tool -> criterion -> verbatim quote from the tool's cited product page
+# (exact rendered text, captured 2026-08-26). Quotes are only recorded where
+# the cited page states the capability in so many words; criteria without an
+# on-page statement carry the citation without a quote.
+QUOTES = {
+    "noon": {
+        "criteria_evaluation": "Searches candidates across the web and evaluates candidate profiles using your specific criteria",
+        "feedback_learning": "Adapts and learns from hiring manager feedback on the quality of sourced candidates",
+        "autonomous_search": "An AI employee that performs the end-to-end role of a talent sourcer",
+        "autonomous_screening": "Noon: the autonomous AI recruiter that sources, screens, and reaches out to qualified candidates",
+        "autonomous_outreach": "Sends multi-channel, personalized campaigns and cultivates relationships with candidates for current/prospective positions",
+        "channels": "Sends multi-channel, personalized campaigns and cultivates relationships with candidates for current/prospective positions",
+        "personalization": "Noon is trained on your unique writing style, capturing your voice and tone with remarkable accuracy.",
+        "sequencing": "Sends multi-channel, personalized campaigns and cultivates relationships with candidates for current/prospective positions",
+        "pool_quality": "Searches candidates across the web and evaluates candidate profiles using your specific criteria",
+        "discovery_reach": "Searches candidates across the web and evaluates candidate profiles using your specific criteria",
+    },
+    "hireez": {
+        "criteria_evaluation": "Input your job description or keywords, and agentic AI will pull all relevant candidates from over 40 sources across the open web. Then, let AI review take a deeper look at every candidate's profile, surfacing them by how well they fit the job criteria and highlighting relevant sections of each candidate's profile so you can understand their fitness.",
+        "hard_filters": "Build teams with agentic AI for cleared candidates",
+        "autonomous_search": "AI Sourcing delivers 7x more qualified talent and 2x higher engagement by searching the open web and your ATS with real-time agentic intelligence.",
+        "autonomous_screening": "Our resume screening solution helps you evaluate resumes against the job description by parsing context instead of just keywords.",
+        "autonomous_outreach": "Automate the message creation, outreach scheduling, and candidate nurturing processes with a combination of generative and agentic AI.",
+        "personalization": "Agentic AI personalizes communication across email, SMS, and InMail, crafting timely, relevant messages that drive stronger engagement and faster candidate responses.",
+        "pool_quality": "Open Web, Deep Search. and Partner Networks across 45+ platforms.",
+        "discovery_reach": "Rediscovery delivers 2.5x more qualified candidates and 80% stronger pipelines by re-engaging past applicants already in your ATS.",
+        "ats_integrations": "By seamlessly integrating with over 50 ATS partners, our platform eliminates the need for multiple top of funnel tools - minimizing friction to existing ATS workflows, reducing costs, and enhancing overall efficiency.",
+        "analytics": "Real-time recruitment analytics show you important stats such as which hiring strategies are most effective and whether your recruiters are meeting important KPIs, giving you the data you need to refine strategies and show your team's ROI to leadership.",
+    },
+    "seekout": {
+        "criteria_evaluation": "Create role-specific workflows with AI-assisted search, automated rubrics, and smart shortlisting. Go from job description to qualified candidates faster with built-in best practices.",
+        "hard_filters": "Security-cleared candidates for defense and gov",
+        "autonomous_search": "Go beyond keywords to find hidden talent others miss. Search 1B+ profiles across external sources and your ATS with AI that understands context, not just terms.",
+        "autonomous_screening": "Process thousands of inbound applicants in hours, not weeks. AI evaluates candidates against your criteria and delivers qualified shortlists so you focus on the best.",
+        "autonomous_outreach": "Engage passive candidates with personalized multi-touch campaigns. AI crafts tailored messages that get responses while you focus on strategy and building relationships.",
+        "personalization": "Engage passive candidates with personalized multi-touch campaigns. AI crafts tailored messages that get responses while you focus on strategy and building relationships.",
+        "sequencing": "Engage passive candidates with personalized multi-touch campaigns. AI crafts tailored messages that get responses while you focus on strategy and building relationships.",
+        "pool_quality": "The agentic AI recruiting platform to source from 1B+ profiles, screen applicants, and engage candidates at scale.",
+        "discovery_reach": "Source and enrich profiles from any website",
+        "ats_integrations": "ATS, CRM, and HCM integrations",
+        "analytics": "Visualize talent pools and labor market data. Make informed decisions about where to source, how to compete, and what skills are available in your target markets.",
+    },
+    "gem": {
+        "criteria_evaluation": "Every result comes with enriched profile data, past engagement history, and a match score with clear reasoning, so you can move from search to outreach in minutes.",
+        "autonomous_outreach": "Craft multi-stage sequences that reference past conversations, interviews, recent promotions, and more. Just tell Gem what you want to incorporate, and it\u2019ll automatically draft the message.",
+        "channels": "Gem combines search, outreach, and pipeline management in one place — with AI-personalized sequences, send-on-behalf-of, omnichannel outreach (email, SMS, InMail), and outreach analytics to track what's actually converting.",
+        "personalization": "Craft multi-stage sequences that reference past conversations, interviews, recent promotions, and more. Just tell Gem what you want to incorporate, and it\u2019ll automatically draft the message.",
+        "sequencing": "Measure the success of all outreach to identify which strategies drive the highest conversions. A/B test subject lines, visualize diversity analytics, and more.",
+        "discovery_reach": "Gem also surfaces past candidates already in your ATS as part of every search, so you're never starting from scratch.",
+        "contact_finding": "Gem provides verified contact information — including direct email addresses — with an industry-best 98% email delivery rate.",
+        "ats_integrations": "Gem integrates with Greenhouse, Workday, Lever, iCIMS, SuccessFactors, and more — so sourced candidates flow directly into your existing workflow.",
+        "analytics": "Forecast hiring needs, surface pipeline bottlenecks, and prove your team's impact — no BI team required.",
+    },
+    "findem": {
+        "trajectory_inference": "Every talent decision raises the same questions: Who is this person? What have they learned over time? Who have they worked with, where did they succeed?",
+        "autonomous_search": "Turn static posts into hire-ready candidates, delivered directly to your team.",
+        "discovery_reach": "Find and prioritize the right people across channels, without tool sprawl or manual effort.",
+        "personalization": "Keep candidates engaged with messages that reflect a person\u2019s background and timing, at any scale.",
+        "analytics": "See what moves candidates forward and where attention is best spent, without digging through reports.",
+        "ats_integrations": "Built to work with your existing systems.",
+    },
+    "fetcher": {
+        "criteria_evaluation": "Our advanced AI technology streamlines the candidate screening process, while our expert team, paired with AI, efficiently sources high-quality candidate profiles tailored to your hiring needs.",
+        "autonomous_search": "We take care of sourcing so you can focus on your candidate experience",
+        "autonomous_screening": "Our advanced AI technology streamlines the candidate screening process, while our expert team, paired with AI, efficiently sources high-quality candidate profiles tailored to your hiring needs.",
+        "autonomous_outreach": "I can review a batch in 15 minutes or less, add them to an email campaign, then set it and forget it until I start seeing responses in my inbox.",
+        "sequencing": "I can review a batch in 15 minutes or less, add them to an email campaign, then set it and forget it until I start seeing responses in my inbox.",
+        "discovery_reach": "Say goodbye to hours spent digging through databases, job boards, and resumes for top talent.",
+        "ats_integrations": "Boost your recruiting capacity with robust technology integrations including ATS, CRM, email, and even Slack.",
+    },
+    "juicebox": {
+        "criteria_evaluation": "Juicebox evaluates up to 5,000 profiles to reveal which candidates are the best match for your open role.",
+        "hard_filters": "Slice your talent pool by seniority, skills, roles, activity level, and education.",
+        "autonomous_search": "Juicebox understands your searches, configures filters, and supports full natural-language search.",
+        "autonomous_screening": "Juicebox evaluates up to 5,000 profiles to reveal which candidates are the best match for your open role.",
+        "pool_quality": "Juicebox has 800 million profiles across the globe from dozens of data sources.",
+        "discovery_reach": "Search across 800M+ profiles from 30+ data sources",
+        "ats_integrations": "Juicebox integrates with 41 ATS systems and 21 CRMs.",
+    },
+    "herohunt": {
+        "criteria_evaluation": "Contextual screening AI that scores profiles on every possible requirement.",
+        "autonomous_search": "AI Recruiter can recruit for you on complete autopilot, from finding 1 billion profiles on the web to AI screening candidates and even outreach.",
+        "autonomous_screening": "Language model driven AI profile screening",
+        "autonomous_outreach": "Automated and hyper-personalized outreach",
+        "personalization": "Powerful prompt based personalization to speak to the details that count.",
+        "pool_quality": "Let AI Recruiter recruit the best from 1 billion profiles worldwide",
+        "discovery_reach": "GitHub, Stack Overflow and more",
+        "contact_finding": "Find verified contact details",
+    },
+    "dover": {
+        "autonomous_outreach": "Instantly connect with top talent and send personalized emails in seconds.",
+        "channels": "Find emails & send outreach in 2 clicks",
+        "contact_finding": "Find emails & send outreach in 2 clicks",
+        "analytics": "Monitor your pipeline from referral to hire",
+        "ats_integrations": "Slack, job boards, API, and MCP",
+    },
+    "linkedin-recruiter": {
+        "criteria_evaluation": "Hiring Assistant reviews thousands of applicants against your criteria in minutes, highlighting top candidates with the skills and experience that matter most.",
+        "hard_filters": "Choose when to use Hiring Assistant or switch to Recruiter for manual search capabilities, including 40+ advanced filters, keywords, and Boolean.",
+        "channels": "Reach candidates directly on LinkedIn with Recruiter\u2019s built-in messaging — designed for personalized messaging at scale (up to 150 InMails per month, per seat.)",
+        "pool_quality": "Hiring Assistant taps into LinkedIn\u2019s network of 1B+ professionals to find qualified candidates you might have otherwise missed.",
+        "analytics": "Unlock insights across your entire hiring funnel and benchmark against competitors to optimize your strategy.",
+    },
+}
+
 CRIT_META = {c["id"]: c for d in CRITERIA["dimensions"] for c in d["criteria"]}
 CRIT_IDS = list(CRIT_META.keys())
 
@@ -463,6 +568,9 @@ def build_capabilities():
                 "accessed": CYCLE_DATE,
                 "claim": note,
             }]
+            quote = QUOTES.get(slug, {}).get(cid)
+            if quote:
+                evidence[0]["quote"] = quote
             if "docs" in src:
                 evidence.append({
                     "url": src["docs"],
@@ -495,6 +603,7 @@ def build_capabilities():
             "source_types": SOURCE_TYPES,
             "rules": [
                 "Every criterion carries at least one evidence record: url, source_type, accessed date, and the claim relied on.",
+                "Where the cited page states the capability in so many words, the record also carries the verbatim quote; criteria without an on-page statement carry the citation without a quote rather than an invented one.",
                 "Evidence URLs must resolve; CI link-checks them.",
                 "The accessed date must fall within the cycle's assessment window.",
                 "Publisher-owned pages (sourcingtools.org, sourcingbench.github.io) are banned as evidence.",
@@ -506,6 +615,8 @@ def build_capabilities():
 
 
 def score(capabilities):
+    with open(os.path.join(ROOT, "data", "disclosures.json")) as f:
+        disclosures = json.load(f)["vendors"]
     rows = []
     for t in capabilities["tools"]:
         dims = {}
@@ -519,6 +630,7 @@ def score(capabilities):
         rows.append({
             "slug": t["slug"], "name": t["name"], "website": t["website"],
             "review": t["review"], "composite": round2(composite), "dimensions": dims,
+            "referral": disclosures[t["slug"]]["referral"],
         })
     rows.sort(key=lambda r: -r["composite"])
     for i, r in enumerate(rows):
