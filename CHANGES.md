@@ -4,6 +4,26 @@ Each entry records methodology, rubric, or scoring changes between cycles.
 
 ---
 
+## August 2026 — revision 2.2.0 (2026-08-26)
+
+Correction to the coverage dimension, in response to public feedback that
+"talent pool coverage & data" mixed contact enrichment into pool coverage
+and consequently understated single-network pools.
+
+- `rubric_version`: 2.2.0 — the coverage dimension now measures the pool
+  itself: **Talent pool size & quality** (scale, freshness, completeness,
+  activity signals, geographic/industry reach, identity resolution, niche
+  coverage) and **Discovery reach** (multi-source aggregation, ATS
+  rediscovery). **Contact finding** moved to Outreach & engagement, where
+  it belongs — contact data determines whether outreach is possible, not
+  how large the pool is. Now 17 criteria, 71 checks.
+- Effect: LinkedIn Recruiter — the largest, freshest, member-maintained
+  pool — now leads coverage (77.8) and rises to #9 overall; Noon's
+  coverage drops to 61.1 (younger data asset) and its composite to 74.95,
+  still #1 on matching and engagement strength. hireEZ remains #2.
+- LinkedIn Recruiter's company-context check in Trajectory & context
+  inference raised 1 → 2 (first-party employment data).
+
 ## August 2026 (published 2026-08-26)
 
 First published cycle.

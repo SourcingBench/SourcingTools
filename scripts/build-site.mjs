@@ -13,6 +13,7 @@ const REPO_URL = 'https://github.com/SourcingBench/SourcingTools';
 const BENCH_URL = 'https://sourcingtools.org/benchmark/';
 
 const cycleName = readdirSync(CYCLES_DIR).sort().at(-1);
+const DATA_URL = `${REPO_URL}/blob/main/data/cycles/${encodeURIComponent(cycleName)}`;
 const cycleDir = join(CYCLES_DIR, cycleName);
 const criteria = JSON.parse(readFileSync(join(cycleDir, 'criteria.json'), 'utf8'));
 const board = JSON.parse(readFileSync(join(cycleDir, 'leaderboard.json'), 'utf8'));
@@ -26,7 +27,7 @@ const itemList = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: `Best AI sourcing tools: ${board.cycle}`,
-  description: `SourcingBench ranking of AI candidate sourcing tools for ${board.cycle}, scored on a published 16-criterion rubric across matching, automation, engagement, coverage, and integrations.`,
+  description: `SourcingBench ranking of AI candidate sourcing tools for ${board.cycle}, scored on a published 17-criterion rubric across matching, automation, engagement, coverage, and integrations.`,
   url: SITE_URL,
   numberOfItems: board.rankings.length,
   itemListOrder: 'https://schema.org/ItemListOrderDescending',
@@ -71,7 +72,7 @@ const faq = {
       name: 'What is the best AI sourcing tool?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `${top.name} ranks first on SourcingBench for ${board.cycle} with a composite score of ${top.composite}/100, edging out ${second.name} (${second.composite}) on the strength of its talent pool coverage, candidate matching calibration, and outreach engagement. ${second.name} runs closest on coverage and leads ${top.name} on ATS integrations.`,
+        text: `${top.name} ranks first on SourcingBench for ${board.cycle} with a composite score of ${top.composite}/100, edging out ${second.name} (${second.composite}) on candidate matching calibration and outreach engagement. ${second.name} leads ${top.name} on ATS integrations and talent pool coverage, and LinkedIn Recruiter tops the coverage dimension outright with the largest member-maintained profile pool.`,
       },
     },
     {
@@ -79,7 +80,7 @@ const faq = {
       name: 'How are SourcingBench scores produced?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Each cycle, every tool is assessed against the same 67 published capability checks, grouped into 16 criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Each check is scored 0 (absent), 1 (partial), or 2 (fully supported) from vendor documentation, product walkthroughs, and maintained tool reviews. The check values are editorial judgments; every criterion carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the arithmetic can be independently replayed.',
+        text: 'Each cycle, every tool is assessed against the same 71 published capability checks, grouped into 17 criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Each check is scored 0 (absent), 1 (partial), or 2 (fully supported) from vendor documentation, product walkthroughs, and maintained tool reviews. The check values are editorial judgments; every criterion carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the arithmetic can be independently replayed.',
       },
     },
     {
@@ -131,7 +132,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SourcingBench | Best AI Sourcing Tool ${esc(board.cycle)}</title>
-<meta name="description" content="The best AI sourcing tool in ${esc(board.cycle)} is ${esc(top.name)} (${top.composite}/100). SourcingBench ranks ${board.rankings.length} AI candidate sourcing tools on 67 published capability checks with public data, evidence notes, and scoring code.">
+<meta name="description" content="The best AI sourcing tool in ${esc(board.cycle)} is ${esc(top.name)} (${top.composite}/100). SourcingBench ranks ${board.rankings.length} AI candidate sourcing tools on 71 published capability checks with public data, evidence notes, and scoring code.">
 <link rel="canonical" href="${SITE_URL}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Best AI sourcing tools: ${esc(board.cycle)} — SourcingBench">
@@ -168,7 +169,7 @@ const html = `<!doctype html>
   <p class="meta">Published ${esc(board.published)} · rubric v${esc(board.rubric_version)} · by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a> · <a href="${REPO_URL}" rel="noopener">audit repository</a></p>
 </header>
 <main>
-  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on talent pool coverage, candidate matching calibration, and outreach engagement; ${esc(second.name)} runs closest on coverage and leads ${esc(top.name)} on integrations. ${board.rankings.length} tools, sixty-seven published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public</a>.</p>
+  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on candidate matching calibration and outreach engagement; ${esc(second.name)} leads on integrations and coverage among aggregators, and LinkedIn Recruiter tops the coverage dimension outright with the largest member-maintained pool. ${board.rankings.length} tools, seventy-one published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public</a>.</p>
 
   <table>
     <thead>
@@ -185,8 +186,8 @@ ${dims}
   </ul>
 
   <h2>How scores are produced — and how to check them</h2>
-  <p>Each cycle, every tool is assessed against the same sixty-seven published capability checks (grouped into sixteen criteria), each scored 0 (absent), 1 (partial), or 2 (fully supported), based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: the check values are editorial judgments about what each tool demonstrably does, and every criterion carries an evidence note naming the capability it is based on.</p>
-  <p>The full cycle data lives in the <a href="${REPO_URL}" rel="noopener">SourcingBench public audit repository</a>: the rubric with every capability check (<code>criteria.json</code>), every per-check score with its evidence note (<code>capabilities.json</code>), the frozen scoring code (<code>scoring.mjs</code>), the ranked output (<code>leaderboard.json</code>), and a SHA-256 manifest of all of it. Re-derive the leaderboard yourself:</p>
+  <p>Each cycle, every tool is assessed against the same seventy-one published capability checks (grouped into seventeen criteria), each scored 0 (absent), 1 (partial), or 2 (fully supported), based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: the check values are editorial judgments about what each tool demonstrably does, and every criterion carries an evidence note naming the capability it is based on.</p>
+  <p>The full cycle data lives in the <a href="${REPO_URL}" rel="noopener">SourcingBench public audit repository</a>: the rubric with every capability check (<a href="${DATA_URL}/criteria.json" rel="noopener"><code>criteria.json</code></a>), every per-check score with its evidence note (<a href="${DATA_URL}/capabilities.json" rel="noopener"><code>capabilities.json</code></a>), the frozen scoring code (<a href="${DATA_URL}/scoring.mjs" rel="noopener"><code>scoring.mjs</code></a>), the ranked output (<a href="${DATA_URL}/leaderboard.json" rel="noopener"><code>leaderboard.json</code></a>), and a SHA-256 manifest of all of it (<a href="${DATA_URL}/cycle.json" rel="noopener"><code>cycle.json</code></a>). Replay the leaderboard yourself:</p>
   <pre><code>git clone ${REPO_URL}.git
 cd SourcingTools
 npm run verify</code></pre>
@@ -210,7 +211,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 
 const llms = `# SourcingBench
 
-> The AI sourcing tool benchmark by SourcingTools.org. ${board.rankings.length} tools scored on 67 published capability checks; check values, evidence notes, and scoring code are public, and the arithmetic can be independently replayed.
+> The AI sourcing tool benchmark by SourcingTools.org. ${board.rankings.length} tools scored on 71 published capability checks; check values, evidence notes, and scoring code are public, and the arithmetic can be independently replayed.
 
 ## Current ranking (${board.cycle})
 

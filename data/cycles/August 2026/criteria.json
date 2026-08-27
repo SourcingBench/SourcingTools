@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "cycle": "August 2026",
   "scale": "Each criterion decomposes into published capability checks. Each check is scored 0 (absent), 1 (partial or assisted), or 2 (fully supported), from documented, observable product behavior. Criterion score = points earned / points possible × 10. Dimension score = dimension points earned / dimension points possible × 100. Composite = weighted sum of dimension scores.",
   "dimensions": [
@@ -211,7 +211,7 @@
       "id": "engagement",
       "name": "Outreach & engagement",
       "weight": 0.2,
-      "definition": "Ability to convert sourced profiles into responsive candidates.",
+      "definition": "Ability to reach sourced profiles and convert them into responsive candidates — including the contact data that determines whether outreach is possible at all.",
       "criteria": [
         {
           "id": "channels",
@@ -308,46 +308,11 @@
               "name": "Handles logistics (timing, process) conversationally"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "coverage",
-      "name": "Talent pool coverage & data",
-      "weight": 0.2,
-      "definition": "Breadth of candidate discovery and quality of contact data.",
-      "criteria": [
-        {
-          "id": "source_breadth",
-          "name": "Source breadth",
-          "definition": "Discovery beyond a single network: open web, GitHub, publications, licensed partners.",
-          "checks": [
-            {
-              "id": "open_web",
-              "name": "Open-web profiles beyond a single network"
-            },
-            {
-              "id": "technical_sources",
-              "name": "Technical sources (GitHub, publications, patents)"
-            },
-            {
-              "id": "licensed_partners",
-              "name": "Licensed/partner data sources"
-            },
-            {
-              "id": "index_scale",
-              "name": "Index scale (hundreds of millions of profiles)"
-            },
-            {
-              "id": "ats_rediscovery",
-              "name": "Rediscovery of candidates already in the ATS/CRM"
-            }
-          ]
         },
         {
           "id": "contact_finding",
           "name": "Contact finding",
-          "definition": "Email/phone enrichment coverage and accuracy.",
+          "definition": "Email/phone enrichment coverage and accuracy — whether the tool can actually reach the candidates it surfaces.",
           "checks": [
             {
               "id": "email_coverage",
@@ -364,6 +329,64 @@
             {
               "id": "continuous_refresh",
               "name": "Continuous re-enrichment of stale contact data"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coverage",
+      "name": "Talent pool coverage & data",
+      "weight": 0.2,
+      "definition": "Size, freshness, and quality of the searchable candidate pool.",
+      "criteria": [
+        {
+          "id": "pool_quality",
+          "name": "Talent pool size & quality",
+          "definition": "How large, current, complete, and well-resolved the searchable profile pool is.",
+          "checks": [
+            {
+              "id": "index_scale",
+              "name": "Pool scale (hundreds of millions of searchable profiles)"
+            },
+            {
+              "id": "profile_freshness",
+              "name": "Profile freshness (actively maintained or continuously refreshed)"
+            },
+            {
+              "id": "profile_completeness",
+              "name": "Profile completeness (full career history, education, skills)"
+            },
+            {
+              "id": "activity_signals",
+              "name": "Candidate activity and openness-to-work signals"
+            },
+            {
+              "id": "global_coverage",
+              "name": "Geographic and industry coverage"
+            },
+            {
+              "id": "identity_resolution",
+              "name": "Identity resolution (one canonical profile per person, deduplicated)"
+            },
+            {
+              "id": "niche_coverage",
+              "name": "Coverage of niche and specialist roles"
+            }
+          ]
+        },
+        {
+          "id": "discovery_reach",
+          "name": "Discovery reach",
+          "definition": "Discovery beyond the pool itself: multi-source aggregation and rediscovery of known candidates.",
+          "checks": [
+            {
+              "id": "beyond_network",
+              "name": "Sources beyond a single network (open web, GitHub, licensed partners)"
+            },
+            {
+              "id": "ats_rediscovery",
+              "name": "Rediscovery of candidates already in the ATS/CRM"
             }
           ]
         }

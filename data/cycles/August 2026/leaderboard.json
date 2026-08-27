@@ -1,7 +1,7 @@
 {
   "cycle": "August 2026",
   "published": "2026-08-26",
-  "rubric_version": "2.1.0",
+  "rubric_version": "2.2.0",
   "weights": {
     "matching": 0.25,
     "autonomy": 0.2,
@@ -15,12 +15,12 @@
       "name": "Noon",
       "website": "https://noon.ai",
       "review": "https://sourcingtools.org/tools/noon/",
-      "composite": 80.95,
+      "composite": 74.95,
       "dimensions": {
         "matching": 82.4,
         "autonomy": 68.8,
-        "engagement": 82.4,
-        "coverage": 94.4,
+        "engagement": 85.7,
+        "coverage": 61.1,
         "workflow": 75.0
       },
       "rank": 1
@@ -30,12 +30,12 @@
       "name": "hireEZ",
       "website": "https://hireez.com",
       "review": "https://sourcingtools.org/tools/hireez/",
-      "composite": 77.12,
+      "composite": 73.2,
       "dimensions": {
         "matching": 73.5,
         "autonomy": 65.6,
-        "engagement": 73.5,
-        "coverage": 88.9,
+        "engagement": 76.2,
+        "coverage": 66.7,
         "workflow": 87.5
       },
       "rank": 2
@@ -45,12 +45,12 @@
       "name": "SeekOut",
       "website": "https://seekout.com",
       "review": "https://sourcingtools.org/tools/seekout/",
-      "composite": 72.69,
+      "composite": 69.22,
       "dimensions": {
         "matching": 76.5,
         "autonomy": 56.3,
-        "engagement": 61.8,
-        "coverage": 88.9,
+        "engagement": 66.7,
+        "coverage": 66.7,
         "workflow": 81.3
       },
       "rank": 3
@@ -60,12 +60,12 @@
       "name": "Gem",
       "website": "https://gem.com",
       "review": "https://sourcingtools.org/tools/gem/",
-      "composite": 70.12,
+      "composite": 67.84,
       "dimensions": {
         "matching": 64.7,
         "autonomy": 56.3,
-        "engagement": 76.5,
-        "coverage": 66.7,
+        "engagement": 76.2,
+        "coverage": 55.6,
         "workflow": 93.8
       },
       "rank": 4
@@ -75,11 +75,11 @@
       "name": "Findem",
       "website": "https://findem.ai",
       "review": "https://sourcingtools.org/tools/findem/",
-      "composite": 66.84,
+      "composite": 67.32,
       "dimensions": {
         "matching": 85.3,
         "autonomy": 50.0,
-        "engagement": 50.0,
+        "engagement": 52.4,
         "coverage": 66.7,
         "workflow": 81.3
       },
@@ -90,12 +90,12 @@
       "name": "Fetcher",
       "website": "https://fetcher.ai",
       "review": "https://sourcingtools.org/tools/fetcher/",
-      "composite": 64.39,
+      "composite": 62.67,
       "dimensions": {
         "matching": 61.8,
         "autonomy": 75.0,
-        "engagement": 61.8,
-        "coverage": 61.1,
+        "engagement": 64.3,
+        "coverage": 50.0,
         "workflow": 62.5
       },
       "rank": 6
@@ -105,12 +105,12 @@
       "name": "Juicebox (PeopleGPT)",
       "website": "https://juicebox.ai",
       "review": "https://sourcingtools.org/tools/juicebox/",
-      "composite": 60.76,
+      "composite": 58.68,
       "dimensions": {
         "matching": 67.6,
         "autonomy": 46.9,
-        "engagement": 58.8,
-        "coverage": 66.7,
+        "engagement": 59.5,
+        "coverage": 55.6,
         "workflow": 62.5
       },
       "rank": 7
@@ -120,43 +120,43 @@
       "name": "Dover",
       "website": "https://dover.com",
       "review": "https://sourcingtools.org/tools/dover/",
-      "composite": 57.54,
+      "composite": 56.68,
       "dimensions": {
         "matching": 52.9,
         "autonomy": 68.8,
-        "engagement": 55.9,
-        "coverage": 50.0,
+        "engagement": 57.1,
+        "coverage": 44.4,
         "workflow": 62.5
       },
       "rank": 8
-    },
-    {
-      "slug": "herohunt",
-      "name": "HeroHunt (Uwi)",
-      "website": "https://herohunt.ai",
-      "review": "https://sourcingtools.org/tools/herohunt/",
-      "composite": 56.88,
-      "dimensions": {
-        "matching": 55.9,
-        "autonomy": 75.0,
-        "engagement": 55.9,
-        "coverage": 55.6,
-        "workflow": 37.5
-      },
-      "rank": 9
     },
     {
       "slug": "linkedin-recruiter",
       "name": "LinkedIn Recruiter",
       "website": "https://business.linkedin.com/talent-solutions/recruiter",
       "review": "https://sourcingtools.org/tools/linkedin-recruiter/",
-      "composite": 45.83,
+      "composite": 56.06,
       "dimensions": {
-        "matching": 61.8,
+        "matching": 64.7,
         "autonomy": 34.4,
-        "engagement": 38.2,
-        "coverage": 27.8,
+        "engagement": 35.7,
+        "coverage": 77.8,
         "workflow": 68.8
+      },
+      "rank": 9
+    },
+    {
+      "slug": "herohunt",
+      "name": "HeroHunt (Uwi)",
+      "website": "https://herohunt.ai",
+      "review": "https://sourcingtools.org/tools/herohunt/",
+      "composite": 54.44,
+      "dimensions": {
+        "matching": 55.9,
+        "autonomy": 75.0,
+        "engagement": 54.8,
+        "coverage": 44.4,
+        "workflow": 37.5
       },
       "rank": 10
     }
