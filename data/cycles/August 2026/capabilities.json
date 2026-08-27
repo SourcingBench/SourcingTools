@@ -2,6 +2,25 @@
   "cycle": "August 2026",
   "assessed": "2026-08-26",
   "rubric_version": "2.2.0",
+  "evidence_schema": {
+    "version": 1,
+    "source_types": [
+      "hands_on",
+      "api_docs",
+      "product_docs",
+      "changelog",
+      "vendor_claim",
+      "third_party_review",
+      "inference"
+    ],
+    "rules": [
+      "Every criterion carries at least one evidence record: url, source_type, accessed date, and the claim relied on.",
+      "Evidence URLs must resolve; CI link-checks them.",
+      "The accessed date must fall within the cycle's assessment window.",
+      "Publisher-owned pages (sourcingtools.org, sourcingbench.github.io) are banned as evidence.",
+      "A criterion whose best source is vendor_claim or inference cannot award any check a 2."
+    ]
+  },
   "tools": [
     {
       "slug": "noon",
@@ -9,7 +28,6 @@
       "website": "https://noon.ai",
       "review": "https://sourcingtools.org/tools/noon/",
       "sources": [
-        "https://sourcingtools.org/tools/noon/",
         "https://noon.ai"
       ],
       "scores": {
@@ -24,7 +42,15 @@
           "points": 9,
           "max": 10,
           "value": 9.0,
-          "note": "Explicit role criteria with per-candidate reasoning and pass-rate reporting; evidence cited at the criterion level rather than per claim"
+          "note": "Explicit role criteria with per-candidate reasoning and pass-rate reporting; evidence cited at the criterion level rather than per claim",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Explicit role criteria with per-candidate reasoning and pass-rate reporting; evidence cited at the criterion level rather than per claim"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -36,7 +62,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Calibration loop: recruiter grades early candidates, model adjusts per role; re-evaluates on criteria change"
+          "note": "Calibration loop: recruiter grades early candidates, model adjusts per role; re-evaluates on criteria change",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Calibration loop: recruiter grades early candidates, model adjusts per role; re-evaluates on criteria change"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -48,7 +82,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Non-negotiables never relaxed by ranking; structured-field and Boolean depth trail SeekOut/hireEZ"
+          "note": "Non-negotiables never relaxed by ranking; structured-field and Boolean depth trail SeekOut/hireEZ",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Non-negotiables never relaxed by ranking; structured-field and Boolean depth trail SeekOut/hireEZ"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -60,7 +102,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Interprets career trajectory and company caliber; less attribute inference than Findem"
+          "note": "Interprets career trajectory and company caliber; less attribute inference than Findem",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Interprets career trajectory and company caliber; less attribute inference than Findem"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -72,7 +122,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Sources continuously from a role brief; pool refresh and fully unattended operation still involve the recruiter"
+          "note": "Sources continuously from a role brief; pool refresh and fully unattended operation still involve the recruiter",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Sources continuously from a role brief; pool refresh and fully unattended operation still involve the recruiter"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -84,7 +142,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Per-candidate verdicts with reasoning against calibrated role criteria across the full pool"
+          "note": "Per-candidate verdicts with reasoning against calibrated role criteria across the full pool",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Per-candidate verdicts with reasoning against calibrated role criteria across the full pool"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -96,7 +162,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Personalized sequences composed automatically; sending runs in approval mode and multi-channel automation is partial"
+          "note": "Personalized sequences composed automatically; sending runs in approval mode and multi-channel automation is partial",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Personalized sequences composed automatically; sending runs in approval mode and multi-channel automation is partial"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -108,7 +182,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "AI coordinator answers candidate questions; availability collection partial, no direct calendar booking or automated rescheduling yet"
+          "note": "AI coordinator answers candidate questions; availability collection partial, no direct calendar booking or automated rescheduling yet",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI coordinator answers candidate questions; availability collection partial, no direct calendar booking or automated rescheduling yet"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -120,7 +202,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Email, LinkedIn, and SMS sequences; deliverability tooling lighter than dedicated outbound platforms"
+          "note": "Email, LinkedIn, and SMS sequences; deliverability tooling lighter than dedicated outbound platforms",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email, LinkedIn, and SMS sequences; deliverability tooling lighter than dedicated outbound platforms"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -132,7 +222,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "AI-generated per-candidate intros grounded in profile; above category average in our review"
+          "note": "AI-generated per-candidate intros grounded in profile evidence and the role's specific pitch",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-generated per-candidate intros grounded in profile evidence and the role's specific pitch"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -145,7 +243,15 @@
           "points": 7,
           "max": 10,
           "value": 7.0,
-          "note": "Multi-step sequences with editing and stop-on-reply; no A/B testing at hireEZ/Gem depth"
+          "note": "Multi-step sequences with editing and stop-on-reply; no A/B testing at hireEZ/Gem depth",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Multi-step sequences with editing and stop-on-reply; no A/B testing at hireEZ/Gem depth"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -157,7 +263,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Coordinator handles candidate Q&A and logistics conversationally, then hands off with context"
+          "note": "Coordinator handles candidate Q&A and logistics conversationally, then hands off with context",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Coordinator handles candidate Q&A and logistics conversationally, then hands off with context"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -169,7 +283,15 @@
           "points": 8,
           "max": 8,
           "value": 10.0,
-          "note": "Category-leading email and phone coverage with verification and continuous re-enrichment"
+          "note": "Category-leading email and phone coverage with verification and continuous re-enrichment",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Category-leading email and phone coverage with verification and continuous re-enrichment"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -184,7 +306,15 @@
           "points": 8,
           "max": 14,
           "value": 5.7,
-          "note": "Web-scale aggregated index, but a younger data asset: refresh cadence, identity resolution, and niche depth still trail the incumbent pools"
+          "note": "Web-scale aggregated index, but a younger data asset: refresh cadence, identity resolution, and niche depth still trail the incumbent pools",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Web-scale aggregated index, but a younger data asset: refresh cadence, identity resolution, and niche depth still trail the incumbent pools"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -194,7 +324,15 @@
           "points": 3,
           "max": 4,
           "value": 7.5,
-          "note": "Multi-source aggregation across the open web, technical sources, and licensed partners; ATS rediscovery newer than incumbents'"
+          "note": "Multi-source aggregation across the open web, technical sources, and licensed partners; ATS rediscovery newer than incumbents'",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Multi-source aggregation across the open web, technical sources, and licensed partners; ATS rediscovery newer than incumbents'"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -206,7 +344,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "20+ ATS providers via unified sync layer; fewer native bi-directional integrations than hireEZ"
+          "note": "20+ ATS providers via unified sync layer; fewer native bi-directional integrations than hireEZ",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "20+ ATS providers via unified sync layer; fewer native bi-directional integrations than hireEZ"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -218,7 +364,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Funnel and outbound performance metrics; lighter team reporting than Gem"
+          "note": "Funnel and outbound performance metrics; lighter team reporting than Gem",
+          "evidence": [
+            {
+              "url": "https://noon.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Funnel and outbound performance metrics; lighter team reporting than Gem"
+            }
+          ]
         }
       }
     },
@@ -228,8 +382,7 @@
       "website": "https://hireez.com",
       "review": "https://sourcingtools.org/tools/hireez/",
       "sources": [
-        "https://sourcingtools.org/tools/hireez/",
-        "https://hireez.com"
+        "https://hireez.com/platform/"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -243,7 +396,15 @@
           "points": 8,
           "max": 10,
           "value": 8.0,
-          "note": "JD-driven requirement extraction and ranked matching with match evidence; per-criterion verdicts partial"
+          "note": "JD-driven requirement extraction and ranked matching with match evidence; per-criterion verdicts partial",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "JD-driven requirement extraction and ranked matching with match evidence; per-criterion verdicts partial"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -255,7 +416,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Match tuning within a search; no per-role calibration loop"
+          "note": "Match tuning within a search; no per-role calibration loop",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Match tuning within a search; no per-role calibration loop"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -267,7 +436,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Deep Boolean and healthcare/technical filters; hard requirements interact with ranking"
+          "note": "Deep Boolean and healthcare/technical filters; hard requirements interact with ranking",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Deep Boolean and healthcare/technical filters; hard requirements interact with ranking"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -279,7 +456,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Ranking beyond keywords, though title/skill-centric"
+          "note": "Ranking beyond keywords, though title/skill-centric",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Ranking beyond keywords, though title/skill-centric"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -291,7 +476,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "AI Sourcing mode surfaces new matches continuously; recruiter builds and owns searches"
+          "note": "AI Sourcing mode surfaces new matches continuously; recruiter builds and owns searches",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI Sourcing mode surfaces new matches continuously; recruiter builds and owns searches"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -303,7 +496,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "EZ Match ranks the full pool against the JD with strong relevance; recruiter reviews shortlists"
+          "note": "EZ Match ranks the full pool against the JD with strong relevance; recruiter reviews shortlists",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "EZ Match ranks the full pool against the JD with strong relevance; recruiter reviews shortlists"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -315,7 +516,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "AI-drafted sequenced outreach runs after recruiter launch"
+          "note": "AI-drafted sequenced outreach runs after recruiter launch",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-drafted sequenced outreach runs after recruiter launch"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -327,7 +536,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Scheduling handoff to ATS/calendar tooling; no candidate-facing agent"
+          "note": "Scheduling handoff to ATS/calendar tooling; no candidate-facing agent",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Scheduling handoff to ATS/calendar tooling; no candidate-facing agent"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -339,7 +556,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Email sequences with phone data and mature deliverability controls; no LinkedIn/SMS sending"
+          "note": "Email sequences with phone data and mature deliverability controls; no LinkedIn/SMS sending",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email sequences with phone data and mature deliverability controls; no LinkedIn/SMS sending"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -351,7 +576,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "AI-written outreach from profile + JD"
+          "note": "AI-written outreach from profile + JD",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-written outreach from profile + JD"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -364,7 +597,15 @@
           "points": 9,
           "max": 10,
           "value": 9.0,
-          "note": "Mature sequences with A/B testing and send-time optimization"
+          "note": "Mature sequences with A/B testing and send-time optimization",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Mature sequences with A/B testing and send-time optimization"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -376,7 +617,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Reply detection and routing; replies handled by the recruiter"
+          "note": "Reply detection and routing; replies handled by the recruiter",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply detection and routing; replies handled by the recruiter"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -388,7 +637,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Category-leading contact coverage with verification; quality varies by region"
+          "note": "Category-leading contact coverage with verification; quality varies by region",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Category-leading contact coverage with verification; quality varies by region"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -403,7 +660,15 @@
           "points": 9,
           "max": 14,
           "value": 6.4,
-          "note": "800M+ aggregated profiles with broad geographic reach; aggregated data carries the usual staleness and duplicate-merge issues"
+          "note": "800M+ aggregated profiles with broad geographic reach; aggregated data carries the usual staleness and duplicate-merge issues",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "800M+ aggregated profiles with broad geographic reach; aggregated data carries the usual staleness and duplicate-merge issues"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -413,7 +678,15 @@
           "points": 3,
           "max": 4,
           "value": 7.5,
-          "note": "Open web plus licensed partners; ATS Rediscovery"
+          "note": "Open web plus licensed partners; ATS Rediscovery",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Open web plus licensed partners; ATS Rediscovery"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -425,7 +698,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "~30 bi-directional ATS integrations plus API access"
+          "note": "~30 bi-directional ATS integrations plus API access",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "~30 bi-directional ATS integrations plus API access"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -437,7 +718,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Full funnel, sequence, and team analytics"
+          "note": "Full funnel, sequence, and team analytics",
+          "evidence": [
+            {
+              "url": "https://hireez.com/platform/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Full funnel, sequence, and team analytics"
+            }
+          ]
         }
       }
     },
@@ -447,8 +736,8 @@
       "website": "https://seekout.com",
       "review": "https://sourcingtools.org/tools/seekout/",
       "sources": [
-        "https://sourcingtools.org/tools/seekout/",
-        "https://seekout.com"
+        "https://seekout.com/platform",
+        "https://support.seekout.com/"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -462,7 +751,21 @@
           "points": 9,
           "max": 10,
           "value": 9.0,
-          "note": "SeekOut Assist builds JD-driven searches with explainable matching"
+          "note": "SeekOut Assist builds JD-driven searches with explainable matching",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "SeekOut Assist builds JD-driven searches with explainable matching"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "SeekOut Assist builds JD-driven searches with explainable matching"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -474,7 +777,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Search-level tuning; no per-role learning loop"
+          "note": "Search-level tuning; no per-role learning loop",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Search-level tuning; no per-role learning loop"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Search-level tuning; no per-role learning loop"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -486,7 +803,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Deepest technical/cleared-talent filters reviewed (clearances, patents, GitHub)"
+          "note": "Deepest technical/cleared-talent filters reviewed (clearances, patents, GitHub)",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Deepest technical/cleared-talent filters reviewed (clearances, patents, GitHub)"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Deepest technical/cleared-talent filters reviewed (clearances, patents, GitHub)"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -498,7 +829,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Strong profile enrichment; limited attribute inference"
+          "note": "Strong profile enrichment; limited attribute inference",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Strong profile enrichment; limited attribute inference"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Strong profile enrichment; limited attribute inference"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -510,7 +855,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Assist builds searches from a JD; recruiter runs them"
+          "note": "Assist builds searches from a JD; recruiter runs them",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Assist builds searches from a JD; recruiter runs them"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Assist builds searches from a JD; recruiter runs them"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -522,7 +881,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Assist ranks and explains matches; review is manual"
+          "note": "Assist ranks and explains matches; review is manual",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Assist ranks and explains matches; review is manual"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Assist ranks and explains matches; review is manual"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -534,7 +907,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "AI-drafted outreach; sending is recruiter-driven"
+          "note": "AI-drafted outreach; sending is recruiter-driven",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-drafted outreach; sending is recruiter-driven"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-drafted outreach; sending is recruiter-driven"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -546,7 +933,21 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "No candidate-facing scheduling; ATS handoff"
+          "note": "No candidate-facing scheduling; ATS handoff",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No candidate-facing scheduling; ATS handoff"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No candidate-facing scheduling; ATS handoff"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -558,7 +959,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Email-focused with solid deliverability controls"
+          "note": "Email-focused with solid deliverability controls",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email-focused with solid deliverability controls"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email-focused with solid deliverability controls"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -570,7 +985,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "AI-drafted messages from enriched profiles"
+          "note": "AI-drafted messages from enriched profiles",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-drafted messages from enriched profiles"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-drafted messages from enriched profiles"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -583,7 +1012,21 @@
           "points": 7,
           "max": 10,
           "value": 7.0,
-          "note": "Solid campaigns; fewer testing features than hireEZ/Gem"
+          "note": "Solid campaigns; fewer testing features than hireEZ/Gem",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Solid campaigns; fewer testing features than hireEZ/Gem"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Solid campaigns; fewer testing features than hireEZ/Gem"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -595,7 +1038,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Reply routing to the recruiter with thread context"
+          "note": "Reply routing to the recruiter with thread context",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply routing to the recruiter with thread context"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply routing to the recruiter with thread context"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -607,7 +1064,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Strong email coverage with verification; phone thinner"
+          "note": "Strong email coverage with verification; phone thinner",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Strong email coverage with verification; phone thinner"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Strong email coverage with verification; phone thinner"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -622,7 +1093,21 @@
           "points": 9,
           "max": 14,
           "value": 6.4,
-          "note": "Large aggregated index with the best niche depth reviewed (clearances, patents, healthcare licenses); freshness typical of aggregated data"
+          "note": "Large aggregated index with the best niche depth reviewed (clearances, patents, healthcare licenses); freshness typical of aggregated data",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Large aggregated index with the best niche depth reviewed (clearances, patents, healthcare licenses); freshness typical of aggregated data"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Large aggregated index with the best niche depth reviewed (clearances, patents, healthcare licenses); freshness typical of aggregated data"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -632,7 +1117,21 @@
           "points": 3,
           "max": 4,
           "value": 7.5,
-          "note": "GitHub, papers, and specialty sources beyond the core index"
+          "note": "GitHub, papers, and specialty sources beyond the core index",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "GitHub, papers, and specialty sources beyond the core index"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "GitHub, papers, and specialty sources beyond the core index"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -644,7 +1143,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Major ATS integrations"
+          "note": "Major ATS integrations",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Major ATS integrations"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Major ATS integrations"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -656,7 +1169,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Talent analytics and pipeline insights"
+          "note": "Talent analytics and pipeline insights",
+          "evidence": [
+            {
+              "url": "https://seekout.com/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Talent analytics and pipeline insights"
+            },
+            {
+              "url": "https://support.seekout.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Talent analytics and pipeline insights"
+            }
+          ]
         }
       }
     },
@@ -666,8 +1193,8 @@
       "website": "https://gem.com",
       "review": "https://sourcingtools.org/tools/gem/",
       "sources": [
-        "https://sourcingtools.org/tools/gem/",
-        "https://gem.com"
+        "https://help.gem.com/",
+        "https://www.gem.com/product/ai-sourcing"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -681,7 +1208,21 @@
           "points": 7,
           "max": 10,
           "value": 7.0,
-          "note": "JD-based matching assist inside the CRM"
+          "note": "JD-based matching assist inside the CRM",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "JD-based matching assist inside the CRM"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "JD-based matching assist inside the CRM"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -693,7 +1234,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Sequence/search tuning; no per-role calibration"
+          "note": "Sequence/search tuning; no per-role calibration",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Sequence/search tuning; no per-role calibration"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Sequence/search tuning; no per-role calibration"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -705,7 +1260,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Standard filtering, strong on CRM fields"
+          "note": "Standard filtering, strong on CRM fields",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard filtering, strong on CRM fields"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard filtering, strong on CRM fields"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -717,7 +1286,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "CRM-centric, not inference-led"
+          "note": "CRM-centric, not inference-led",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "CRM-centric, not inference-led"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "CRM-centric, not inference-led"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -729,7 +1312,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "AI sourcing assists; recruiter-driven searches"
+          "note": "AI sourcing assists; recruiter-driven searches",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI sourcing assists; recruiter-driven searches"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI sourcing assists; recruiter-driven searches"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -741,7 +1338,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Ranking assist only"
+          "note": "Ranking assist only",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Ranking assist only"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Ranking assist only"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -753,7 +1364,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Sequences run automatically once launched"
+          "note": "Sequences run automatically once launched",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Sequences run automatically once launched"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Sequences run automatically once launched"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -765,7 +1390,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Scheduling links with calendar booking, not an agent"
+          "note": "Scheduling links with calendar booking, not an agent",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Scheduling links with calendar booking, not an agent"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Scheduling links with calendar booking, not an agent"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -777,7 +1416,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Email + InMail tracking with deliverability controls"
+          "note": "Email + InMail tracking with deliverability controls",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email + InMail tracking with deliverability controls"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email + InMail tracking with deliverability controls"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -789,7 +1442,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Templates with AI assist"
+          "note": "Templates with AI assist",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Templates with AI assist"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Templates with AI assist"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -802,7 +1469,21 @@
           "points": 10,
           "max": 10,
           "value": 10.0,
-          "note": "Category-leading sequences: A/B, send-time optimization, team tracking"
+          "note": "Category-leading sequences: A/B, send-time optimization, team tracking",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Category-leading sequences: A/B, send-time optimization, team tracking"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Category-leading sequences: A/B, send-time optimization, team tracking"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -814,7 +1495,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Reply detection and routing with full thread history"
+          "note": "Reply detection and routing with full thread history",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply detection and routing with full thread history"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply detection and routing with full thread history"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -826,7 +1521,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Strong email finding"
+          "note": "Strong email finding",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Strong email finding"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Strong email finding"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -841,7 +1550,21 @@
           "points": 7,
           "max": 14,
           "value": 5.0,
-          "note": "Own pool is modest — Gem rides on top of LinkedIn-centric sourcing plus the customer's CRM"
+          "note": "Own pool is modest — Gem rides on top of LinkedIn-centric sourcing plus the customer's CRM",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Own pool is modest — Gem rides on top of LinkedIn-centric sourcing plus the customer's CRM"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Own pool is modest — Gem rides on top of LinkedIn-centric sourcing plus the customer's CRM"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -851,7 +1574,21 @@
           "points": 3,
           "max": 4,
           "value": 7.5,
-          "note": "Extension-based capture; strongest CRM rediscovery reviewed"
+          "note": "Extension-based capture; strongest CRM rediscovery reviewed",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Extension-based capture; strongest CRM rediscovery reviewed"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Extension-based capture; strongest CRM rediscovery reviewed"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -863,7 +1600,21 @@
           "points": 8,
           "max": 8,
           "value": 10.0,
-          "note": "Deep bi-directional ATS/CRM sync; Gem is also a CRM"
+          "note": "Deep bi-directional ATS/CRM sync; Gem is also a CRM",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Deep bi-directional ATS/CRM sync; Gem is also a CRM"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Deep bi-directional ATS/CRM sync; Gem is also a CRM"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -875,7 +1626,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Category-leading outbound and funnel analytics"
+          "note": "Category-leading outbound and funnel analytics",
+          "evidence": [
+            {
+              "url": "https://www.gem.com/product/ai-sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Category-leading outbound and funnel analytics"
+            },
+            {
+              "url": "https://help.gem.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Category-leading outbound and funnel analytics"
+            }
+          ]
         }
       }
     },
@@ -885,8 +1650,7 @@
       "website": "https://findem.ai",
       "review": "https://sourcingtools.org/tools/findem/",
       "sources": [
-        "https://sourcingtools.org/tools/findem/",
-        "https://findem.ai"
+        "https://www.findem.ai/platform"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -900,7 +1664,15 @@
           "points": 9,
           "max": 10,
           "value": 9.0,
-          "note": "Attribute inference ('built a data team at a startup') is a real capability gap"
+          "note": "Attribute inference ('built a data team at a startup') is a real capability gap",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Attribute inference ('built a data team at a startup') is a real capability gap"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -912,7 +1684,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Attribute tuning per search"
+          "note": "Attribute tuning per search",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Attribute tuning per search"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -924,7 +1704,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Attribute-level hard requirements"
+          "note": "Attribute-level hard requirements",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Attribute-level hard requirements"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -936,7 +1724,15 @@
           "points": 8,
           "max": 8,
           "value": 10.0,
-          "note": "3D data: person + company + time; strongest trajectory modeling reviewed"
+          "note": "3D data: person + company + time; strongest trajectory modeling reviewed",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "3D data: person + company + time; strongest trajectory modeling reviewed"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -948,7 +1744,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Attribute-based searches run and refresh continuously"
+          "note": "Attribute-based searches run and refresh continuously",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Attribute-based searches run and refresh continuously"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -960,7 +1764,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Attribute matching narrows the full pool; review manual"
+          "note": "Attribute matching narrows the full pool; review manual",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Attribute matching narrows the full pool; review manual"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -972,7 +1784,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Campaigns exist; recruiter-configured"
+          "note": "Campaigns exist; recruiter-configured",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Campaigns exist; recruiter-configured"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -984,7 +1804,15 @@
           "points": 2,
           "max": 8,
           "value": 2.5,
-          "note": "No scheduling automation"
+          "note": "No scheduling automation",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No scheduling automation"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -996,7 +1824,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Email-focused"
+          "note": "Email-focused",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email-focused"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -1008,7 +1844,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Standard AI drafting"
+          "note": "Standard AI drafting",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard AI drafting"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -1021,7 +1865,15 @@
           "points": 5,
           "max": 10,
           "value": 5.0,
-          "note": "Basic campaigns"
+          "note": "Basic campaigns",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Basic campaigns"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -1033,7 +1885,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Reply routing only"
+          "note": "Reply routing only",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply routing only"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -1045,7 +1905,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Adequate; not its focus"
+          "note": "Adequate; not its focus",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Adequate; not its focus"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -1060,7 +1928,15 @@
           "points": 9,
           "max": 14,
           "value": 6.4,
-          "note": "Large enriched index; 3D person+company+time data gives strong identity resolution"
+          "note": "Large enriched index; 3D person+company+time data gives strong identity resolution",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Large enriched index; 3D person+company+time data gives strong identity resolution"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -1070,7 +1946,15 @@
           "points": 3,
           "max": 4,
           "value": 7.5,
-          "note": "Multi-source enrichment with company history data"
+          "note": "Multi-source enrichment with company history data",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Multi-source enrichment with company history data"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -1082,7 +1966,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Enterprise ATS integrations"
+          "note": "Enterprise ATS integrations",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Enterprise ATS integrations"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -1094,7 +1986,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Talent analytics focus"
+          "note": "Talent analytics focus",
+          "evidence": [
+            {
+              "url": "https://www.findem.ai/platform",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Talent analytics focus"
+            }
+          ]
         }
       }
     },
@@ -1104,8 +2004,8 @@
       "website": "https://fetcher.ai",
       "review": "https://sourcingtools.org/tools/fetcher/",
       "sources": [
-        "https://sourcingtools.org/tools/fetcher/",
-        "https://fetcher.ai"
+        "https://fetcher.ai",
+        "https://help.fetcher.ai/"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -1119,7 +2019,21 @@
           "points": 6,
           "max": 10,
           "value": 6.0,
-          "note": "Brief-based matching, curator-checked"
+          "note": "Brief-based matching, curator-checked",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Brief-based matching, curator-checked"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Brief-based matching, curator-checked"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -1131,7 +2045,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Batch approval/rejection tunes future batches"
+          "note": "Batch approval/rejection tunes future batches",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Batch approval/rejection tunes future batches"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Batch approval/rejection tunes future batches"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -1143,7 +2071,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Brief-level requirements"
+          "note": "Brief-level requirements",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Brief-level requirements"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Brief-level requirements"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -1155,7 +2097,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Standard profile matching"
+          "note": "Standard profile matching",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard profile matching"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard profile matching"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -1167,7 +2123,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Recurring AI-sourced candidate batches delivered per role"
+          "note": "Recurring AI-sourced candidate batches delivered per role",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Recurring AI-sourced candidate batches delivered per role"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Recurring AI-sourced candidate batches delivered per role"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -1179,7 +2149,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "AI pre-screen with human curation before delivery"
+          "note": "AI pre-screen with human curation before delivery",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI pre-screen with human curation before delivery"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI pre-screen with human curation before delivery"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -1191,7 +2175,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Automated sequences on approved candidates"
+          "note": "Automated sequences on approved candidates",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated sequences on approved candidates"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated sequences on approved candidates"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -1203,7 +2201,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Interest handoff; no booking agent"
+          "note": "Interest handoff; no booking agent",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Interest handoff; no booking agent"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Interest handoff; no booking agent"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -1215,7 +2227,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Email sequences with deliverability care"
+          "note": "Email sequences with deliverability care",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email sequences with deliverability care"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email sequences with deliverability care"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -1227,7 +2253,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Template + AI assist"
+          "note": "Template + AI assist",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Template + AI assist"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Template + AI assist"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -1240,7 +2280,21 @@
           "points": 6,
           "max": 10,
           "value": 6.0,
-          "note": "Solid automated follow-ups"
+          "note": "Solid automated follow-ups",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Solid automated follow-ups"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Solid automated follow-ups"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -1252,7 +2306,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Interested-reply routing"
+          "note": "Interested-reply routing",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Interested-reply routing"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Interested-reply routing"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -1264,7 +2332,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Verified emails included"
+          "note": "Verified emails included",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Verified emails included"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Verified emails included"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -1279,7 +2361,21 @@
           "points": 6,
           "max": 14,
           "value": 4.3,
-          "note": "Smaller curated pool, adequate for common roles"
+          "note": "Smaller curated pool, adequate for common roles",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Smaller curated pool, adequate for common roles"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Smaller curated pool, adequate for common roles"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -1289,7 +2385,21 @@
           "points": 3,
           "max": 4,
           "value": 7.5,
-          "note": "Web sourcing beyond one network; CRM rediscovery basic"
+          "note": "Web sourcing beyond one network; CRM rediscovery basic",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Web sourcing beyond one network; CRM rediscovery basic"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Web sourcing beyond one network; CRM rediscovery basic"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -1301,7 +2411,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Common ATS integrations"
+          "note": "Common ATS integrations",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Common ATS integrations"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Common ATS integrations"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -1313,7 +2437,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Campaign metrics"
+          "note": "Campaign metrics",
+          "evidence": [
+            {
+              "url": "https://fetcher.ai",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Campaign metrics"
+            },
+            {
+              "url": "https://help.fetcher.ai/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Campaign metrics"
+            }
+          ]
         }
       }
     },
@@ -1323,8 +2461,7 @@
       "website": "https://juicebox.ai",
       "review": "https://sourcingtools.org/tools/juicebox/",
       "sources": [
-        "https://sourcingtools.org/tools/juicebox/",
-        "https://juicebox.ai"
+        "https://juicebox.ai/peoplegpt"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -1338,7 +2475,15 @@
           "points": 8,
           "max": 10,
           "value": 8.0,
-          "note": "NL queries evaluated with cited evidence per candidate"
+          "note": "NL queries evaluated with cited evidence per candidate",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "NL queries evaluated with cited evidence per candidate"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -1350,7 +2495,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Query refinement; no persistent per-role model"
+          "note": "Query refinement; no persistent per-role model",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Query refinement; no persistent per-role model"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -1362,7 +2515,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Filterable, less deep than SeekOut on technical/clearance"
+          "note": "Filterable, less deep than SeekOut on technical/clearance",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Filterable, less deep than SeekOut on technical/clearance"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -1374,7 +2535,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Understands NL requirements; limited trajectory modeling"
+          "note": "Understands NL requirements; limited trajectory modeling",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Understands NL requirements; limited trajectory modeling"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -1386,7 +2555,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Natural-language search is recruiter-initiated per query"
+          "note": "Natural-language search is recruiter-initiated per query",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Natural-language search is recruiter-initiated per query"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -1398,7 +2575,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Cited-evidence matching against the query; manual review"
+          "note": "Cited-evidence matching against the query; manual review",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Cited-evidence matching against the query; manual review"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -1410,7 +2595,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "AI-drafted emails; recruiter sends"
+          "note": "AI-drafted emails; recruiter sends",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-drafted emails; recruiter sends"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -1422,7 +2615,15 @@
           "points": 2,
           "max": 8,
           "value": 2.5,
-          "note": "No scheduling automation"
+          "note": "No scheduling automation",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No scheduling automation"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -1434,7 +2635,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Email outreach with enrichment"
+          "note": "Email outreach with enrichment",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email outreach with enrichment"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -1446,7 +2655,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "AI personalization from profile evidence"
+          "note": "AI personalization from profile evidence",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI personalization from profile evidence"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -1459,7 +2676,15 @@
           "points": 6,
           "max": 10,
           "value": 6.0,
-          "note": "Sequenced campaigns, self-serve"
+          "note": "Sequenced campaigns, self-serve",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Sequenced campaigns, self-serve"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -1471,7 +2696,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Reply routing only"
+          "note": "Reply routing only",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Reply routing only"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -1483,7 +2716,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Built-in enrichment"
+          "note": "Built-in enrichment",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Built-in enrichment"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -1498,7 +2739,15 @@
           "points": 8,
           "max": 14,
           "value": 5.7,
-          "note": "800M-profile web index; aggregated-data freshness"
+          "note": "800M-profile web index; aggregated-data freshness",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "800M-profile web index; aggregated-data freshness"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -1508,7 +2757,15 @@
           "points": 2,
           "max": 4,
           "value": 5.0,
-          "note": "Web-wide aggregation; no ATS rediscovery"
+          "note": "Web-wide aggregation; no ATS rediscovery",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Web-wide aggregation; no ATS rediscovery"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -1520,7 +2777,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Growing list, lighter than incumbents"
+          "note": "Growing list, lighter than incumbents",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Growing list, lighter than incumbents"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -1532,7 +2797,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Campaign-level analytics"
+          "note": "Campaign-level analytics",
+          "evidence": [
+            {
+              "url": "https://juicebox.ai/peoplegpt",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Campaign-level analytics"
+            }
+          ]
         }
       }
     },
@@ -1542,8 +2815,7 @@
       "website": "https://herohunt.ai",
       "review": "https://sourcingtools.org/tools/herohunt/",
       "sources": [
-        "https://sourcingtools.org/tools/herohunt/",
-        "https://herohunt.ai"
+        "https://www.herohunt.ai/uwi"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -1557,7 +2829,15 @@
           "points": 6,
           "max": 10,
           "value": 6.0,
-          "note": "Brief-driven screening, lighter reasoning"
+          "note": "Brief-driven screening, lighter reasoning",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Brief-driven screening, lighter reasoning"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -1569,7 +2849,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Feedback adjusts the search"
+          "note": "Feedback adjusts the search",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Feedback adjusts the search"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -1581,7 +2869,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Standard requirements"
+          "note": "Standard requirements",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard requirements"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -1593,7 +2889,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Keyword/skill-centric"
+          "note": "Keyword/skill-centric",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Keyword/skill-centric"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -1605,7 +2909,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Uwi runs the search loop automatically from a brief"
+          "note": "Uwi runs the search loop automatically from a brief",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Uwi runs the search loop automatically from a brief"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -1617,7 +2929,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Automated screening; precision trails Noon on complex briefs"
+          "note": "Automated screening; precision trails Noon on complex briefs",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated screening; precision trails Noon on complex briefs"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -1629,7 +2949,15 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Automated personalized outreach"
+          "note": "Automated personalized outreach",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated personalized outreach"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -1641,7 +2969,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Interest handoff only"
+          "note": "Interest handoff only",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Interest handoff only"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -1653,7 +2989,15 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Email + LinkedIn"
+          "note": "Email + LinkedIn",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email + LinkedIn"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -1665,7 +3009,15 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Per-candidate AI personalization"
+          "note": "Per-candidate AI personalization",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Per-candidate AI personalization"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -1678,7 +3030,15 @@
           "points": 5,
           "max": 10,
           "value": 5.0,
-          "note": "Basic follow-ups"
+          "note": "Basic follow-ups",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Basic follow-ups"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -1690,7 +3050,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Routing only"
+          "note": "Routing only",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Routing only"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -1702,7 +3070,15 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Included, thinner coverage"
+          "note": "Included, thinner coverage",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Included, thinner coverage"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -1717,7 +3093,15 @@
           "points": 6,
           "max": 14,
           "value": 4.3,
-          "note": "1B-profile web index claim; freshness, dedup, and completeness are visibly uneven"
+          "note": "1B-profile web index claim; freshness, dedup, and completeness are visibly uneven",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "1B-profile web index claim; freshness, dedup, and completeness are visibly uneven"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -1727,7 +3111,15 @@
           "points": 2,
           "max": 4,
           "value": 5.0,
-          "note": "Web-wide aggregation; no ATS rediscovery"
+          "note": "Web-wide aggregation; no ATS rediscovery",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Web-wide aggregation; no ATS rediscovery"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -1739,7 +3131,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Minimal"
+          "note": "Minimal",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Minimal"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -1751,7 +3151,15 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Basic"
+          "note": "Basic",
+          "evidence": [
+            {
+              "url": "https://www.herohunt.ai/uwi",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Basic"
+            }
+          ]
         }
       }
     },
@@ -1761,8 +3169,8 @@
       "website": "https://dover.com",
       "review": "https://sourcingtools.org/tools/dover/",
       "sources": [
-        "https://sourcingtools.org/tools/dover/",
-        "https://dover.com"
+        "https://help.dover.com/",
+        "https://www.dover.com/sourcing"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -1776,7 +3184,21 @@
           "points": 6,
           "max": 10,
           "value": 6.0,
-          "note": "Role presets + criteria"
+          "note": "Role presets + criteria",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Role presets + criteria"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Role presets + criteria"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -1788,7 +3210,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Limited"
+          "note": "Limited",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Limited"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Limited"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -1800,7 +3236,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Standard"
+          "note": "Standard",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -1812,7 +3262,21 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Standard matching"
+          "note": "Standard matching",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard matching"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Standard matching"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -1824,7 +3288,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Automated sourcing for common startup roles inside its free ATS"
+          "note": "Automated sourcing for common startup roles inside its free ATS",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated sourcing for common startup roles inside its free ATS"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated sourcing for common startup roles inside its free ATS"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -1836,7 +3314,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Criteria-based filtering tuned to startup roles"
+          "note": "Criteria-based filtering tuned to startup roles",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Criteria-based filtering tuned to startup roles"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Criteria-based filtering tuned to startup roles"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -1848,7 +3340,21 @@
           "points": 6,
           "max": 8,
           "value": 7.5,
-          "note": "Automated sequences from your domain"
+          "note": "Automated sequences from your domain",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated sequences from your domain"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated sequences from your domain"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -1860,7 +3366,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Scheduling links and coordination help"
+          "note": "Scheduling links and coordination help",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Scheduling links and coordination help"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Scheduling links and coordination help"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -1872,7 +3392,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Email"
+          "note": "Email",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Email"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -1884,7 +3418,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Templated with variables"
+          "note": "Templated with variables",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Templated with variables"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Templated with variables"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -1897,7 +3445,21 @@
           "points": 5,
           "max": 10,
           "value": 5.0,
-          "note": "Automated follow-ups"
+          "note": "Automated follow-ups",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated follow-ups"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Automated follow-ups"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -1909,7 +3471,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Routing"
+          "note": "Routing",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Routing"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Routing"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -1921,7 +3497,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Included"
+          "note": "Included",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Included"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Included"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -1936,7 +3526,21 @@
           "points": 6,
           "max": 14,
           "value": 4.3,
-          "note": "Pool tuned to common startup roles; thin outside them"
+          "note": "Pool tuned to common startup roles; thin outside them",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Pool tuned to common startup roles; thin outside them"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Pool tuned to common startup roles; thin outside them"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -1946,7 +3550,21 @@
           "points": 2,
           "max": 4,
           "value": 5.0,
-          "note": "Limited multi-source reach; rediscovery within its own ATS"
+          "note": "Limited multi-source reach; rediscovery within its own ATS",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Limited multi-source reach; rediscovery within its own ATS"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Limited multi-source reach; rediscovery within its own ATS"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -1958,7 +3576,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Is its own ATS; exports elsewhere"
+          "note": "Is its own ATS; exports elsewhere",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Is its own ATS; exports elsewhere"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Is its own ATS; exports elsewhere"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -1970,7 +3602,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "Funnel basics"
+          "note": "Funnel basics",
+          "evidence": [
+            {
+              "url": "https://www.dover.com/sourcing",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Funnel basics"
+            },
+            {
+              "url": "https://help.dover.com/",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Funnel basics"
+            }
+          ]
         }
       }
     },
@@ -1980,8 +3626,8 @@
       "website": "https://business.linkedin.com/talent-solutions/recruiter",
       "review": "https://sourcingtools.org/tools/linkedin-recruiter/",
       "sources": [
-        "https://sourcingtools.org/tools/linkedin-recruiter/",
-        "https://business.linkedin.com/talent-solutions/recruiter"
+        "https://business.linkedin.com/talent-solutions/recruiter",
+        "https://www.linkedin.com/help/recruiter"
       ],
       "scores": {
         "criteria_evaluation": {
@@ -1995,7 +3641,21 @@
           "points": 6,
           "max": 10,
           "value": 6.0,
-          "note": "Recommended matches per project"
+          "note": "Recommended matches per project",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Recommended matches per project"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Recommended matches per project"
+            }
+          ]
         },
         "feedback_learning": {
           "checks": {
@@ -2007,7 +3667,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "Project-level signals"
+          "note": "Project-level signals",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Project-level signals"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Project-level signals"
+            }
+          ]
         },
         "hard_filters": {
           "checks": {
@@ -2019,7 +3693,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "40+ structured filters on first-party data"
+          "note": "40+ structured filters on first-party data",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "40+ structured filters on first-party data"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "40+ structured filters on first-party data"
+            }
+          ]
         },
         "trajectory_inference": {
           "checks": {
@@ -2031,7 +3719,21 @@
           "points": 5,
           "max": 8,
           "value": 6.3,
-          "note": "First-party employment data gives reliable company context; search itself is keyword-led"
+          "note": "First-party employment data gives reliable company context; search itself is keyword-led",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "First-party employment data gives reliable company context; search itself is keyword-led"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "First-party employment data gives reliable company context; search itself is keyword-led"
+            }
+          ]
         },
         "autonomous_search": {
           "checks": {
@@ -2043,7 +3745,21 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "AI-assisted search inside a recruiter-driven workflow"
+          "note": "AI-assisted search inside a recruiter-driven workflow",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-assisted search inside a recruiter-driven workflow"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-assisted search inside a recruiter-driven workflow"
+            }
+          ]
         },
         "autonomous_screening": {
           "checks": {
@@ -2055,7 +3771,21 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "Spotlights and match signals only"
+          "note": "Spotlights and match signals only",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Spotlights and match signals only"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Spotlights and match signals only"
+            }
+          ]
         },
         "autonomous_outreach": {
           "checks": {
@@ -2067,7 +3797,21 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "AI-assisted InMail drafting; manual sends"
+          "note": "AI-assisted InMail drafting; manual sends",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-assisted InMail drafting; manual sends"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-assisted InMail drafting; manual sends"
+            }
+          ]
         },
         "scheduling_automation": {
           "checks": {
@@ -2079,7 +3823,21 @@
           "points": 2,
           "max": 8,
           "value": 2.5,
-          "note": "No scheduling automation"
+          "note": "No scheduling automation",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No scheduling automation"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No scheduling automation"
+            }
+          ]
         },
         "channels": {
           "checks": {
@@ -2091,7 +3849,21 @@
           "points": 3,
           "max": 8,
           "value": 3.8,
-          "note": "InMail only; no email/SMS"
+          "note": "InMail only; no email/SMS",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "InMail only; no email/SMS"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "InMail only; no email/SMS"
+            }
+          ]
         },
         "personalization": {
           "checks": {
@@ -2103,7 +3875,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "AI-assisted drafts, template-heavy in practice"
+          "note": "AI-assisted drafts, template-heavy in practice",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-assisted drafts, template-heavy in practice"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "AI-assisted drafts, template-heavy in practice"
+            }
+          ]
         },
         "sequencing": {
           "checks": {
@@ -2116,7 +3902,21 @@
           "points": 4,
           "max": 10,
           "value": 4.0,
-          "note": "InMail follow-ups"
+          "note": "InMail follow-ups",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "InMail follow-ups"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "InMail follow-ups"
+            }
+          ]
         },
         "reply_handling": {
           "checks": {
@@ -2128,7 +3928,21 @@
           "points": 2,
           "max": 8,
           "value": 2.5,
-          "note": "Manual"
+          "note": "Manual",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Manual"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Manual"
+            }
+          ]
         },
         "contact_finding": {
           "checks": {
@@ -2140,7 +3954,21 @@
           "points": 2,
           "max": 8,
           "value": 2.5,
-          "note": "No emails/phones without third-party tools"
+          "note": "No emails/phones without third-party tools",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No emails/phones without third-party tools"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "No emails/phones without third-party tools"
+            }
+          ]
         },
         "pool_quality": {
           "checks": {
@@ -2155,7 +3983,21 @@
           "points": 13,
           "max": 14,
           "value": 9.3,
-          "note": "The category's reference pool: 1B+ member-maintained profiles, unmatched freshness, explicit open-to-work signals, global reach, and one canonical profile per person"
+          "note": "The category's reference pool: 1B+ member-maintained profiles, unmatched freshness, explicit open-to-work signals, global reach, and one canonical profile per person",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "The category's reference pool: 1B+ member-maintained profiles, unmatched freshness, explicit open-to-work signals, global reach, and one canonical profile per person"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "The category's reference pool: 1B+ member-maintained profiles, unmatched freshness, explicit open-to-work signals, global reach, and one canonical profile per person"
+            }
+          ]
         },
         "discovery_reach": {
           "checks": {
@@ -2165,7 +4007,21 @@
           "points": 1,
           "max": 4,
           "value": 2.5,
-          "note": "Walled garden — nothing beyond the network; partial rediscovery via ATS connectors"
+          "note": "Walled garden — nothing beyond the network; partial rediscovery via ATS connectors",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Walled garden — nothing beyond the network; partial rediscovery via ATS connectors"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Walled garden — nothing beyond the network; partial rediscovery via ATS connectors"
+            }
+          ]
         },
         "ats_integrations": {
           "checks": {
@@ -2177,7 +4033,21 @@
           "points": 4,
           "max": 8,
           "value": 5.0,
-          "note": "ATS connectors via partners"
+          "note": "ATS connectors via partners",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "ATS connectors via partners"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "ATS connectors via partners"
+            }
+          ]
         },
         "analytics": {
           "checks": {
@@ -2189,7 +4059,21 @@
           "points": 7,
           "max": 8,
           "value": 8.8,
-          "note": "Talent insights and pipeline reporting"
+          "note": "Talent insights and pipeline reporting",
+          "evidence": [
+            {
+              "url": "https://business.linkedin.com/talent-solutions/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Talent insights and pipeline reporting"
+            },
+            {
+              "url": "https://www.linkedin.com/help/recruiter",
+              "source_type": "product_docs",
+              "accessed": "2026-08-26",
+              "claim": "Talent insights and pipeline reporting"
+            }
+          ]
         }
       }
     }

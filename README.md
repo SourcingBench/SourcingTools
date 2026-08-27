@@ -36,7 +36,7 @@ data/
   cycles/
     <cycle>/                # one directory per published cycle
       criteria.json         # the rubric: dimensions, weights, criterion definitions
-      capabilities.json     # every tool's 0/1/2 score per capability check, with evidence notes
+      capabilities.json     # every tool's 0/1/2 score per capability check, with structured evidence citations
       scoring.mjs           # the frozen scoring aggregator for this cycle
       leaderboard.json      # composite + per-dimension scores, ranked
       cycle.json            # SHA-256 manifest of the files above
@@ -44,10 +44,13 @@ data/
     <slug>.json             # per-tool score history across all cycles
   replies/                  # vendor right-of-reply rebuttals, published verbatim
   disclosures.json          # per-vendor referral relationship disclosure
-rubrics/                    # pre-registered rubrics for upcoming cycles
+rubrics/                    # pre-registered rubrics + scoring code for upcoming cycles
 scripts/
   verify-cycle.mjs          # the audit script (see below)
-PREREGISTRATION.md          # pre-registration policy and rubric hashes
+  check-links.mjs           # CI link checker for every evidence URL
+PREREGISTRATION.md          # pre-registration policy: rubric + scoring hashes
+GOVERNANCE.md               # scorer separation, blind scoring, conflicts, commercial model
+CORRECTIONS.md              # public corrections log
 CHANGES.md                  # cycle-to-cycle methodology changelog
 ```
 
@@ -67,13 +70,14 @@ A successful verification looks like:
 verify-cycle OK
 ```
 
-The script runs three checks for each cycle:
+The script runs four checks for each cycle:
 
 1. **Manifest integrity.** Recomputes the SHA-256 of every file named in `cycle.json` and asserts it matches. Catches truncated, corrupted, or doctored publishes.
-2. **Rubric coverage.** Every tool has an in-range 0/1/2 value for every published capability check and an evidence note for every criterion, and the dimension weights sum to 1.
-3. **Score replay.** Re-runs the cycle's frozen `scoring.mjs` against `capabilities.json` and asserts every composite, dimension score, and rank matches the published `leaderboard.json` exactly.
+2. **Rubric coverage.** Every tool has an in-range 0/1/2 value for every published capability check, and the dimension weights sum to 1.
+3. **Evidence integrity.** Every criterion carries at least one structured evidence citation — a source URL, a source type from a fixed quality enum (`hands_on > api_docs > product_docs > changelog > vendor_claim > third_party_review > inference`), an access date no later than the cycle's assessment date, and the claim relied on. Publisher-owned pages (sourcingtools.org, this site) are **banned as evidence** — the publisher's own opinion can't be the evidence for the publisher's own score — and a criterion whose best source is `vendor_claim` or `inference` cannot award any check a 2. Evidence rules are machine-enforced, not editorial promises.
+4. **Score replay.** Re-runs the cycle's frozen `scoring.mjs` against `capabilities.json` and asserts every composite, dimension score, and rank matches the published `leaderboard.json` exactly.
 
-The verifier is wired into CI: every push runs `npm run verify` and fails the build if any published cycle no longer replays.
+The verifier is wired into CI: every push runs `npm run verify` and fails the build if any published cycle no longer replays. A second CI job (`npm run check-links`) fetches every evidence URL and fails on dead links.
 
 ## What verification does — and does not — prove
 
@@ -81,7 +85,11 @@ The verifier proves the **publication is internally honest**: the files haven't 
 
 ## Pre-registered rubrics
 
-From September 2026 onward, each cycle's rubric is committed and hashed in [`rubrics/`](rubrics/) **before** assessment begins, so the measurement is fixed before anyone knows who wins under it — see [PREREGISTRATION.md](PREREGISTRATION.md) for the policy and the registered hashes. Earlier rubric drafts (v1, v2.0) were revised before public release, which pre-registration exists to prevent; the August 2026 cycle predates the policy and its revisions are disclosed in [CHANGES.md](CHANGES.md).
+From September 2026 onward, each cycle's rubric **and its frozen scoring code** are committed and hashed in [`rubrics/`](rubrics/) **before** assessment begins, so the measurement is fixed before anyone knows who wins under it — see [PREREGISTRATION.md](PREREGISTRATION.md) for the policy and the registered hashes. Earlier rubric drafts (v1, v2.0) were revised before public release, which pre-registration exists to prevent; the August 2026 cycle predates the policy and its revisions are disclosed in [CHANGES.md](CHANGES.md).
+
+## Governance
+
+The rubric author does not assign check values; from September 2026 an independent second scorer re-scores a published sample from the same evidence packets, with disagreements published rather than reconciled, and scoring is done blind (vendor names stripped) where feasible. Named contributors must publish conflict-of-interest statements; until the project has named maintainers, that absence is a disclosed limitation, not a claim of neutrality. Vendor referral fees must be flat and may never vary with rank, score, or movement — no pay-to-play, no rank-contingent payments. Full policy: [GOVERNANCE.md](GOVERNANCE.md). Substantive factual errors are logged publicly in [CORRECTIONS.md](CORRECTIONS.md) — what was wrong, who caught it, what changed.
 
 ## Vendor right of reply
 
@@ -97,11 +105,15 @@ SourcingBench publishes monthly. This is a young benchmark — the history start
 
 ## Methodology in one paragraph
 
-Each cycle, every tool is assessed against the same 71 published capability checks, grouped into 17 criteria across five dimensions weighted by what an AI recruiting tool should do (matching & screening 25%, workflow automation 20%, outreach & engagement 20%, coverage & data 20%, integrations & reporting 15%). Each check is scored 0 (absent), 1 (partial or assisted), or 2 (fully supported) from vendor documentation, product walkthroughs, and the tool reviews maintained at SourcingTools.org; every check value and each criterion's evidence note are published in `capabilities.json`, so the basis for every number is inspectable. This is a capability rubric, not a blind task benchmark: the check values are editorial judgments about what each tool demonstrably does, and the published code verifies the arithmetic and data integrity, not the judgments themselves. The full methodology is on the [benchmark page](https://sourcingtools.org/benchmark/).
+Each cycle, every tool is assessed against the same 71 published capability checks, grouped into 17 criteria across five dimensions weighted by what an AI recruiting tool should do (matching & screening 25%, workflow automation 20%, outreach & engagement 20%, coverage & data 20%, integrations & reporting 15%). Each check is scored 0 (absent), 1 (partial or assisted), or 2 (fully supported) from vendor documentation and product walkthroughs; every check value and each criterion's structured evidence citation (source URL, source type, access date, claim) are published in `capabilities.json` and machine-verified, so the basis for every number is inspectable and link-checked. This is a capability rubric, not a blind task benchmark: the check values are editorial judgments about what each tool demonstrably does, and the published code verifies the arithmetic and data integrity, not the judgments themselves. The full methodology is on the [benchmark page](https://sourcingtools.org/benchmark/).
 
 ## Corrections and disputes
 
-Vendors and users: if a score misrepresents a shipped capability, open an issue in this repo citing the documentation for the capability, or use the contact path at [sourcingtools.org/contact](https://sourcingtools.org/contact/). Corrections are applied in the next cycle and noted in `CHANGES.md`.
+Vendors and users: if a score misrepresents a shipped capability, open an issue in this repo citing the documentation for the capability, or use the contact path at [sourcingtools.org/contact](https://sourcingtools.org/contact/). Corrections are applied in the next cycle, credited in [CORRECTIONS.md](CORRECTIONS.md), and noted in `CHANGES.md`.
+
+## How to evaluate a benchmark — including this one
+
+For any score in any leaderboard, ask what would have to be true for it to be wrong and whether you could find out; then check for dated citations, named authors, more than one cycle, and whether the money moves with the rank. The standing checklist — applied to SourcingBench itself, including the checks it currently fails — is at [sourcingbench.github.io/SourcingTools/how-to-evaluate-a-benchmark](https://sourcingbench.github.io/SourcingTools/how-to-evaluate-a-benchmark/).
 
 ## License
 

@@ -8,7 +8,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "verify": "node scripts/verify-cycle.mjs --all"
+    "verify": "node scripts/verify-cycle.mjs --all",
+    "check-links": "node scripts/check-links.mjs"
   },
   "repository": {
     "type": "git",

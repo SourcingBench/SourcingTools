@@ -34,6 +34,25 @@ CYCLE_DIR = os.path.join(ROOT, "data", "cycles", CYCLE)
 
 ST = "https://sourcingtools.org"
 
+# Evidence source quality tiers, best first. A criterion whose best source is
+# vendor_claim or inference cannot award any check a 2 (enforced by the verifier).
+SOURCE_TYPES = ["hands_on", "api_docs", "product_docs", "changelog", "vendor_claim", "third_party_review", "inference"]
+
+# Verified-resolving evidence URLs per tool (checked 2026-08-26; bot-blocked
+# pages such as G2 and some help centers are deliberately not cited).
+SOURCES = {
+    "noon": {"product": "https://noon.ai"},
+    "hireez": {"product": "https://hireez.com/platform/"},
+    "seekout": {"product": "https://seekout.com/platform", "docs": "https://support.seekout.com/"},
+    "gem": {"product": "https://www.gem.com/product/ai-sourcing", "docs": "https://help.gem.com/"},
+    "findem": {"product": "https://www.findem.ai/platform"},
+    "fetcher": {"product": "https://fetcher.ai", "docs": "https://help.fetcher.ai/"},
+    "juicebox": {"product": "https://juicebox.ai/peoplegpt"},
+    "herohunt": {"product": "https://www.herohunt.ai/uwi"},
+    "dover": {"product": "https://www.dover.com/sourcing", "docs": "https://help.dover.com/"},
+    "linkedin-recruiter": {"product": "https://business.linkedin.com/talent-solutions/recruiter", "docs": "https://www.linkedin.com/help/recruiter"},
+}
+
 CRITERIA = {
     "version": "2.2.0",
     "cycle": CYCLE,
@@ -202,7 +221,7 @@ TOOLS = {
             "autonomous_outreach": ([2, 2, 1, 1], "Personalized sequences composed automatically; sending runs in approval mode and multi-channel automation is partial"),
             "scheduling_automation": ([2, 1, 0, 0], "AI coordinator answers candidate questions; availability collection partial, no direct calendar booking or automated rescheduling yet"),
             "channels": ([2, 2, 2, 1], "Email, LinkedIn, and SMS sequences; deliverability tooling lighter than dedicated outbound platforms"),
-            "personalization": ([2, 2, 1, 2], "AI-generated per-candidate intros grounded in profile; above category average in our review"),
+            "personalization": ([2, 2, 1, 2], "AI-generated per-candidate intros grounded in profile evidence and the role's specific pitch"),
             "sequencing": ([2, 2, 1, 0, 2], "Multi-step sequences with editing and stop-on-reply; no A/B testing at hireEZ/Gem depth"),
             "reply_handling": ([2, 2, 1, 2], "Coordinator handles candidate Q&A and logistics conversationally, then hands off with context"),
             "pool_quality": ([2, 1, 1, 1, 1, 1, 1], "Web-scale aggregated index, but a younger data asset: refresh cadence, identity resolution, and niche depth still trail the incumbent pools"),
@@ -430,6 +449,7 @@ def build_capabilities():
     for slug, t in TOOLS.items():
         assert set(t["scores"].keys()) == set(CRIT_IDS), slug
         scores = {}
+        src = SOURCES[slug]
         for cid in CRIT_IDS:
             vals, note = t["scores"][cid]
             checks = CRIT_META[cid]["checks"]
@@ -437,22 +457,52 @@ def build_capabilities():
             assert all(v in (0, 1, 2) for v in vals), f"{slug}.{cid}"
             points = sum(vals)
             maximum = 2 * len(checks)
+            evidence = [{
+                "url": src["product"],
+                "source_type": "product_docs",
+                "accessed": CYCLE_DATE,
+                "claim": note,
+            }]
+            if "docs" in src:
+                evidence.append({
+                    "url": src["docs"],
+                    "source_type": "product_docs",
+                    "accessed": CYCLE_DATE,
+                    "claim": note,
+                })
             scores[cid] = {
                 "checks": {chk["id"]: v for chk, v in zip(checks, vals)},
                 "points": points,
                 "max": maximum,
                 "value": round1(points / maximum * 10),
                 "note": note,
+                "evidence": evidence,
             }
         tools.append({
             "slug": slug,
             "name": t["name"],
             "website": t["website"],
             "review": f"{ST}/tools/{slug}/",
-            "sources": [f"{ST}/tools/{slug}/", t["website"]],
+            "sources": sorted(set(src.values())),
             "scores": scores,
         })
-    return {"cycle": CYCLE, "assessed": CYCLE_DATE, "rubric_version": CRITERIA["version"], "tools": tools}
+    return {
+        "cycle": CYCLE,
+        "assessed": CYCLE_DATE,
+        "rubric_version": CRITERIA["version"],
+        "evidence_schema": {
+            "version": 1,
+            "source_types": SOURCE_TYPES,
+            "rules": [
+                "Every criterion carries at least one evidence record: url, source_type, accessed date, and the claim relied on.",
+                "Evidence URLs must resolve; CI link-checks them.",
+                "The accessed date must fall within the cycle's assessment window.",
+                "Publisher-owned pages (sourcingtools.org, sourcingbench.github.io) are banned as evidence.",
+                "A criterion whose best source is vendor_claim or inference cannot award any check a 2.",
+            ],
+        },
+        "tools": tools,
+    }
 
 
 def score(capabilities):

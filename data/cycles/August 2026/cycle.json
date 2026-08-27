@@ -3,7 +3,7 @@
   "published": "2026-08-26",
   "files": {
     "criteria.json": "69668b50e0a2ca07b3f7d103ae08815b5ad56c23483b9e55ebfecf4aaa7d0ef9",
-    "capabilities.json": "7ea45e575766f458b140b08a1df2ef55cd1cefb7be8d036f15f69fce58718de6",
+    "capabilities.json": "6c596ab075e80d272814f583f4b38094510cd461c9c0bfb5822303b15045dda1",
     "scoring.mjs": "74994d2a905d421a3d0d7ef8cf16d02a678bc403deb1354c0399b70f37d5e170",
     "leaderboard.json": "d5905aeff4dd64eb944549962d404aa60ae06c15727bda3294b20b6e677d2049"
   }

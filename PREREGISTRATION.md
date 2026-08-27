@@ -11,12 +11,14 @@ the measurement before anyone knows who wins under it.
 ## How it works
 
 1. Before a cycle's assessment begins, the exact rubric — every dimension,
-   weight, criterion, and capability check — is committed to `rubrics/`
-   and its SHA-256 recorded here. The git commit provides a public
-   timestamp; GitHub's commit history makes it independently checkable.
+   weight, criterion, and capability check — **and** the frozen scoring
+   code (`scoring.mjs`) are committed to `rubrics/` and their SHA-256
+   hashes recorded here. The git commit provides a public timestamp;
+   GitHub's commit history makes it independently checkable.
 2. Assessment for that cycle is scored **only** against the pre-registered
-   rubric. The published cycle's `criteria.json` must be byte-identical to
-   the pre-registered file (verifiable by hash).
+   rubric and scorer. The published cycle's `criteria.json` and
+   `scoring.mjs` must be byte-identical to the pre-registered files
+   (verifiable by hash).
 3. Rubric changes are allowed only **between** cycles, must be
    pre-registered for the next cycle before it is scored, and must be
    explained in [CHANGES.md](CHANGES.md).
@@ -26,6 +28,7 @@ the measurement before anyone knows who wins under it.
 | Cycle | File | SHA-256 | Registered |
 |-------|------|---------|------------|
 | September 2026 | [`rubrics/september-2026-criteria.json`](rubrics/september-2026-criteria.json) | `f1b96c1172a5eed8c4b07027de7efa2e7780e1b6255fa835eb61d740e8b9edfb` | 2026-08-26 |
+| September 2026 | [`rubrics/september-2026-scoring.mjs`](rubrics/september-2026-scoring.mjs) | `74994d2a905d421a3d0d7ef8cf16d02a678bc403deb1354c0399b70f37d5e170` | 2026-08-26 |
 
 The August 2026 cycle (rubric v2.1.0 → corrected to v2.2.0) predates this
 policy and was **not** pre-registered; its revisions are disclosed in

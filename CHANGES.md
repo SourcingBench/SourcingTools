@@ -4,6 +4,48 @@ Each entry records methodology, rubric, or scoring changes between cycles.
 
 ---
 
+## Evidence layer and governance II (2026-08-26)
+
+No score changes; every composite, dimension score, and rank is identical.
+The evidence and process layer was hardened:
+
+- **Structured evidence citations**: every criterion score in
+  `capabilities.json` now carries structured evidence records — source URL,
+  source type from a fixed quality enum (`hands_on > api_docs >
+  product_docs > changelog > vendor_claim > third_party_review >
+  inference`), access date, and the claim relied on — replacing
+  prose-only notes. Only URLs verified to resolve are cited; bot-blocked
+  pages (e.g. G2) are deliberately not cited.
+- **Verifier enforcement** (`scripts/verify-cycle.mjs`): evidence is now
+  machine-checked — URL validity, enum membership, date format, access
+  date within the cycle window, a ban on publisher-owned pages
+  (sourcingtools.org, sourcingbench.github.io) as evidence, and a cap:
+  a criterion whose best source is `vendor_claim` or `inference` cannot
+  award any check a 2.
+- **Self-referential evidence removed**: one Noon note read "above
+  category average in our review" — the publisher's own opinion page as
+  evidence for the publisher's own score. Rewritten to describe documented
+  product behavior; the ban above makes recurrence a CI failure. Logged in
+  [CORRECTIONS.md](CORRECTIONS.md).
+- **CI link checking** (`scripts/check-links.mjs`, `npm run check-links`):
+  a CI job fetches every evidence URL and fails on dead links.
+- **Scoring code pre-registered**: `rubrics/september-2026-scoring.mjs` is
+  now hashed in [PREREGISTRATION.md](PREREGISTRATION.md) alongside the
+  rubric, so the aggregation code is also fixed before scoring.
+- **Governance policy** ([GOVERNANCE.md](GOVERNANCE.md)): separation of
+  rubric author and scorer, independent second scorer with published
+  disagreements, blind scoring where feasible, conflict-of-interest
+  statement requirements for named contributors, and flat non-rank-based
+  referral fees — no pay-to-play, no rank-contingent payments.
+- **Public corrections log** ([CORRECTIONS.md](CORRECTIONS.md)): what was
+  wrong, who caught it, what changed — seeded with the two errors caught
+  by external review to date.
+- **"How to evaluate a benchmark" page** on the site: the standing
+  checklist (falsifiability, dated citations, named authors, multiple
+  cycles, whether the money moves with the rank) applied to SourcingBench
+  itself, including the checks it currently fails (no named maintainers
+  yet, single-cycle history).
+
 ## Governance additions (2026-08-26)
 
 No score changes. In response to public criticism that the project audits

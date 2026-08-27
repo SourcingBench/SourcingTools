@@ -7,6 +7,11 @@
 //   2. Rubric coverage — every tool has an in-range 0/1/2 value for every
 //      capability check and an evidence note for every criterion in the
 //      published rubric; the rubric weights sum to 1.
+//   2b. Evidence integrity — every criterion carries at least one structured
+//      evidence record (url, source_type from the fixed enum, accessed date
+//      inside the cycle window, and the claim relied on); publisher-owned
+//      pages are banned as evidence; a criterion whose best source is
+//      vendor_claim or inference cannot award any check a 2.
 //   3. Score replay — re-run the cycle's frozen scoring.mjs against
 //      capabilities.json and assert every composite, dimension score, and
 //      rank matches the published leaderboard.json exactly.
@@ -26,6 +31,40 @@ const REQUIRED = ['criteria.json', 'capabilities.json', 'scoring.mjs', 'leaderbo
 
 const sha256 = (p) => createHash('sha256').update(readFileSync(p)).digest('hex');
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
+
+const SOURCE_TYPES = ['hands_on', 'api_docs', 'product_docs', 'changelog', 'vendor_claim', 'third_party_review', 'inference'];
+const WEAK_SOURCES = ['vendor_claim', 'inference']; // cannot support a check value of 2
+const SELF_HOSTS = ['sourcingtools.org', 'sourcingbench.github.io', 'github.com/sourcingbench'];
+
+function checkEvidence(cycle, tool, critId, s, checkVals, errors) {
+  const ev = s.evidence;
+  if (!Array.isArray(ev) || ev.length === 0) {
+    errors.push(`${cycle}: ${tool}.${critId} has no structured evidence records`);
+    return;
+  }
+  let best = SOURCE_TYPES.length;
+  for (const [i, e] of ev.entries()) {
+    const where = `${tool}.${critId}.evidence[${i}]`;
+    let url;
+    try {
+      url = new URL(e.url);
+      if (!['http:', 'https:'].includes(url.protocol)) throw new Error('non-http');
+    } catch {
+      errors.push(`${cycle}: ${where} has invalid url: ${e.url}`);
+    }
+    if (url && SELF_HOSTS.some((h) => `${url.hostname}${url.pathname}`.toLowerCase().includes(h)))
+      errors.push(`${cycle}: ${where} cites a publisher-owned page as evidence: ${e.url}`);
+    const tier = SOURCE_TYPES.indexOf(e.source_type);
+    if (tier === -1) errors.push(`${cycle}: ${where} source_type not in enum: ${e.source_type}`);
+    else best = Math.min(best, tier);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(e.accessed ?? '') || Number.isNaN(Date.parse(e.accessed)))
+      errors.push(`${cycle}: ${where} has invalid accessed date: ${e.accessed}`);
+    if (!e.claim || typeof e.claim !== 'string')
+      errors.push(`${cycle}: ${where} has no claim`);
+  }
+  if (best < SOURCE_TYPES.length && WEAK_SOURCES.includes(SOURCE_TYPES[best]) && checkVals.some((v) => v === 2))
+    errors.push(`${cycle}: ${tool}.${critId} awards a 2 but its best source is ${SOURCE_TYPES[best]} (capped at 1)`);
+}
 
 async function verifyCycle(cycle) {
   const errors = [];
@@ -74,6 +113,11 @@ async function verifyCycle(cycle) {
         errors.push(`${cycle}: ${t.slug}.${c.id} value out of range: ${s.value}`);
       if (!s.note || typeof s.note !== 'string')
         errors.push(`${cycle}: ${t.slug}.${c.id} has no evidence note`);
+      checkEvidence(cycle, t.slug, c.id, s, checkIds.map((k) => s.checks?.[k]), errors);
+      for (const e of s.evidence ?? []) {
+        if (e.accessed && capabilities.assessed && e.accessed > capabilities.assessed)
+          errors.push(`${cycle}: ${t.slug}.${c.id} evidence accessed ${e.accessed} after cycle assessment date ${capabilities.assessed}`);
+      }
     }
     for (const id of Object.keys(t.scores)) {
       if (!critIds.includes(id)) errors.push(`${cycle}: ${t.slug} scores unknown criterion ${id}`);
