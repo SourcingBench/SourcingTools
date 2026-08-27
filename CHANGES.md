@@ -4,6 +4,30 @@ Each entry records methodology, rubric, or scoring changes between cycles.
 
 ---
 
+## Governance additions (2026-08-26)
+
+No score changes. In response to public criticism that the project audits
+only its own arithmetic, four governance mechanisms were added:
+
+- **Pre-registration** ([PREREGISTRATION.md](PREREGISTRATION.md)): from
+  September 2026, each cycle's rubric is committed and SHA-256-hashed
+  before assessment begins. The September 2026 rubric (identical to
+  v2.2.0) is registered in `rubrics/`. The August 2026 cycle and the
+  privately revised v1/v2.0 drafts predate this policy.
+- **Vendor right of reply** (`data/replies/`): pre-publication scorecards
+  to every vendor, rebuttals published verbatim, no veto. Applies from
+  September 2026.
+- **Per-vendor referral disclosure** (`data/disclosures.json`): whether
+  each vendor pays the publisher referral fees is now a visible column in
+  the leaderboard table, not just a footer sentence. Kept outside the
+  hashed cycle files because it is disclosure metadata, not a scoring
+  input.
+- **Hands-on protocol pre-registered** ([HANDS-ON.md](HANDS-ON.md)): the
+  task-based testing design (real specs, preserved candidate lists, blind
+  judging, precision@25, time to first qualified shortlist, outreach
+  response rate, raw runs published) is committed now, before any hands-on
+  cycle exists. No hands-on claims are made until raw runs are published.
+
 ## August 2026 — revision 2.2.0 (2026-08-26)
 
 Correction to the coverage dimension, in response to public feedback that

@@ -1,0 +1,16 @@
+{
+  "description": "Per-vendor commercial disclosure: whether SourcingTools.org, the publisher of SourcingBench, has a referral relationship with the vendor (i.e. may earn a fee when a reader requests a demo through SourcingTools.org). Published so readers can see the correlation between referral relationships and rankings for themselves. Referral status is disclosure metadata, not a scoring input, and is kept outside the hashed cycle files so cycle data stays immutable.",
+  "updated": "2026-08-26",
+  "vendors": {
+    "noon": { "referral": true },
+    "hireez": { "referral": true },
+    "seekout": { "referral": false },
+    "gem": { "referral": false },
+    "findem": { "referral": false },
+    "fetcher": { "referral": true },
+    "juicebox": { "referral": true },
+    "dover": { "referral": true },
+    "herohunt": { "referral": true },
+    "linkedin-recruiter": { "referral": false }
+  }
+}

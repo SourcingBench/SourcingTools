@@ -17,6 +17,7 @@ const DATA_URL = `${REPO_URL}/blob/main/data/cycles/${encodeURIComponent(cycleNa
 const cycleDir = join(CYCLES_DIR, cycleName);
 const criteria = JSON.parse(readFileSync(join(cycleDir, 'criteria.json'), 'utf8'));
 const board = JSON.parse(readFileSync(join(cycleDir, 'leaderboard.json'), 'utf8'));
+const disclosures = JSON.parse(readFileSync(join(ROOT, 'data', 'disclosures.json'), 'utf8'));
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const pct = (w) => `${Math.round(w * 100)}%`;
@@ -91,6 +92,14 @@ const faq = {
         text: `Yes. Clone ${REPO_URL} and run \`npm run verify\` to check the published files against their SHA-256 manifest and replay every published score from the raw check values. That verifies the data integrity and arithmetic; the capability judgments themselves are editorial, published with evidence notes. Cycle data is licensed CC BY 4.0 — reuse it with attribution to SourcingBench by SourcingTools.org.`,
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Does SourcingBench test the tools hands-on?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Not yet. SourcingBench is a capability rubric, not a blind task benchmark: no cycle to date includes hands-on runs, and the leaderboard says so. A pre-registered hands-on protocol — real job specs run through every tool, preserved candidate lists, blind relevance judging, and published raw runs — is committed at ${REPO_URL}/blob/main/HANDS-ON.md and will be reported as a separate observed-performance layer if and when it is funded and run. Rubrics are pre-registered before each cycle, vendors get pre-publication right of reply without a veto, and per-vendor referral relationships are disclosed in the leaderboard table itself.`,
+      },
+    },
   ],
 };
 
@@ -116,6 +125,7 @@ const rows = board.rankings
           <td>${t.dimensions.engagement}</td>
           <td>${t.dimensions.coverage}</td>
           <td>${t.dimensions.workflow}</td>
+          <td>${disclosures.vendors[t.slug].referral ? '<b>Yes</b>' : 'No'}</td>
         </tr>`
   )
   .join('\n');
@@ -173,12 +183,13 @@ const html = `<!doctype html>
 
   <table>
     <thead>
-      <tr><th>#</th><th>Tool</th><th>Score / 100</th><th>Matching</th><th>Automation</th><th>Engagement</th><th>Coverage</th><th>Integrations</th></tr>
+      <tr><th>#</th><th>Tool</th><th>Score / 100</th><th>Matching</th><th>Automation</th><th>Engagement</th><th>Coverage</th><th>Integrations</th><th>Pays us referral fees?</th></tr>
     </thead>
     <tbody>
 ${rows}
     </tbody>
   </table>
+  <p class="meta">The last column discloses, per vendor, whether the publisher may earn a referral fee on demo requests (<a href="${REPO_URL}/blob/main/data/disclosures.json" rel="noopener">disclosures.json</a>) — published in the table so readers can see the correlation with rankings for themselves. Referral status is not a scoring input.</p>
 
   <h2>What the dimensions measure</h2>
   <ul>
@@ -192,6 +203,12 @@ ${dims}
 cd SourcingTools
 npm run verify</code></pre>
   <p>The verifier — also run in the repository's CI on every push — checks the manifest hashes, validates rubric coverage, and replays the frozen scoring code against the raw check values, failing if any published number no longer reproduces. It verifies the data integrity and the arithmetic; the capability judgments themselves are editorial, which is why each one is published with its evidence note for inspection.</p>
+
+  <h2>Governance: pre-registration, right of reply, and what's still missing</h2>
+  <p><b>Pre-registered rubrics.</b> From September 2026 onward, each cycle's rubric is committed and SHA-256-hashed in the repository <em>before</em> assessment begins (<a href="${REPO_URL}/blob/main/PREREGISTRATION.md" rel="noopener">PREREGISTRATION.md</a>), so the measurement is fixed before anyone knows who wins under it. Earlier drafts (v1, v2.0) were revised pre-publication; the August 2026 cycle predates the policy and its revisions are disclosed in the <a href="${REPO_URL}/blob/main/CHANGES.md" rel="noopener">changelog</a>.</p>
+  <p><b>Vendor right of reply.</b> From September 2026, every vendor receives its full scorecard before publication with a reply window; rebuttals are published verbatim in <a href="${REPO_URL}/tree/main/data/replies" rel="noopener">data/replies/</a> alongside the scores they dispute. Vendors do not get a veto — right of reply is a correction mechanism, not pre-approval.</p>
+  <p><b>Hands-on testing.</b> SourcingBench does not yet run the tools against real job specs; the leaderboard is a capability rubric, and it says so. The pre-registered protocol for a future observed-performance layer — ten real specs through all ten tools, preserved candidate lists, blind relevance judging, precision@25, time to first qualified shortlist, outreach response rate, raw runs published — is in <a href="${REPO_URL}/blob/main/HANDS-ON.md" rel="noopener">HANDS-ON.md</a>. Until raw runs exist, no hands-on claims are made.</p>
+  <p><b>Track record.</b> This benchmark is young: history starts August 2026 and accumulates monthly. Every cycle stays published permanently and mistakes are corrected in public.</p>
 
   <h2>Corrections</h2>
   <p>Vendors and users: if a score misrepresents a shipped capability, <a href="${REPO_URL}/issues" rel="noopener">open an issue</a> citing documentation for the capability, or use the <a href="https://sourcingtools.org/contact/" rel="noopener">SourcingTools.org contact page</a>. Corrections are applied in the next cycle and recorded in the repository changelog. Benchmark data is CC BY 4.0 — reuse it with attribution.</p>
@@ -216,6 +233,13 @@ const llms = `# SourcingBench
 ## Current ranking (${board.cycle})
 
 ${board.rankings.map((t) => `${t.rank}. ${t.name} — ${t.composite}/100 (${t.review})`).join('\n')}
+
+## Governance
+
+- Rubrics are pre-registered and hashed before each cycle from September 2026 (${REPO_URL}/blob/main/PREREGISTRATION.md)
+- Vendors get pre-publication right of reply; rebuttals published verbatim, no veto (${REPO_URL}/tree/main/data/replies)
+- Per-vendor referral relationships are disclosed in the leaderboard table itself (${REPO_URL}/blob/main/data/disclosures.json)
+- No hands-on performance claims yet; the pre-registered hands-on protocol is at ${REPO_URL}/blob/main/HANDS-ON.md
 
 ## Resources
 

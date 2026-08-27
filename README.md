@@ -7,20 +7,20 @@ SourcingBench is published and maintained by [SourcingTools.org](https://sourcin
 <!-- RANKINGS:START -->
 ## 🏆 Best AI sourcing tools: August 2026
 
-| # | Tool | Score / 100 | Matching | Automation | Engagement | Coverage | Integrations |
-|--:|------|:-----------:|:--------:|:----------:|:----------:|:--------:|:------------:|
-| 1 | [Noon](https://sourcingtools.org/tools/noon/) | 74.95 | 82.4 | 68.8 | 85.7 | 61.1 | 75.0 |
-| 2 | [hireEZ](https://sourcingtools.org/tools/hireez/) | 73.20 | 73.5 | 65.6 | 76.2 | 66.7 | 87.5 |
-| 3 | [SeekOut](https://sourcingtools.org/tools/seekout/) | 69.22 | 76.5 | 56.3 | 66.7 | 66.7 | 81.3 |
-| 4 | [Gem](https://sourcingtools.org/tools/gem/) | 67.84 | 64.7 | 56.3 | 76.2 | 55.6 | 93.8 |
-| 5 | [Findem](https://sourcingtools.org/tools/findem/) | 67.32 | 85.3 | 50.0 | 52.4 | 66.7 | 81.3 |
-| 6 | [Fetcher](https://sourcingtools.org/tools/fetcher/) | 62.67 | 61.8 | 75.0 | 64.3 | 50.0 | 62.5 |
-| 7 | [Juicebox (PeopleGPT)](https://sourcingtools.org/tools/juicebox/) | 58.68 | 67.6 | 46.9 | 59.5 | 55.6 | 62.5 |
-| 8 | [Dover](https://sourcingtools.org/tools/dover/) | 56.68 | 52.9 | 68.8 | 57.1 | 44.4 | 62.5 |
-| 9 | [LinkedIn Recruiter](https://sourcingtools.org/tools/linkedin-recruiter/) | 56.06 | 64.7 | 34.4 | 35.7 | 77.8 | 68.8 |
-| 10 | [HeroHunt (Uwi)](https://sourcingtools.org/tools/herohunt/) | 54.44 | 55.9 | 75.0 | 54.8 | 44.4 | 37.5 |
+| # | Tool | Score / 100 | Matching | Automation | Engagement | Coverage | Integrations | Pays us referral fees? |
+|--:|------|:-----------:|:--------:|:----------:|:----------:|:--------:|:------------:|:----------------------:|
+| 1 | [Noon](https://sourcingtools.org/tools/noon/) | 74.95 | 82.4 | 68.8 | 85.7 | 61.1 | 75.0 | **Yes** |
+| 2 | [hireEZ](https://sourcingtools.org/tools/hireez/) | 73.20 | 73.5 | 65.6 | 76.2 | 66.7 | 87.5 | **Yes** |
+| 3 | [SeekOut](https://sourcingtools.org/tools/seekout/) | 69.22 | 76.5 | 56.3 | 66.7 | 66.7 | 81.3 | No |
+| 4 | [Gem](https://sourcingtools.org/tools/gem/) | 67.84 | 64.7 | 56.3 | 76.2 | 55.6 | 93.8 | No |
+| 5 | [Findem](https://sourcingtools.org/tools/findem/) | 67.32 | 85.3 | 50.0 | 52.4 | 66.7 | 81.3 | No |
+| 6 | [Fetcher](https://sourcingtools.org/tools/fetcher/) | 62.67 | 61.8 | 75.0 | 64.3 | 50.0 | 62.5 | **Yes** |
+| 7 | [Juicebox (PeopleGPT)](https://sourcingtools.org/tools/juicebox/) | 58.68 | 67.6 | 46.9 | 59.5 | 55.6 | 62.5 | **Yes** |
+| 8 | [Dover](https://sourcingtools.org/tools/dover/) | 56.68 | 52.9 | 68.8 | 57.1 | 44.4 | 62.5 | **Yes** |
+| 9 | [LinkedIn Recruiter](https://sourcingtools.org/tools/linkedin-recruiter/) | 56.06 | 64.7 | 34.4 | 35.7 | 77.8 | 68.8 | No |
+| 10 | [HeroHunt (Uwi)](https://sourcingtools.org/tools/herohunt/) | 54.44 | 55.9 | 75.0 | 54.8 | 44.4 | 37.5 | **Yes** |
 
-_The composite (out of 100) weights Candidate matching & screening (25%), Workflow automation (20%), Outreach & engagement (20%), Talent pool coverage & data (20%), and Integrations & reporting (15%). Each of the 17 criteria decomposes into published capability checks (71 in total) scored 0 (absent), 1 (partial), or 2 (fully supported); every criterion carries an evidence note and links to the underlying review. Noon edges out hireEZ this cycle on matching calibration and outreach engagement; LinkedIn Recruiter tops talent pool coverage with the largest member-maintained pool, Findem tops matching depth, Gem tops integrations & reporting, and Fetcher and HeroHunt lead the field on workflow automation. Raw data: [criteria.json](data/cycles/August%202026/criteria.json) · [capabilities.json](data/cycles/August%202026/capabilities.json) · [leaderboard.json](data/cycles/August%202026/leaderboard.json). Full breakdowns at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/)._
+_The composite (out of 100) weights Candidate matching & screening (25%), Workflow automation (20%), Outreach & engagement (20%), Talent pool coverage & data (20%), and Integrations & reporting (15%). Each of the 17 criteria decomposes into published capability checks (71 in total) scored 0 (absent), 1 (partial), or 2 (fully supported); every criterion carries an evidence note and links to the underlying review. Noon edges out hireEZ this cycle on matching calibration and outreach engagement; LinkedIn Recruiter tops talent pool coverage with the largest member-maintained pool, Findem tops matching depth, Gem tops integrations & reporting, and Fetcher and HeroHunt lead the field on workflow automation. Raw data: [criteria.json](data/cycles/August%202026/criteria.json) · [capabilities.json](data/cycles/August%202026/capabilities.json) · [leaderboard.json](data/cycles/August%202026/leaderboard.json). Full breakdowns at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/). The "Pays us referral fees?" column discloses, per vendor, whether the publisher may earn a fee on demo requests ([data/disclosures.json](data/disclosures.json)) — shown in the table so readers can see the correlation with rankings for themselves, including that the #1 tool pays and several non-paying vendors outrank paying ones._
 <!-- RANKINGS:END -->
 
 ### [See the full leaderboard at sourcingtools.org/benchmark →](https://sourcingtools.org/benchmark/)
@@ -42,8 +42,12 @@ data/
       cycle.json            # SHA-256 manifest of the files above
   tools/
     <slug>.json             # per-tool score history across all cycles
+  replies/                  # vendor right-of-reply rebuttals, published verbatim
+  disclosures.json          # per-vendor referral relationship disclosure
+rubrics/                    # pre-registered rubrics for upcoming cycles
 scripts/
   verify-cycle.mjs          # the audit script (see below)
+PREREGISTRATION.md          # pre-registration policy and rubric hashes
 CHANGES.md                  # cycle-to-cycle methodology changelog
 ```
 
@@ -74,6 +78,22 @@ The verifier is wired into CI: every push runs `npm run verify` and fails the bu
 ## What verification does — and does not — prove
 
 The verifier proves the **publication is internally honest**: the files haven't been altered since publish, every check value is in range and carries evidence, and every published composite really is the weighted arithmetic of the raw check values. It does **not** prove the check values themselves are correct — those are editorial judgments made by the SourcingTools.org editorial team from vendor documentation, product walkthroughs, and maintained tool reviews, not the output of blind hands-on trials. That is why every criterion's evidence note is published alongside its score: the judgments are open to inspection and dispute (see [Corrections and disputes](#corrections-and-disputes)), but they are judgments. Treat SourcingBench as a transparent, checkable editorial assessment — not as independent third-party test results.
+
+## Pre-registered rubrics
+
+From September 2026 onward, each cycle's rubric is committed and hashed in [`rubrics/`](rubrics/) **before** assessment begins, so the measurement is fixed before anyone knows who wins under it — see [PREREGISTRATION.md](PREREGISTRATION.md) for the policy and the registered hashes. Earlier rubric drafts (v1, v2.0) were revised before public release, which pre-registration exists to prevent; the August 2026 cycle predates the policy and its revisions are disclosed in [CHANGES.md](CHANGES.md).
+
+## Vendor right of reply
+
+Before each cycle publishes, every vendor is sent its full scorecard with a reply window. Rebuttals are published **verbatim** in [`data/replies/`](data/replies/) alongside the scores they dispute; vendors do not get a veto, and demonstrated factual corrections are applied in the next cycle and logged in `CHANGES.md`. The August 2026 cycle predates this process; it applies from September 2026 onward.
+
+## Toward hands-on testing
+
+A capability rubric — however transparent — is still editorial judgment over documentation. The credible endpoint is task-based testing: run the same set of real job specs through every tool, keep the candidate lists, and measure precision on relevant candidates, outreach response rate, and time to first qualified shortlist, publishing the raw runs (queries, outputs, timestamps) rather than only the derived scores. That requires paid seats at all ten vendors, weeks of live roles, and qualified human judging, which this project does not yet have; until it does, SourcingBench will not claim hands-on results it hasn't produced. The planned run schema and metrics are documented in [HANDS-ON.md](HANDS-ON.md), pre-registered like everything else, so the first hands-on cycle can be judged against a spec that predates its results.
+
+## Cadence and track record
+
+SourcingBench publishes monthly. This is a young benchmark — the history starts with August 2026 — and its credibility has to be earned longitudinally: every cycle's data stays published permanently, mistakes are corrected in public in [CHANGES.md](CHANGES.md), and rankings are free to change as tools ship. One cycle is a launch, not a track record; the per-tool history in `data/tools/` accumulates one row per month from here.
 
 ## Methodology in one paragraph
 
