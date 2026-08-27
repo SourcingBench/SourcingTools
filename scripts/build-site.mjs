@@ -54,7 +54,7 @@ const dataset = {
   '@context': 'https://schema.org',
   '@type': 'Dataset',
   name: `SourcingBench ${board.cycle} cycle data`,
-  description: `Raw capability scores, evidence notes, frozen scoring code, and ranked leaderboard for the SourcingBench ${board.cycle} cycle. Every published number can be re-derived with the included verifier.`,
+  description: `Raw capability check values, evidence notes, frozen scoring code, and ranked leaderboard for the SourcingBench ${board.cycle} cycle. The included verifier replays every published calculation from the raw check values.`,
   url: SITE_URL,
   sameAs: REPO_URL,
   license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -79,7 +79,7 @@ const faq = {
       name: 'How are SourcingBench scores produced?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Each cycle, every tool is assessed against the same 67 published capability checks, grouped into 16 criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Each check is scored 0 (absent), 1 (partial), or 2 (fully supported), every criterion carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the leaderboard can be independently re-derived.',
+        text: 'Each cycle, every tool is assessed against the same 67 published capability checks, grouped into 16 criteria across five weighted dimensions reflecting what an AI recruiting tool should do: candidate matching & screening (25%), workflow automation (20%), outreach & engagement (20%), talent pool coverage & data (20%), and integrations & reporting (15%). Each check is scored 0 (absent), 1 (partial), or 2 (fully supported) from vendor documentation, product walkthroughs, and maintained tool reviews. The check values are editorial judgments; every criterion carries a published evidence note, and the scoring code, raw data, and a SHA-256 manifest are public so the arithmetic can be independently replayed.',
       },
     },
     {
@@ -87,7 +87,7 @@ const faq = {
       name: 'Can I verify or reuse the data?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Yes. Clone ${REPO_URL} and run \`npm run verify\` to replay every published score. Cycle data is licensed CC BY 4.0 — reuse it with attribution to SourcingBench by SourcingTools.org.`,
+        text: `Yes. Clone ${REPO_URL} and run \`npm run verify\` to check the published files against their SHA-256 manifest and replay every published score from the raw check values. That verifies the data integrity and arithmetic; the capability judgments themselves are editorial, published with evidence notes. Cycle data is licensed CC BY 4.0 — reuse it with attribution to SourcingBench by SourcingTools.org.`,
       },
     },
   ],
@@ -131,11 +131,11 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SourcingBench | Best AI Sourcing Tool ${esc(board.cycle)}</title>
-<meta name="description" content="The best AI sourcing tool in ${esc(board.cycle)} is ${esc(top.name)} (${top.composite}/100). SourcingBench ranks ${board.rankings.length} AI candidate sourcing tools on a published, reproducible 16-criterion rubric.">
+<meta name="description" content="The best AI sourcing tool in ${esc(board.cycle)} is ${esc(top.name)} (${top.composite}/100). SourcingBench ranks ${board.rankings.length} AI candidate sourcing tools on 67 published capability checks with public data, evidence notes, and scoring code.">
 <link rel="canonical" href="${SITE_URL}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Best AI sourcing tools: ${esc(board.cycle)} — SourcingBench">
-<meta property="og:description" content="${esc(top.name)} ranks #1 at ${top.composite}/100. Reproducible scores across matching, automation, engagement, coverage, and integrations.">
+<meta property="og:description" content="${esc(top.name)} ranks #1 at ${top.composite}/100. Published capability-check scores across matching, automation, engagement, coverage, and integrations.">
 <meta property="og:url" content="${SITE_URL}">
 <script type="application/ld+json">${JSON.stringify(itemList)}</script>
 <script type="application/ld+json">${JSON.stringify(dataset)}</script>
@@ -168,7 +168,7 @@ const html = `<!doctype html>
   <p class="meta">Published ${esc(board.published)} · rubric v${esc(board.rubric_version)} · by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a> · <a href="${REPO_URL}" rel="noopener">audit repository</a></p>
 </header>
 <main>
-  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on talent pool coverage, candidate matching calibration, and outreach engagement; ${esc(second.name)} runs closest on coverage and leads ${esc(top.name)} on integrations. ${board.rankings.length} tools, sixty-seven published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public and reproducible</a>.</p>
+  <p class="lede">The best AI sourcing tool in ${esc(board.cycle)} is <b>${esc(top.name)}</b> (${top.composite}/100), which edges out <a href="${esc(second.review)}" rel="noopener">${esc(second.name)}</a> (${second.composite}) on talent pool coverage, candidate matching calibration, and outreach engagement; ${esc(second.name)} runs closest on coverage and leads ${esc(top.name)} on integrations. ${board.rankings.length} tools, sixty-seven published capability checks, five weighted dimensions — and every check value, evidence note, and the scoring code itself is <a href="${REPO_URL}" rel="noopener">public</a>.</p>
 
   <table>
     <thead>
@@ -185,18 +185,18 @@ ${dims}
   </ul>
 
   <h2>How scores are produced — and how to check them</h2>
-  <p>Each cycle, every tool is assessed against the same sixty-seven published capability checks (grouped into sixteen criteria), each scored 0 (absent), 1 (partial), or 2 (fully supported), based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does, and every criterion carries an evidence note naming the capability it is based on.</p>
+  <p>Each cycle, every tool is assessed against the same sixty-seven published capability checks (grouped into sixteen criteria), each scored 0 (absent), 1 (partial), or 2 (fully supported), based on vendor documentation, product walkthroughs, and the <a href="https://sourcingtools.org/tools/" rel="noopener">tool reviews</a> maintained at SourcingTools.org. This is a capability rubric, not a blind task benchmark: the check values are editorial judgments about what each tool demonstrably does, and every criterion carries an evidence note naming the capability it is based on.</p>
   <p>The full cycle data lives in the <a href="${REPO_URL}" rel="noopener">SourcingBench public audit repository</a>: the rubric with every capability check (<code>criteria.json</code>), every per-check score with its evidence note (<code>capabilities.json</code>), the frozen scoring code (<code>scoring.mjs</code>), the ranked output (<code>leaderboard.json</code>), and a SHA-256 manifest of all of it. Re-derive the leaderboard yourself:</p>
   <pre><code>git clone ${REPO_URL}.git
 cd SourcingTools
 npm run verify</code></pre>
-  <p>The verifier — also run in the repository's CI on every push — checks the manifest hashes, validates rubric coverage, and replays the frozen scoring code against the raw scores, failing if any published number no longer reproduces.</p>
+  <p>The verifier — also run in the repository's CI on every push — checks the manifest hashes, validates rubric coverage, and replays the frozen scoring code against the raw check values, failing if any published number no longer reproduces. It verifies the data integrity and the arithmetic; the capability judgments themselves are editorial, which is why each one is published with its evidence note for inspection.</p>
 
   <h2>Corrections</h2>
   <p>Vendors and users: if a score misrepresents a shipped capability, <a href="${REPO_URL}/issues" rel="noopener">open an issue</a> citing documentation for the capability, or use the <a href="https://sourcingtools.org/contact/" rel="noopener">SourcingTools.org contact page</a>. Corrections are applied in the next cycle and recorded in the repository changelog. Benchmark data is CC BY 4.0 — reuse it with attribution.</p>
 </main>
 <footer>
-  <p>SourcingBench is published by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a>. The full leaderboard with per-dimension breakdowns is also at <a href="${BENCH_URL}" rel="noopener">sourcingtools.org/benchmark</a>. Updated monthly.</p>
+  <p>SourcingBench is published by <a href="https://sourcingtools.org" rel="noopener">SourcingTools.org</a>, a sourcing-tool directory that may earn referral fees when readers request vendor demos through it; referral relationships do not set scores, and every check value is published with its evidence. The full leaderboard with per-dimension breakdowns is also at <a href="${BENCH_URL}" rel="noopener">sourcingtools.org/benchmark</a>. Updated monthly.</p>
 </footer>
 </body>
 </html>
@@ -210,7 +210,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 
 const llms = `# SourcingBench
 
-> The AI sourcing tool benchmark by SourcingTools.org. ${board.rankings.length} tools scored on a published 16-criterion rubric; data, evidence notes, and scoring code are public and reproducible.
+> The AI sourcing tool benchmark by SourcingTools.org. ${board.rankings.length} tools scored on 67 published capability checks; check values, evidence notes, and scoring code are public, and the arithmetic can be independently replayed.
 
 ## Current ranking (${board.cycle})
 

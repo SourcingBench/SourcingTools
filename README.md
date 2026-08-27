@@ -1,8 +1,8 @@
 # SourcingBench: AI Sourcing Tool Rankings & Public Audit Record
 
-**The best AI sourcing tools, ranked by a published, reproducible benchmark.** SourcingBench scores AI recruiting tools on what an AI recruiting tool should do: match and screen candidates accurately, engage them effectively, automate the recruiting workflow, cover the talent pool, and fit the surrounding stack. Every criterion definition, every per-tool score with its evidence note, and the scoring code itself are published in this repository, so anyone can re-derive the rankings from scratch.
+**The best AI sourcing tools, ranked on a published capability rubric.** SourcingBench scores AI recruiting tools on what an AI recruiting tool should do: match and screen candidates accurately, engage them effectively, automate the recruiting workflow, cover the talent pool, and fit the surrounding stack. Every criterion definition, every per-tool check value with its evidence note, and the scoring code itself are published in this repository, so anyone can replay the published calculations and inspect the basis for every number.
 
-SourcingBench is published by [SourcingTools.org](https://sourcingtools.org), the independent directory of candidate sourcing tools. The live leaderboard with per-dimension breakdowns is at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/), with a standalone copy at [sourcingbench.github.io/SourcingTools](https://sourcingbench.github.io/SourcingTools/).
+SourcingBench is published and maintained by [SourcingTools.org](https://sourcingtools.org), a directory of candidate sourcing tools that may earn referral fees when readers request vendor demos through it. Referral relationships do not set scores — every check value is published with its evidence — but readers should weigh that relationship as they would for any publisher. The live leaderboard with per-dimension breakdowns is at [sourcingtools.org/benchmark](https://sourcingtools.org/benchmark/), with a standalone copy at [sourcingbench.github.io/SourcingTools](https://sourcingbench.github.io/SourcingTools/).
 
 <!-- RANKINGS:START -->
 ## 🏆 Best AI sourcing tools: August 2026
@@ -27,7 +27,7 @@ _The composite (out of 100) weights Candidate matching & screening (25%), Workfl
 
 Per-dimension breakdowns, the complete 16-criterion rubric, per-tool evidence notes, and cycle history.
 
-This repository is the **public audit record**: the leaderboard on the live site is rendered from the data here, and anyone can clone this repo and re-derive every published cycle.
+This repository is the **public audit record**: the leaderboard on the live site is rendered from the data here, and anyone can clone this repo and replay every published cycle's arithmetic from the raw check values.
 
 ## What's in here
 
@@ -71,9 +71,13 @@ The script runs three checks for each cycle:
 
 The verifier is wired into CI: every push runs `npm run verify` and fails the build if any published cycle no longer replays.
 
+## What verification does — and does not — prove
+
+The verifier proves the **publication is internally honest**: the files haven't been altered since publish, every check value is in range and carries evidence, and every published composite really is the weighted arithmetic of the raw check values. It does **not** prove the check values themselves are correct — those are editorial judgments made by the SourcingTools.org editorial team from vendor documentation, product walkthroughs, and maintained tool reviews, not the output of blind hands-on trials. That is why every criterion's evidence note is published alongside its score: the judgments are open to inspection and dispute (see [Corrections and disputes](#corrections-and-disputes)), but they are judgments. Treat SourcingBench as a transparent, checkable editorial assessment — not as independent third-party test results.
+
 ## Methodology in one paragraph
 
-Each cycle, every tool is assessed against the same 67 published capability checks, grouped into 16 criteria across five dimensions weighted by what an AI recruiting tool should do (matching & screening 25%, workflow automation 20%, outreach & engagement 20%, coverage & data 20%, integrations & reporting 15%). Each check is scored 0 (absent), 1 (partial or assisted), or 2 (fully supported) from vendor documentation, product walkthroughs, and the tool reviews maintained at SourcingTools.org; every check value and each criterion's evidence note are published in `capabilities.json`, so the basis for every number is inspectable. This is a capability rubric, not a blind task benchmark: it measures what each tool demonstrably does. The full methodology is on the [benchmark page](https://sourcingtools.org/benchmark/).
+Each cycle, every tool is assessed against the same 67 published capability checks, grouped into 16 criteria across five dimensions weighted by what an AI recruiting tool should do (matching & screening 25%, workflow automation 20%, outreach & engagement 20%, coverage & data 20%, integrations & reporting 15%). Each check is scored 0 (absent), 1 (partial or assisted), or 2 (fully supported) from vendor documentation, product walkthroughs, and the tool reviews maintained at SourcingTools.org; every check value and each criterion's evidence note are published in `capabilities.json`, so the basis for every number is inspectable. This is a capability rubric, not a blind task benchmark: the check values are editorial judgments about what each tool demonstrably does, and the published code verifies the arithmetic and data integrity, not the judgments themselves. The full methodology is on the [benchmark page](https://sourcingtools.org/benchmark/).
 
 ## Corrections and disputes
 
